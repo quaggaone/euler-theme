@@ -1,0 +1,145 @@
+img {
+    max-width: 100%;
+}
+
+:root {
+    --hb-color: #{$color-accent};
+
+    @media (prefers-color-scheme: dark) {
+        --hb-color: #{$color-accent-dark};
+    }
+}
+
+._accent {
+    color: var(--hb-color);
+}
+
+.row {
+    margin-bottom: 2rem;
+}
+
+.logo {
+    @include media-breakpoint-down(lg) {
+        width: 40%;
+        margin-right: auto;
+    }
+}
+
+.logo-light {
+    @media (prefers-color-scheme: dark) {
+        display: none;
+    }
+}
+
+.logo-dark {
+    display: none;
+
+    @media (prefers-color-scheme: dark) {
+        display: block;
+    }
+}
+
+.stay-tuned {
+    margin-bottom: .75em;
+    background-color: #C4A764;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-family: var(--#{$prefix}font-monospace);
+    font-weight: 700;
+    color: #000000;
+    display: inline-block;
+}
+
+.slogan {
+    .__main {
+        letter-spacing: .0125em;
+    }
+
+    .__alt {
+        @extend .h4;
+        font-weight: 300;
+    }
+}
+
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .__item {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        padding: .625rem;
+
+        @include media-breakpoint-down(lg) {
+            width: 42%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    img {
+        width: 100%;
+        padding: 1rem;
+        border: .125rem solid black;
+
+        @media (prefers-color-scheme: dark) {
+            filter: invert(1);
+        }
+    }
+
+    span {
+        margin-top: .125em;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-size: 1.125rem;
+        line-break: anywhere;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .map {
+        order: 2;
+    }
+
+    .culture {
+        order: 3;
+    }
+
+    .connect {
+        order: 1;
+    }
+}
+
+.locations {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+
+    @include media-breakpoint-down(lg) {
+        text-align: right;
+    }
+
+    .__country {
+        font-weight: 500;
+    }
+}
+
+.culture {
+    @include font-size(.8rem);
+}
+
+.connect {
+    margin-bottom: 4rem;
+
+    small {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        letter-spacing: .1em;
+        font-size: 1rem;
+    }
+
+    .__contact {
+        border-left: .125rem solid var(--hb-color);
+        padding-left: .5rem;
+    }
+}
