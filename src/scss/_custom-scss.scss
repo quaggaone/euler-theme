@@ -143,4 +143,20 @@ img {
         border-left: .125rem solid var(--hb-color);
         padding-left: .5rem;
     }
+
+    .__social {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+
+        a {
+            text-decoration: none;
+            margin-right: .5em;
+            color: var(--#{$prefix}font-color);
+
+            &:hover {
+                color: var(--hb-color);
+            }
+        }
+    }
 }
