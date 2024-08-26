@@ -95,6 +95,17 @@ $hbc-black-violet-70: tint-color($hbc-black-violet, 20%);
 $hbc-black-violet-80: tint-color($hbc-black-violet, 10%);
 $hbc-black-violet-90: $hbc-black-violet;
 
+$hbc-black-violet-alt: #0F0CB3;
+$hbc-black-violet-alt-10: tint-color($hbc-black-violet-alt, 80%);
+$hbc-black-violet-alt-20: tint-color($hbc-black-violet-alt, 60%);
+$hbc-black-violet-alt-30: tint-color($hbc-black-violet-alt, 40%);
+$hbc-black-violet-alt-40: tint-color($hbc-black-violet-alt, 20%);
+$hbc-black-violet-alt-50: $hbc-black-violet-alt;
+$hbc-black-violet-alt-60: shade-color($hbc-black-violet-alt, 20%);
+$hbc-black-violet-alt-70: shade-color($hbc-black-violet-alt, 40%);
+$hbc-black-violet-alt-80: shade-color($hbc-black-violet-alt, 60%);
+$hbc-black-violet-alt-90: shade-color($hbc-black-violet-alt, 80%);
+
 $hbc-green: #34C759;
 $hbc-green-10: tint-color($hbc-green, 80%);
 $hbc-green-20: tint-color($hbc-green, 60%);
@@ -189,6 +200,18 @@ $hbc-black-violets: (
     "90": $hbc-black-violet-90
 );
 
+$hbc-black-violet-alts: (
+    "10": $hbc-black-violet-alt-10,
+    "20": $hbc-black-violet-alt-20,
+    "30": $hbc-black-violet-alt-30,
+    "40": $hbc-black-violet-alt-40,
+    "50": $hbc-black-violet-alt-50,
+    "60": $hbc-black-violet-alt-60,
+    "70": $hbc-black-violet-alt-70,
+    "80": $hbc-black-violet-alt-80,
+    "90": $hbc-black-violet-alt-90
+);
+
 $hbc-greens: (
     "10": $hbc-green-10,
     "20": $hbc-green-20,
@@ -274,6 +297,18 @@ $hbc-black-violets-dark: (
     "90": $hbc-black-violet-10
 );
 
+$hbc-black-violet-alts-dark: (
+    "10": $hbc-black-violet-alt-90,
+    "20": $hbc-black-violet-alt-80,
+    "30": $hbc-black-violet-alt-70,
+    "40": $hbc-black-violet-alt-60,
+    "50": $hbc-black-violet-alt-50,
+    "60": $hbc-black-violet-alt-40,
+    "70": $hbc-black-violet-alt-30,
+    "80": $hbc-black-violet-alt-20,
+    "90": $hbc-black-violet-alt-10
+);
+
 $hbc-greens-dark: (
     "10": $hbc-green-90,
     "20": $hbc-green-80,
@@ -345,6 +380,10 @@ $hbc-yellows-dark: (
         --hbc-black-violet-#{$color}: #{$value};
     }
 
+    @each $color, $value in $hbc-black-violet-alts {
+        --hbc-black-violet-alt-#{$color}: #{$value};
+    }
+
     @each $color, $value in $hbc-greens {
         --hbc-green-#{$color}: #{$value};
     }
@@ -385,6 +424,10 @@ $hbc-yellows-dark: (
 
         @each $color, $value in $hbc-black-violets-dark {
             --hbc-black-violet-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-black-violet-alts-dark {
+            --hbc-black-violet-alt-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-greens-dark {
@@ -436,6 +479,12 @@ body {
         }
     }
 
+    &._black-violet-alt, ._black-violet-alt {
+        @each $color, $value in $hbc-black-violet-alts {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
     &._green, ._green {
         @each $color, $value in $hbc-greens {
             --hbc-#{$color}: #{$value};
@@ -483,6 +532,12 @@ body {
     
         &._black-violet, ._black-violet {
             @each $color, $value in $hbc-black-violets-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._black-violet-alt, ._black-violet-alt {
+            @each $color, $value in $hbc-black-violet-alts-dark {
                 --hbc-#{$color}: #{$value};
             }
         }

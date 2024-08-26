@@ -1,10 +1,16 @@
-@mixin hbc-link-reset() {
+@mixin hbc-link-reset($text-only: false) {
     text-decoration: none;
     color: inherit;
+    @if not $text-only {
+        background-color: inherit;
+    }
 
-    &:hover {
+    &:hover, &:active {
         text-decoration: none;
         color: inherit;
+        @if not $text-only {
+            background-color: inherit;
+        }
     }
 
     &:visited {
@@ -12,9 +18,27 @@
     }
 }
 
+@mixin hbc-link() {
+    text-decoration: underline;
+    background-color: var(--hbc-30);
+    color: var(--hbc-90);
+    text-decoration-color: var(--hbc-90);
+    padding: 0 .125em;
+
+    &:hover, &:active {
+        background-color: var(--hbc-20);
+        color: var(--hbc-70);
+        text-decoration-color: var(--hbc-70);
+    }
+}
+
 img, .img, video {
     max-width: 100%;
     border-radius: calc($hbc-border-radius + .25rem);
+}
+
+a {
+    @include hbc-link();
 }
 
 :root {
@@ -144,6 +168,9 @@ body {
     }
 
     .__map {
+        max-width: 30rem;
+        width: 100%;
+
         &._white {
             display: none !important;
     
@@ -183,24 +210,31 @@ small {
         }
     }
 
-    .__social {
-        display: flex;
-        flex-direction: row;
-        font-size: 1.5rem;
+}
 
-        a {
-            text-decoration: none;
-            margin-right: .5em;
-            color: var(--#{$prefix}font-color);
+// REMOVE deprecated classes
+.__social, .hbc-social {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    
+    a {
+        @include hbc-link-reset();
+        
+        text-decoration: none;
+        margin-right: .5em;
+        // color: var(--#{$prefix}font-color);
+        color: var(--hbc-50);
 
-            &:hover {
-                color: var(--hbc-50);
-            }
+        &:hover {
+            color: var(--hbc-40);
+        }
+
+        &:visited {
+            color: var(--hbc-50);
         }
     }
 }
-
-
 
 
 .btn {
@@ -257,6 +291,10 @@ header, section {
 .header {
     $header-full-height: 80vh;
 
+    max-width: 125rem;
+    margin-left: auto;
+    margin-right: auto;
+
     .__navbar {
         @extend .navbar;
         @extend .navbar-expand-lg;
@@ -268,6 +306,7 @@ header, section {
 
     .__navbar-brand {
         @extend .navbar-brand;
+        @include hbc-link-reset();
 
         .__logo {
             @include rfs(3rem, max-height);
@@ -391,8 +430,7 @@ header, section {
         @extend .col-lg-6;
         // @extend .mb-3;
 
-        // REMOVE deprecated classes
-        &._text-container, &._text {
+        &._text {
             @extend .d-flex;
             @extend .flex-column;
             @extend .mb-3;
@@ -400,8 +438,7 @@ header, section {
             @extend .pe-lg-3;
         }
 
-        // REMOVE deprecated classes
-        &._img-container, &._img {
+        &._img {
             @extend .d-flex;
             @extend .justify-content-end;
 
@@ -527,7 +564,7 @@ header, section {
         }
 
         .__col {
-            &._img-container {
+            &._img {
                 position: absolute;
                 inset: 0;
                 z-index: -1;
@@ -847,7 +884,7 @@ header, section {
         
         --#{$prefix}card-bg: #{default-color(10)};
         
-        @include hbc-link-reset();
+        @include hbc-link-reset($text-only: true);
         
         transition-duration: .3s;
         animation-duration: .3s;
@@ -862,7 +899,8 @@ header, section {
     }
     
     .__img {
-        padding: 1rem;
+        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+        padding-bottom: 0;
         
         img {
             width: 100%;
@@ -877,6 +915,9 @@ header, section {
     
     .__body {
         @extend .card-body;
+
+        display: flex;
+        flex-direction: column;
         
         // max-height: 100%;
         // max-width: 100%;
@@ -930,7 +971,12 @@ header, section {
     }
     
     .__link-indicator {
+        // @extend .link-primary;
+        @include hbc-link();
+        
         display: none;
+        margin-top: auto;
+        margin-right: auto;
     }
     
     @include media-breakpoint-up(lg) {
@@ -963,11 +1009,7 @@ header, section {
         }
         
         .__link-indicator {
-            @extend .link-primary;
-            
             display: inline-block;
-            margin-top: .25rem;
-            text-decoration: underline;
         }
     }
     
@@ -1005,8 +1047,6 @@ header, section {
         }
 
         .__img {
-            padding: var(--#{$prefix}card-spacer-y) var(--#{$prefix}card-spacer-x);
-
             img {
                 aspect-ratio: 1/1;
                 background-color: var(--hbc-20);
@@ -1031,9 +1071,9 @@ header, section {
             margin-bottom: 0;
         }
         
-        .__link-indicator {
-            display: none;
-        }
+        // .__link-indicator {
+        //     display: none;
+        // }
     }
 }
 
