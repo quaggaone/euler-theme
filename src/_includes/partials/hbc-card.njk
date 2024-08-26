@@ -1,0 +1,34 @@
+{# <div class="card-grid__col">
+    <div class="card {{ hbcCardClass }}">
+        <div class="card-body">
+            <p class="card-title">{{ hbcCardTitle }}</p>
+            <p class="card-text">
+                {{ hbcCardDesc }}
+            </p>
+            <div class="d-flex flex-column-reverse flex-md-row flex-wrap align-items-center flex-grow-1">
+                {{ hbcCardImgUrl | safe}}
+                <ul class="list-unstyled mb-0 ms-2 align-self-start align-self-md-center" style="line-height: 1.75rem;">
+                    {{ hbcCardListItems | safe }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> #}
+
+<div class="hbc-card {{ hbcCardOptions }}">
+    <a class="__container" href="{{ hbcCardLink }}">
+        <img class="__img" src="{{ hbcCardImg }}" alt="">
+        <div class="__body">
+            <h3 class="__title">{{ hbcCardTitle }}</h3>
+            <div class="__subtitle">
+                {{ hbcCardSubtitle | safe }}
+            </div>
+            <div class="__text">
+                {{ hbcCardText | safe }}
+            </div>
+            <div class="__link-indicator">
+                Learn More
+            </div>
+        </div>
+    </a>
+</div>

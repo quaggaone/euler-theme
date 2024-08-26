@@ -1,12 +1,569 @@
+// # CUSTOM GLOBAL VALUES
+$abbr: "hbc"; // project abbreviation for CSS variables (to make code copiable between projects)
+
+$hbc-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$hbc-font-sans-condensed: "IBM Plex Sans Condensed", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$hbc-font-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$hbc-font-serif: "IBM Plex Serif", "Times New Roman";
+
+$hbc-border-radius: none;
+
+
+// ## CUSTOM COLOR VALUES
+// ### WHITE + GRAY
+$hbc-white: #f2f2f2;
+$hbc-dark: #0d0d0d;
+
+// ### GREYS
+$hbc-grey: #808080;
+$hbc-grey-10: tint-color($hbc-grey, 80%);
+$hbc-grey-20: tint-color($hbc-grey, 60%);
+$hbc-grey-30: tint-color($hbc-grey, 40%);
+$hbc-grey-40: tint-color($hbc-grey, 20%);
+$hbc-grey-50: $hbc-grey;
+$hbc-grey-60: shade-color($hbc-grey, 20%);
+$hbc-grey-70: shade-color($hbc-grey, 40%);
+$hbc-grey-80: shade-color($hbc-grey, 60%);
+$hbc-grey-90: shade-color($hbc-grey, 80%);
+
+$hbc-greys: (
+    "10": $hbc-grey-10,
+    "20": $hbc-grey-20,
+    "30": $hbc-grey-30,
+    "40": $hbc-grey-40,
+    "50": $hbc-grey-50,
+    "60": $hbc-grey-60,
+    "70": $hbc-grey-70,
+    "80": $hbc-grey-80,
+    "90": $hbc-grey-90
+);
+
+$hbc-greys-dark: (
+    "10": $hbc-grey-90,
+    "20": $hbc-grey-80,
+    "30": $hbc-grey-70,
+    "40": $hbc-grey-60,
+    "50": $hbc-grey-50,
+    "60": $hbc-grey-40,
+    "70": $hbc-grey-30,
+    "80": $hbc-grey-20,
+    "90": $hbc-grey-10
+);
+
+// ### COLORS
+$hbc-amaranth: #AD0040;
+$hbc-amaranth-10: tint-color($hbc-amaranth, 80%);
+$hbc-amaranth-20: tint-color($hbc-amaranth, 60%);
+$hbc-amaranth-30: tint-color($hbc-amaranth, 40%);
+$hbc-amaranth-40: tint-color($hbc-amaranth, 20%);
+$hbc-amaranth-50: $hbc-amaranth;
+$hbc-amaranth-60: shade-color($hbc-amaranth, 20%);
+$hbc-amaranth-70: shade-color($hbc-amaranth, 40%);
+$hbc-amaranth-80: shade-color($hbc-amaranth, 60%);
+$hbc-amaranth-90: shade-color($hbc-amaranth, 80%);
+
+$hbc-gold: #C4A765;
+$hbc-gold-10: tint-color($hbc-gold, 80%);
+$hbc-gold-20: tint-color($hbc-gold, 60%);
+$hbc-gold-30: tint-color($hbc-gold, 40%);
+$hbc-gold-40: tint-color($hbc-gold, 20%);
+$hbc-gold-50: $hbc-gold;
+$hbc-gold-60: shade-color($hbc-gold, 20%);
+$hbc-gold-70: shade-color($hbc-gold, 40%);
+$hbc-gold-80: shade-color($hbc-gold, 60%);
+$hbc-gold-90: shade-color($hbc-gold, 80%);
+
+$hbc-steel: #356D9A;
+$hbc-steel-10: tint-color($hbc-steel, 80%);
+$hbc-steel-20: tint-color($hbc-steel, 60%);
+$hbc-steel-30: tint-color($hbc-steel, 40%);
+$hbc-steel-40: tint-color($hbc-steel, 20%);
+$hbc-steel-50: $hbc-steel;
+$hbc-steel-60: shade-color($hbc-steel, 20%);
+$hbc-steel-70: shade-color($hbc-steel, 40%);
+$hbc-steel-80: shade-color($hbc-steel, 60%);
+$hbc-steel-90: shade-color($hbc-steel, 80%);
+
+$hbc-black-violet: #050438;
+$hbc-black-violet-10: tint-color($hbc-black-violet, 84%);
+$hbc-black-violet-20: tint-color($hbc-black-violet, 70%);
+$hbc-black-violet-30: tint-color($hbc-black-violet, 60%);
+$hbc-black-violet-40: tint-color($hbc-black-violet, 50%);
+$hbc-black-violet-50: tint-color($hbc-black-violet, 40%);
+$hbc-black-violet-60: tint-color($hbc-black-violet, 30%);
+$hbc-black-violet-70: tint-color($hbc-black-violet, 20%);
+$hbc-black-violet-80: tint-color($hbc-black-violet, 10%);
+$hbc-black-violet-90: $hbc-black-violet;
+
+$hbc-green: #34C759;
+$hbc-green-10: tint-color($hbc-green, 80%);
+$hbc-green-20: tint-color($hbc-green, 60%);
+$hbc-green-30: tint-color($hbc-green, 40%);
+$hbc-green-40: tint-color($hbc-green, 20%);
+$hbc-green-50: $hbc-green;
+$hbc-green-60: shade-color($hbc-green, 20%);
+$hbc-green-70: shade-color($hbc-green, 40%);
+$hbc-green-80: shade-color($hbc-green, 60%);
+$hbc-green-90: shade-color($hbc-green, 80%);
+
+$hbc-orange: #FF6900;
+$hbc-orange-10: tint-color($hbc-orange, 80%);
+$hbc-orange-20: tint-color($hbc-orange, 60%);
+$hbc-orange-30: tint-color($hbc-orange, 40%);
+$hbc-orange-40: tint-color($hbc-orange, 20%);
+$hbc-orange-50: $hbc-orange;
+$hbc-orange-60: shade-color($hbc-orange, 20%);
+$hbc-orange-70: shade-color($hbc-orange, 40%);
+$hbc-orange-80: shade-color($hbc-orange, 60%);
+$hbc-orange-90: shade-color($hbc-orange, 80%);
+
+$hbc-yellow: #FF9F0A;
+$hbc-yellow-10: tint-color($hbc-yellow, 80%);
+$hbc-yellow-20: tint-color($hbc-yellow, 60%);
+$hbc-yellow-30: tint-color($hbc-yellow, 40%);
+$hbc-yellow-40: tint-color($hbc-yellow, 20%);
+$hbc-yellow-50: $hbc-yellow;
+$hbc-yellow-60: shade-color($hbc-yellow, 20%);
+$hbc-yellow-70: shade-color($hbc-yellow, 40%);
+$hbc-yellow-80: shade-color($hbc-yellow, 60%);
+$hbc-yellow-90: shade-color($hbc-yellow, 80%);
+
+// ### DARK-MODE COLORS
+$hbc-amaranth-dark: #BD3366;
+$hbc-amaranth-dark-10: tint-color($hbc-amaranth-dark, 80%);
+$hbc-amaranth-dark-20: tint-color($hbc-amaranth-dark, 60%);
+$hbc-amaranth-dark-30: tint-color($hbc-amaranth-dark, 40%);
+$hbc-amaranth-dark-40: tint-color($hbc-amaranth-dark, 20%);
+$hbc-amaranth-dark-50: $hbc-amaranth-dark;
+$hbc-amaranth-dark-60: shade-color($hbc-amaranth-dark, 20%);
+$hbc-amaranth-dark-70: shade-color($hbc-amaranth-dark, 40%);
+$hbc-amaranth-dark-80: shade-color($hbc-amaranth-dark, 60%);
+$hbc-amaranth-dark-90: shade-color($hbc-amaranth-dark, 80%);
+
+// ### MAPS
+$hbc-amaranths: (
+    "10": $hbc-amaranth-10,
+    "20": $hbc-amaranth-20,
+    "30": $hbc-amaranth-30,
+    "40": $hbc-amaranth-40,
+    "50": $hbc-amaranth-50,
+    "60": $hbc-amaranth-60,
+    "70": $hbc-amaranth-70,
+    "80": $hbc-amaranth-80,
+    "90": $hbc-amaranth-90
+);
+
+$hbc-golds: (
+    "10": $hbc-gold-10,
+    "20": $hbc-gold-20,
+    "30": $hbc-gold-30,
+    "40": $hbc-gold-40,
+    "50": $hbc-gold-50,
+    "60": $hbc-gold-60,
+    "70": $hbc-gold-70,
+    "80": $hbc-gold-80,
+    "90": $hbc-gold-90
+);
+
+$hbc-steels: (
+    "10": $hbc-steel-10,
+    "20": $hbc-steel-20,
+    "30": $hbc-steel-30,
+    "40": $hbc-steel-40,
+    "50": $hbc-steel-50,
+    "60": $hbc-steel-60,
+    "70": $hbc-steel-70,
+    "80": $hbc-steel-80,
+    "90": $hbc-steel-90
+);
+
+$hbc-black-violets: (
+    "10": $hbc-black-violet-10,
+    "20": $hbc-black-violet-20,
+    "30": $hbc-black-violet-30,
+    "40": $hbc-black-violet-40,
+    "50": $hbc-black-violet-50,
+    "60": $hbc-black-violet-60,
+    "70": $hbc-black-violet-70,
+    "80": $hbc-black-violet-80,
+    "90": $hbc-black-violet-90
+);
+
+$hbc-greens: (
+    "10": $hbc-green-10,
+    "20": $hbc-green-20,
+    "30": $hbc-green-30,
+    "40": $hbc-green-40,
+    "50": $hbc-green-50,
+    "60": $hbc-green-60,
+    "70": $hbc-green-70,
+    "80": $hbc-green-80,
+    "90": $hbc-green-90
+);
+
+$hbc-oranges: (
+    "10": $hbc-orange-10,
+    "20": $hbc-orange-20,
+    "30": $hbc-orange-30,
+    "40": $hbc-orange-40,
+    "50": $hbc-orange-50,
+    "60": $hbc-orange-60,
+    "70": $hbc-orange-70,
+    "80": $hbc-orange-80,
+    "90": $hbc-orange-90
+);
+
+$hbc-yellows: (
+    "10": $hbc-yellow-10,
+    "20": $hbc-yellow-20,
+    "30": $hbc-yellow-30,
+    "40": $hbc-yellow-40,
+    "50": $hbc-yellow-50,
+    "60": $hbc-yellow-60,
+    "70": $hbc-yellow-70,
+    "80": $hbc-yellow-80,
+    "90": $hbc-yellow-90
+);
+
+// ### DARK-MODE MAPS
+$hbc-amaranths-dark: (
+    "10": $hbc-amaranth-dark-90,
+    "20": $hbc-amaranth-dark-80,
+    "30": $hbc-amaranth-dark-70,
+    "40": $hbc-amaranth-dark-60,
+    "50": $hbc-amaranth-dark-50,
+    "60": $hbc-amaranth-dark-40,
+    "70": $hbc-amaranth-dark-30,
+    "80": $hbc-amaranth-dark-20,
+    "90": $hbc-amaranth-dark-10
+);
+
+$hbc-golds-dark: (
+    "10": $hbc-gold-90,
+    "20": $hbc-gold-80,
+    "30": $hbc-gold-70,
+    "40": $hbc-gold-60,
+    "50": $hbc-gold-50,
+    "60": $hbc-gold-40,
+    "70": $hbc-gold-30,
+    "80": $hbc-gold-20,
+    "90": $hbc-gold-10
+);
+
+$hbc-steels-dark: (
+    "10": $hbc-steel-90,
+    "20": $hbc-steel-80,
+    "30": $hbc-steel-70,
+    "40": $hbc-steel-60,
+    "50": $hbc-steel-50,
+    "60": $hbc-steel-40,
+    "70": $hbc-steel-30,
+    "80": $hbc-steel-20,
+    "90": $hbc-steel-10
+);
+
+$hbc-black-violets-dark: (
+    "10": $hbc-black-violet-90,
+    "20": $hbc-black-violet-80,
+    "30": $hbc-black-violet-70,
+    "40": $hbc-black-violet-60,
+    "50": $hbc-black-violet-50,
+    "60": $hbc-black-violet-40,
+    "70": $hbc-black-violet-30,
+    "80": $hbc-black-violet-20,
+    "90": $hbc-black-violet-10
+);
+
+$hbc-greens-dark: (
+    "10": $hbc-green-90,
+    "20": $hbc-green-80,
+    "30": $hbc-green-70,
+    "40": $hbc-green-60,
+    "50": $hbc-green-50,
+    "60": $hbc-green-40,
+    "70": $hbc-green-30,
+    "80": $hbc-green-20,
+    "90": $hbc-green-10
+);
+
+$hbc-oranges-dark: (
+    "10": $hbc-orange-90,
+    "20": $hbc-orange-80,
+    "30": $hbc-orange-70,
+    "40": $hbc-orange-60,
+    "50": $hbc-orange-50,
+    "60": $hbc-orange-40,
+    "70": $hbc-orange-30,
+    "80": $hbc-orange-20,
+    "90": $hbc-orange-10
+);
+
+$hbc-yellows-dark: (
+    "10": $hbc-yellow-90,
+    "20": $hbc-yellow-80,
+    "30": $hbc-yellow-70,
+    "40": $hbc-yellow-60,
+    "50": $hbc-yellow-50,
+    "60": $hbc-yellow-40,
+    "70": $hbc-yellow-30,
+    "80": $hbc-yellow-20,
+    "90": $hbc-yellow-10
+);
+
+
+@function default-color($value, $color: "grey") {
+    $color-string: "var(--#{$abbr}-" + #{$value} + ", var(--#{$abbr}-" + #{$color} + "-" + #{$value} + "))";
+    @return $color-string;
+}
+
+
+// CSS VARIABLES
+
+:root {
+    --hbc-white: #{$hbc-white};
+    --hbc-dark: #{$hbc-dark};
+
+    --hbc-always-white: #{$hbc-white};
+
+    @each $color, $value in $hbc-greys {
+        --hbc-grey-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-amaranths {
+        --hbc-amaranth-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-golds {
+        --hbc-gold-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-steels {
+        --hbc-steel-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-black-violets {
+        --hbc-black-violet-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-greens {
+        --hbc-green-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-oranges {
+        --hbc-orange-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-yellows {
+        --hbc-yellow-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $hbc-greys {
+        --hbc-#{$color}: #{$value};
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --hbc-white: #{$hbc-dark};
+        --hbc-dark: #{$hbc-white};
+
+        @each $color, $value in $hbc-greys-dark {
+            --hbc-grey-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-amaranths-dark {
+            --hbc-amaranth-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-golds-dark {
+            --hbc-gold-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-steels-dark {
+            --hbc-steel-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-black-violets-dark {
+            --hbc-black-violet-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-greens-dark {
+            --hbc-green-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-oranges-dark {
+            --hbc-orange-#{$color}: #{$value};
+        }
+
+        @each $color, $value in $hbc-yellows-dark {
+            --hbc-yellow-#{$color}: #{$value};
+        }
+    
+        @each $color, $value in $hbc-greys-dark {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+}
+
+body {
+    &._grey, ._grey {
+        @each $color, $value in $hbc-greys {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._amaranth, ._amaranth {
+        @each $color, $value in $hbc-amaranths {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._gold, ._gold {
+        @each $color, $value in $hbc-golds {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._steel, ._steel {
+        @each $color, $value in $hbc-steels {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._black-violet, ._black-violet {
+        @each $color, $value in $hbc-black-violets {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._green, ._green {
+        @each $color, $value in $hbc-greens {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._orange, ._orange {
+        @each $color, $value in $hbc-oranges {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+
+    &._yellow, ._yellow {
+        @each $color, $value in $hbc-yellows {
+            --hbc-#{$color}: #{$value};
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        &._grey, ._grey {
+            @each $color, $value in $hbc-greys-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._amaranth, ._amaranth {
+            @each $color, $value in $hbc-amaranths-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._gold, ._gold {
+            @each $color, $value in $hbc-golds-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._steel, ._steel {
+            @each $color, $value in $hbc-steels-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._black-violet, ._black-violet {
+            @each $color, $value in $hbc-black-violets-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._green, ._green {
+            @each $color, $value in $hbc-greens-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._orange, ._orange {
+            @each $color, $value in $hbc-oranges-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    
+        &._yellow, ._yellow {
+            @each $color, $value in $hbc-yellows-dark {
+                --hbc-#{$color}: #{$value};
+            }
+        }
+    }
+}
+
+
+// # BOOTSTRAP ADJUSTMENTS
 $color-mode-type: media-query;
 
-$headings-font-family: "IBM Plex Sans", sans-serif;
+$headings-font-family: $hbc-font-sans;
 
-$font-family-sans-serif: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-sans-serif: $hbc-font-sans;
+$font-family-monospace: $hbc-font-monospace;
+
+$display-font-family: $hbc-font-sans-condensed;
+$display-font-style: null;
+$display-font-weight: 500;
 
 
 $color-accent: #AD0040;
 $color-accent-dark: #BD3366;
 
-$body-bg-dark: #000000;
+$body-bg-dark: $hbc-dark;
+
+
+$display-font-sizes: (
+    tagline: 3rem,
+    1: 2.5rem,
+    2: 2rem,
+    3: 1.75rem,
+    4: 1.5rem,
+    5: 1.25rem
+);
+
+$navbar-light-toggler-border-color: none;
+
+$nav-link-font-size: 1.125rem;
+$nav-link-font-weight: 500;
+
+$dropdown-color: var(--hbc-dark);
+$dropdown-bg: var(--hbc-10);
+$dropdown-link-color: var(--hbc-dark);
+$dropdown-link-hover-color: var(--hbc-dark);
+$dropdown-link-hover-bg: var(--hbc-20);
+$dropdown-link-active-color: var(--hbc-dark);
+$dropdown-link-active-bg: var(--hbc-30);
+$dropdown-border-radius: $hbc-border-radius;
+$dropdown-border-width: 0;
+
+$accordion-icon-color: $hbc-dark;
+$accordion-icon-active-color: $hbc-dark;
+$accordion-icon-color-dark: $hbc-white;
+$accordion-icon-active-color-dark: $hbc-white;
+
+$card-border-radius: $hbc-border-radius;
+
+// ## MODAL
+$modal-content-border-color: transparent;
+$modal-content-border-width: 0;
+$modal-content-border-radius: $hbc-border-radius;
+
+$modal-footer-border-color: var(--hbc-20);
+$modal-footer-border-width: 1px;
+
+$modal-fade-transform: translate(0, 0);

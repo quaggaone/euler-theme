@@ -1,0 +1,26 @@
+---
+layout: "base.njk"
+title: "Blog"
+---
+
+{% set hbcBlogText %}
+<h2>Hello World Zine!</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus. Quam qui eos velit, itaque ipsam omnis sint veritatis nisi dolore illo exercitationem dolores necessitatibus laborum tempore nostrum veniam delectus?
+{% endset %}
+{% include "partials/hbc-blog-text.njk" %}
+
+{% set hbcImageUrl %}
+/assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg
+{% endset %}
+{% set hbcImageOptions %}
+
+{% endset %}
+{% set hbcImageCaption %}
+generic brand image
+{% endset %}
+{% include "partials/hbc-image.njk" %}
+
+{% set hbcBlogText %}
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus. Quam qui eos velit, itaque ipsam omnis sint veritatis nisi dolore illo exercitationem dolores necessitatibus laborum tempore nostrum veniam delectus?
+{% endset %}
+{% include "partials/hbc-blog-text.njk" %}
