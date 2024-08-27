@@ -13,9 +13,9 @@
         }
     }
 
-    &:visited {
-        color: inherit;
-    }
+    // &:visited {
+    //     color: inherit;
+    // }
 }
 
 @mixin hbc-link() {
@@ -228,10 +228,6 @@ small {
 
         &:hover {
             color: var(--hbc-40);
-        }
-
-        &:visited {
-            color: var(--hbc-50);
         }
     }
 }
