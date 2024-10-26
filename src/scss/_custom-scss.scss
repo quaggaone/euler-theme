@@ -886,12 +886,12 @@ header, section {
         animation-duration: .3s;
         transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
         animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
-        transition-property: all;
+        transition-property: padding, border-color;
         
         height: 100%;
         
-        border: var(--hbc-40) 0rem solid;
-        padding: .25rem;
+        border: transparent .25rem solid;
+        padding: 0;
     }
     
     .__img {
@@ -927,8 +927,6 @@ header, section {
     .__subtitle {
         @extend .card-subtitle;
         
-        display: flex;
-        flex-wrap: wrap;
         font-weight: 400;
         font-family: #{$hbc-font-sans-condensed};
         letter-spacing: .1em;
@@ -1000,7 +998,6 @@ header, section {
             &:hover,
             &:active {
                 border: var(--hbc-40) .25rem solid;
-                padding: 0rem;
             }
         }
         
@@ -1012,29 +1009,50 @@ header, section {
     &._bg-img {
         .__container {
             background-color: #{default-color(10)};
-            
-            &::before {
-                content: '';
-                background-image: linear-gradient(#00000080, #00000080);
-                position: absolute;
-                inset: 0;
-            }
+            min-height: 16rem;
         }
         
         .__img {
-            &[src=""] {
+            padding: 0;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            img {
+                height: 100%;
+            }
+            
+            &::before {
+                content: '';
+                // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+                position: absolute;
+                inset: 0;
+            }
+            
+            &:has(img[src=""]) {
                 display: block;
             }
         }
         
         .__body {
-            position: absolute;
-            bottom: 0;
-            color: var(--hbc-always-white);
+            z-index: 2;
+            margin: 0;
+            color: var(--hbc-60);
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+
+        .__title {
+            @extend .h4;
         }
     }
     
-    .hbc-grid ._team & {
+    .hbc-grid ._team &, .hbc-grid ._company-cards & {
         .__container {
             @include media-breakpoint-down(md) {
                 --#{$prefix}card-spacer-y: .5rem;
@@ -1060,6 +1078,10 @@ header, section {
         .__link-indicator {
             display: none;
         }
+    }
+
+    .hbc-grid ._company-cards & {
+        @extend ._bg-img;
     }
 
     .hbc-grid ._blog & {
@@ -1120,6 +1142,21 @@ header, section {
     }
 }
 
+.hbc-text {
+    $block: &;
+
+    // @extend .container;
+
+    // #{$block}__container {
+    //     @include make-row(1rem);
+    // }
+
+    // #{$block}__col {
+    //     @include make-col-ready();
+    //     @include make-col();
+    // }
+}
+
 .hbc-blog-text {
     @extend .container;
     
@@ -1144,6 +1181,7 @@ header, section {
     
             @include media-breakpoint-up(lg) {
                 order: 1;
+                text-align: right;
             }
         }
     
@@ -1195,7 +1233,7 @@ header, section {
             @extend .row-cols-1;
         }
         
-        &._team {
+        &._team, &._company-cards {
             @extend .row-cols-xl-4;
             @extend .row-cols-md-3;
             @extend .row-cols-2;
@@ -1207,29 +1245,61 @@ header, section {
             @extend .row-cols-md-2;
             @extend .row-cols-1;
         }
+
+        &._highlighted {
+            @include media-breakpoint-up(md) {
+                >:nth-child(-n+2) {
+                    width: 50%;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                >:nth-child(n+3):nth-child(-n+8) {
+                    width: 33.33333333333333%;
+                }
+            }
+        }
     }
 }
 
 .modal {
     padding: map-get($spacers, 2);
+    
+    .modal-dialog {
+        @extend .modal-xl;
+        @extend .modal-dialog-scrollable;
+        @extend .modal-dialog-centered;
+    }
+
+    .modal-header {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    .modal-body {
+        @extend .row;
+        @extend .gx-4;
+        @extend .gy-0;
+
+        margin-bottom: 0;
+        padding: map-get($spacers, 4);
+    }
+    
+    .modal-footer {
+        @extend .d-md-none;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+            
+    .modal-title {
+        margin: 0 auto 0 0;
+    }
 
     &._team-member {
         img {
             background-color: var(--hbc-10);
-        }
-
-        .modal-dialog {
-            @extend .modal-xl;
-            @extend .modal-dialog-scrollable;
-            @extend .modal-dialog-centered;
-        }
-
-        .modal-body {
-            @extend .row;
-            @extend .g-4;
-
-            margin-bottom: 0;
-            padding: map-get($spacers, 4);
         }
 
         .modal-body-data {
@@ -1255,26 +1325,16 @@ header, section {
         .modal-body-text {
             @extend .col-md-8;
         }
+    }
 
-        .modal-footer {
-            @extend .d-md-none;
-
-            padding-left: 1rem;
-            padding-right: 1rem;
+    &._company-card {
+        .modal-body {
+            @extend .row-cols-lg-2;
         }
 
-        .modal-title {
-            margin: 0 auto 0 0;
-        }
-
-        .__team-member-links {
-            a {
-                color: var(--hbc-50);
-
-                &:hover {
-                    color: var(--hbc-40);
-                }
-            }
+        .modal-body-example-img img {
+            aspect-ratio: 2/1;
+            object-fit: cover;
         }
     }
 }
@@ -1302,5 +1362,20 @@ header, section {
                 }
             }
         }
+    }
+}
+
+.hbc-company-card {
+    $block: &;
+
+    @extend .container;
+
+    #{$block}__container {
+        @include make-row();
+    }
+
+    #{$block}__col {
+        @include make-col-ready();
+        @include make-col(6);
     }
 }

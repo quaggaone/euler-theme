@@ -570,11 +570,10 @@ $accordion-icon-active-color-dark: $hbc-white;
 $card-border-radius: $hbc-border-radius;
 
 // ## MODAL
-$modal-content-border-color: transparent;
+$modal-content-border-color: var(--hbc-20);
 $modal-content-border-width: 0;
 $modal-content-border-radius: $hbc-border-radius;
 
-$modal-footer-border-color: var(--hbc-20);
-$modal-footer-border-width: 1px;
+$modal-header-border-width: 1px;
 
 $modal-fade-transform: translate(0, 0);
