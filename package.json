@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
-    "watch:sass": "sass --watch --style=compressed --source-map --embed-sources --no-error-css src/scss/:assets/css/",
-    "build:sass": "sass --style=compressed --source-map --embed-sources --no-error-css src/scss/:assets/css/",
+    "watch:sass": "sass --watch --style=compressed --source-map --embed-sources --no-error-css src/scss/:assets/themes/hotbird/css/",
+    "build:sass": "sass --style=compressed --source-map --embed-sources --no-error-css src/scss/:assets/themes/hotbird/css/",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
