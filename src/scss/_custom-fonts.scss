@@ -1,9 +1,11 @@
+$fonts-dir: "../fonts";
+
 @import "ibm-plex-sans";
 @import "ibm-plex-sans-condensed";
 @import "ibm-plex-mono";
 @import "ibm-plex-serif";
 
 /* Bootstrap Icons font */
-$bootstrap-icons-font-dir: "../fonts/bootstrap-icons" !default;
+$bootstrap-icons-font-dir: "../fonts/bootstrap-icons";
 
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons";
