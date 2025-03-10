@@ -2,9 +2,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setServerOptions({
         port: 55660,
         showAllHosts: true, // Set this to true to access the server on your local network
+        watch: ["_site/**/*.css"], // Watch CSS files for changes
     });
-
-    eleventyConfig.addWatchTarget("./assets/");
     
     eleventyConfig.addPassthroughCopy("./assets/.");
     eleventyConfig.addPassthroughCopy({ "./node_modules/bootstrap-icons/font/fonts/.": "assets/themes/hotbird/fonts/bootstrap-icons" });
@@ -15,5 +14,6 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: "src",
         },
+        pathPrefix: "/euler-theme/",
     };
 };
