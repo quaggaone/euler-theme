@@ -21,8 +21,8 @@
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Building Better Businesses">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hotbird.one">
-    <meta property="og:image" content="assets/brand/hbc-open-graph.png">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="{{ euler.assetsDir }}brand/open-graph.png">
     <meta property="og:image:alt" content="Abstract image with Hotbird & Company Logo and tagline.">
     <meta property="og:description" content="What if you could build the future success and value of your business systematically? • Your growth requires an individual approach. • Maximizing focus & minimizing risk.">
     <meta property="og:site_name" content="Hotbird & Company">
@@ -31,7 +31,7 @@
 
     <meta name="google-site-verification" content="">
     <title>{{ title }} | Hotbird &amp; Company</title>
-    <link rel="stylesheet" href="assets/themes/hotbird/css/main.css">
+    <link rel="stylesheet" href="{{ euler.assetsDir }}css/main.css">
 </head>
 
 <body class="{{ bodyModifier }}">
@@ -40,6 +40,6 @@
         {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}
-    <script src="assets/themes/hotbird/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ euler.assetsDir }}libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
