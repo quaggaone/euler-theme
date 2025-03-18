@@ -20,15 +20,15 @@
 
 @mixin hbc-link() {
     text-decoration: underline;
-    background-color: var(--hbc-30);
-    color: var(--hbc-90);
-    text-decoration-color: var(--hbc-90);
+    background-color: var(--#{$abbr}-30);
+    color: var(--#{$abbr}-90);
+    text-decoration-color: var(--#{$abbr}-90);
     padding: 0 .125em;
 
     &:hover, &:active {
-        background-color: var(--hbc-20);
-        color: var(--hbc-70);
-        text-decoration-color: var(--hbc-70);
+        background-color: var(--#{$abbr}-20);
+        color: var(--#{$abbr}-70);
+        text-decoration-color: var(--#{$abbr}-70);
     }
 }
 
@@ -202,11 +202,11 @@ small {
 .connect {
 
     .__contact {
-        border-left: .125rem solid var(--hbc-50);
+        border-left: .125rem solid var(--#{$abbr}-50);
         padding-left: .5rem;
 
         .__email {
-            color: var(--hbc-70);
+            color: var(--#{$abbr}-70);
         }
     }
 
@@ -224,10 +224,10 @@ small {
         text-decoration: none;
         margin-right: .5em;
         // color: var(--#{$prefix}font-color);
-        color: var(--hbc-50);
+        color: var(--#{$abbr}-50);
 
         &:hover {
-            color: var(--hbc-40);
+            color: var(--#{$abbr}-40);
         }
     }
 }
@@ -240,17 +240,17 @@ small {
     // --bs-btn-font-size: ;
     --bs-btn-font-weight: 600;
     // --bs-btn-line-height: ;
-    --bs-btn-color: var(--hbc-10);
-    --bs-btn-bg: var(--hbc-50);
+    --bs-btn-color: var(--#{$abbr}-10);
+    --bs-btn-bg: var(--#{$abbr}-50);
     // --bs-btn-border-width: ;
     --bs-btn-border-color: transparent;
     --bs-btn-border-radius: #{$hbc-border-radius};
-    --bs-btn-hover-color: var(--hbc-10);
-    --bs-btn-hover-bg: var(--hbc-40);
+    --bs-btn-hover-color: var(--#{$abbr}-10);
+    --bs-btn-hover-bg: var(--#{$abbr}-40);
     --bs-btn-hover-border-color: transparent;
 
-    --bs-btn-active-color: var(--hbc-10);
-    --bs-btn-active-bg: var(--hbc-30);
+    --bs-btn-active-color: var(--#{$abbr}-10);
+    --bs-btn-active-bg: var(--#{$abbr}-30);
     --bs-btn-active-border-color: transparent;
 
     // --bs-btn-border-color: var(--bd-violet);
@@ -419,7 +419,7 @@ header, section {
         // @extend .p-2;
         @extend .p-4;
 
-        background-color: var(--hbc-10);
+        background-color: var(--#{$abbr}-10);
     }
 
     .__col {
@@ -525,7 +525,7 @@ header, section {
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--hbc-white);
+            background-color: var(--#{$abbr}-white);
             
             @include media-breakpoint-up(lg) {
                 background-color: transparent;
@@ -611,13 +611,13 @@ header, section {
         @extend .row;
         @extend .g-0;
 
-        --hbc-accordion-display-bg: transparent;
+        --#{$abbr}-accordion-display-bg: transparent;
 
         /* for bootstrap accordion */
-        --hbc-accordion-border-width: 4px;
-        --hbc-accordion-border-style: none;
+        --#{$abbr}-accordion-border-width: 4px;
+        --#{$abbr}-accordion-border-style: none;
 
-        background-color: var(--hbc-accordion-display-bg);
+        background-color: var(--#{$abbr}-accordion-display-bg);
         border-radius: $hbc-border-radius;
     }
 
@@ -640,15 +640,15 @@ header, section {
         --bs-accordion-border-width: 0;
         --bs-accordion-border-radius: $hbc-border-radius;
         --bs-accordion-border-color: transparent;
-        --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--hbc-accordion-border-width));
+        --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--#{$abbr}-accordion-border-width));
         --bs-accordion-btn-padding-x: #{map-get($spacers, 3)};
-        --bs-accordion-bg: var(--hbc-10);
-        --bs-accordion-active-bg: var(--hbc-20);
-        --bs-accordion-active-color: var(--hbc-80);
+        --bs-accordion-bg: var(--#{$abbr}-10);
+        --bs-accordion-active-bg: var(--#{$abbr}-20);
+        --bs-accordion-active-color: var(--#{$abbr}-80);
 
-        border-color: var(--hbc-80);
-        border-width: var(--hbc-accordion-border-width);
-        border-style: var(--hbc-accordion-border-style);
+        border-color: var(--#{$abbr}-80);
+        border-width: var(--#{$abbr}-accordion-border-width);
+        border-style: var(--#{$abbr}-accordion-border-style);
         border-radius: var(--bs-accordion-border-radius);
     }
 
@@ -686,17 +686,17 @@ header, section {
 
     &._important {
         .__container {
-            --hbc-accordion-display-bg: var(--hbc-10);
+            --#{$abbr}-accordion-display-bg: var(--#{$abbr}-10);
         }
 
         .__col {
             &._desc {
-                padding: calc(map-get($spacers, 3) + var(--hbc-accordion-border-width)) !important;
+                padding: calc(map-get($spacers, 3) + var(--#{$abbr}-accordion-border-width)) !important;
             }
 
             &._accordion {
                 .accordion {
-                    --hbc-accordion-border-style: solid;
+                    --#{$abbr}-accordion-border-style: solid;
                 }
             }
         }
@@ -720,7 +720,7 @@ header, section {
 
         .__caption {
             font-family: $hbc-font-sans;
-            color: var(--hbc-grey-70);
+            color: var(--#{$abbr}-grey-70);
             max-width: 70%;
             margin: .4rem 0 0 0;
         }
@@ -998,7 +998,7 @@ header, section {
         &.__container {
             &:hover,
             &:active {
-                border: var(--hbc-40) .25rem solid;
+                border: var(--#{$abbr}-40) .25rem solid;
             }
         }
         
@@ -1042,7 +1042,7 @@ header, section {
         .__body {
             z-index: 2;
             margin: 0;
-            color: var(--hbc-60);
+            color: var(--#{$abbr}-60);
             display: flex;
             flex-direction: column;
             justify-content: end;
@@ -1064,7 +1064,7 @@ header, section {
         .__img {
             img {
                 aspect-ratio: 1/1;
-                background-color: var(--hbc-20);
+                background-color: var(--#{$abbr}-20);
             }
         }
         
@@ -1104,7 +1104,7 @@ header, section {
         @include row-cols(1);
         
         flex-direction: column-reverse;
-        background-color: var(--hbc-10);
+        background-color: var(--#{$abbr}-10);
         
         
         @include media-breakpoint-up(sm) {
@@ -1304,7 +1304,7 @@ header, section {
 
     &._team-member {
         img {
-            background-color: var(--hbc-10);
+            background-color: var(--#{$abbr}-10);
         }
 
         .modal-body-data {
@@ -1350,7 +1350,7 @@ header, section {
     @extend .p-4;
     @extend .mt-5;
 
-    background-color: var(--hbc-10);
+    background-color: var(--#{$abbr}-10);
 
     #legal {
         ul {

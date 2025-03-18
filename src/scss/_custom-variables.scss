@@ -1,5 +1,5 @@
 // # CUSTOM GLOBAL VALUES
-$abbr: "hbc"; // project abbreviation for CSS variables (to make code copiable between projects)
+$abbr: "elr"; // project abbreviation for CSS variables (to make code copiable between projects)
 
 $hbc-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $hbc-font-sans-condensed: "IBM Plex Sans Condensed", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -331,87 +331,87 @@ $hbc-yellows-dark: (
 // CSS VARIABLES
 
 :root {
-    --hbc-white: #{$hbc-white};
-    --hbc-dark: #{$hbc-dark};
+    --#{$abbr}-white: #{$hbc-white};
+    --#{$abbr}-dark: #{$hbc-dark};
 
-    --hbc-always-white: #{$hbc-white};
+    --#{$abbr}-always-white: #{$hbc-white};
 
     @each $color, $value in $hbc-greys {
-        --hbc-grey-#{$color}: #{$value};
+        --#{$abbr}-grey-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-amaranths {
-        --hbc-amaranth-#{$color}: #{$value};
+        --#{$abbr}-amaranth-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-golds {
-        --hbc-gold-#{$color}: #{$value};
+        --#{$abbr}-gold-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-steels {
-        --hbc-steel-#{$color}: #{$value};
+        --#{$abbr}-steel-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-black-violets {
-        --hbc-black-violet-#{$color}: #{$value};
+        --#{$abbr}-black-violet-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-greens {
-        --hbc-green-#{$color}: #{$value};
+        --#{$abbr}-green-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-oranges {
-        --hbc-orange-#{$color}: #{$value};
+        --#{$abbr}-orange-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-yellows {
-        --hbc-yellow-#{$color}: #{$value};
+        --#{$abbr}-yellow-#{$color}: #{$value};
     }
 
     @each $color, $value in $hbc-greys {
-        --hbc-#{$color}: #{$value};
+        --#{$abbr}-#{$color}: #{$value};
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --hbc-white: #{$hbc-dark};
-        --hbc-dark: #{$hbc-white};
+        --#{$abbr}-white: #{$hbc-dark};
+        --#{$abbr}-dark: #{$hbc-white};
 
         @each $color, $value in $hbc-greys-dark {
-            --hbc-grey-#{$color}: #{$value};
+            --#{$abbr}-grey-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-amaranths-dark {
-            --hbc-amaranth-#{$color}: #{$value};
+            --#{$abbr}-amaranth-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-golds-dark {
-            --hbc-gold-#{$color}: #{$value};
+            --#{$abbr}-gold-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-steels-dark {
-            --hbc-steel-#{$color}: #{$value};
+            --#{$abbr}-steel-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-black-violets-dark {
-            --hbc-black-violet-#{$color}: #{$value};
+            --#{$abbr}-black-violet-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-greens-dark {
-            --hbc-green-#{$color}: #{$value};
+            --#{$abbr}-green-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-oranges-dark {
-            --hbc-orange-#{$color}: #{$value};
+            --#{$abbr}-orange-#{$color}: #{$value};
         }
 
         @each $color, $value in $hbc-yellows-dark {
-            --hbc-yellow-#{$color}: #{$value};
+            --#{$abbr}-yellow-#{$color}: #{$value};
         }
     
         @each $color, $value in $hbc-greys-dark {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 }
@@ -419,49 +419,49 @@ $hbc-yellows-dark: (
 body {
     &._grey, ._grey {
         @each $color, $value in $hbc-greys {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._amaranth, ._amaranth {
         @each $color, $value in $hbc-amaranths {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._gold, ._gold {
         @each $color, $value in $hbc-golds {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._steel, ._steel {
         @each $color, $value in $hbc-steels {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._black-violet, ._black-violet {
         @each $color, $value in $hbc-black-violets {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._green, ._green {
         @each $color, $value in $hbc-greens {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._orange, ._orange {
         @each $color, $value in $hbc-oranges {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 
     &._yellow, ._yellow {
         @each $color, $value in $hbc-yellows {
-            --hbc-#{$color}: #{$value};
+            --#{$abbr}-#{$color}: #{$value};
         }
     }
 }
@@ -470,49 +470,49 @@ body {
     body {
         &._grey, ._grey {
             @each $color, $value in $hbc-greys-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._amaranth, ._amaranth {
             @each $color, $value in $hbc-amaranths-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._gold, ._gold {
             @each $color, $value in $hbc-golds-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._steel, ._steel {
             @each $color, $value in $hbc-steels-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._black-violet, ._black-violet {
             @each $color, $value in $hbc-black-violets-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._green, ._green {
             @each $color, $value in $hbc-greens-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._orange, ._orange {
             @each $color, $value in $hbc-oranges-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     
         &._yellow, ._yellow {
             @each $color, $value in $hbc-yellows-dark {
-                --hbc-#{$color}: #{$value};
+                --#{$abbr}-#{$color}: #{$value};
             }
         }
     }
@@ -552,13 +552,13 @@ $navbar-light-toggler-border-color: none;
 $nav-link-font-size: 1.125rem;
 $nav-link-font-weight: 500;
 
-$dropdown-color: var(--hbc-dark);
-$dropdown-bg: var(--hbc-10);
-$dropdown-link-color: var(--hbc-dark);
-$dropdown-link-hover-color: var(--hbc-dark);
-$dropdown-link-hover-bg: var(--hbc-20);
-$dropdown-link-active-color: var(--hbc-dark);
-$dropdown-link-active-bg: var(--hbc-30);
+$dropdown-color: var(--#{$abbr}-dark);
+$dropdown-bg: var(--#{$abbr}-10);
+$dropdown-link-color: var(--#{$abbr}-dark);
+$dropdown-link-hover-color: var(--#{$abbr}-dark);
+$dropdown-link-hover-bg: var(--#{$abbr}-20);
+$dropdown-link-active-color: var(--#{$abbr}-dark);
+$dropdown-link-active-bg: var(--#{$abbr}-30);
 $dropdown-border-radius: $hbc-border-radius;
 $dropdown-border-width: 0;
 
@@ -570,7 +570,7 @@ $accordion-icon-active-color-dark: $hbc-white;
 $card-border-radius: $hbc-border-radius;
 
 // ## MODAL
-$modal-content-border-color: var(--hbc-20);
+$modal-content-border-color: var(--#{$abbr}-20);
 $modal-content-border-width: 0;
 $modal-content-border-radius: $hbc-border-radius;
 
