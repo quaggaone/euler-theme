@@ -1,0 +1,33 @@
+@mixin elr-link-reset($text-only: false) {
+    text-decoration: none;
+    color: inherit;
+    @if not $text-only {
+        background-color: inherit;
+    }
+
+    &:hover, &:active {
+        text-decoration: none;
+        color: inherit;
+        @if not $text-only {
+            background-color: inherit;
+        }
+    }
+
+    // &:visited {
+    //     color: inherit;
+    // }
+}
+
+@mixin elr-link() {
+    text-decoration: underline;
+    background-color: var(--#{$abbr}-30);
+    color: var(--#{$abbr}-90);
+    text-decoration-color: var(--#{$abbr}-90);
+    padding: 0 .125em;
+
+    &:hover, &:active {
+        background-color: var(--#{$abbr}-20);
+        color: var(--#{$abbr}-70);
+        text-decoration-color: var(--#{$abbr}-70);
+    }
+}

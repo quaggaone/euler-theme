@@ -1,44 +1,10 @@
-@mixin hbc-link-reset($text-only: false) {
-    text-decoration: none;
-    color: inherit;
-    @if not $text-only {
-        background-color: inherit;
-    }
-
-    &:hover, &:active {
-        text-decoration: none;
-        color: inherit;
-        @if not $text-only {
-            background-color: inherit;
-        }
-    }
-
-    // &:visited {
-    //     color: inherit;
-    // }
-}
-
-@mixin hbc-link() {
-    text-decoration: underline;
-    background-color: var(--#{$abbr}-30);
-    color: var(--#{$abbr}-90);
-    text-decoration-color: var(--#{$abbr}-90);
-    padding: 0 .125em;
-
-    &:hover, &:active {
-        background-color: var(--#{$abbr}-20);
-        color: var(--#{$abbr}-70);
-        text-decoration-color: var(--#{$abbr}-70);
-    }
-}
-
 img, .img, video {
     max-width: 100%;
     border-radius: calc($elr-border-radius + .25rem);
 }
 
 a {
-    @include hbc-link();
+    @include elr-link();
 }
 
 :root {
@@ -219,7 +185,7 @@ small {
     font-size: 1.5rem;
     
     a {
-        @include hbc-link-reset();
+        @include elr-link-reset();
         
         text-decoration: none;
         margin-right: .5em;
@@ -302,7 +268,7 @@ header, section {
 
     .__navbar-brand {
         @extend .navbar-brand;
-        @include hbc-link-reset();
+        @include elr-link-reset();
 
         .__logo {
             @include rfs(3rem, max-height);
@@ -881,7 +847,7 @@ header, section {
         
         --#{$prefix}card-bg: #{default-color(10)};
         
-        @include hbc-link-reset($text-only: true);
+        @include elr-link-reset($text-only: true);
         
         transition-duration: .3s;
         animation-duration: .3s;
@@ -967,7 +933,7 @@ header, section {
     
     .__link-indicator {
         // @extend .link-primary;
-        @include hbc-link();
+        @include elr-link();
         
         display: none;
         margin-top: auto;
