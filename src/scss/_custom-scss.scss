@@ -34,7 +34,7 @@
 
 img, .img, video {
     max-width: 100%;
-    border-radius: calc($hbc-border-radius + .25rem);
+    border-radius: calc($elr-border-radius + .25rem);
 }
 
 a {
@@ -136,7 +136,7 @@ body {
 
     span {
         margin-top: .125em;
-        font-family: $hbc-font-sans-condensed;
+        font-family: $elr-font-sans-condensed;
         font-size: 1.125rem;
         line-break: anywhere;
     }
@@ -157,7 +157,7 @@ body {
 }
 
 .locations {
-    font-family: $hbc-font-sans-condensed;
+    font-family: $elr-font-sans-condensed;
 
     @include media-breakpoint-down(lg) {
         text-align: right;
@@ -194,7 +194,7 @@ body {
 small {
     text-transform: uppercase;
     font-weight: 300;
-    font-family: $hbc-font-sans-condensed;
+    font-family: $elr-font-sans-condensed;
     letter-spacing: .1em;
     font-size: 1rem;
 }
@@ -236,7 +236,7 @@ small {
 .btn {
     // --bs-btn-padding-x: ;
     // --bs-btn-padding-y: ;
-    --bs-btn-font-family: #{$hbc-font-sans};
+    --bs-btn-font-family: #{$elr-font-sans};
     // --bs-btn-font-size: ;
     --bs-btn-font-weight: 600;
     // --bs-btn-line-height: ;
@@ -244,7 +244,7 @@ small {
     --bs-btn-bg: var(--#{$abbr}-50);
     // --bs-btn-border-width: ;
     --bs-btn-border-color: transparent;
-    --bs-btn-border-radius: #{$hbc-border-radius};
+    --bs-btn-border-radius: #{$elr-border-radius};
     --bs-btn-hover-color: var(--#{$abbr}-10);
     --bs-btn-hover-bg: var(--#{$abbr}-40);
     --bs-btn-hover-border-color: transparent;
@@ -269,9 +269,9 @@ small {
         // rewrite Bootstrap class name for BEM
         @extend .btn-link;
 
-        --bs-btn-color: #{$hbc-dark};
+        --bs-btn-color: #{$elr-dark};
         --bs-btn-bg: transparent;
-        --bs-btn-hover-color: #{$hbc-dark};
+        --bs-btn-hover-color: #{$elr-dark};
         --bs-btn-hover-bg: transparent;
 
         &:hover {
@@ -618,7 +618,7 @@ header, section {
         --#{$abbr}-accordion-border-style: none;
 
         background-color: var(--#{$abbr}-accordion-display-bg);
-        border-radius: $hbc-border-radius;
+        border-radius: $elr-border-radius;
     }
 
     .__col {
@@ -638,7 +638,7 @@ header, section {
         @extend .accordion-flush;
 
         --bs-accordion-border-width: 0;
-        --bs-accordion-border-radius: $hbc-border-radius;
+        --bs-accordion-border-radius: $elr-border-radius;
         --bs-accordion-border-color: transparent;
         --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--#{$abbr}-accordion-border-width));
         --bs-accordion-btn-padding-x: #{map-get($spacers, 3)};
@@ -719,7 +719,7 @@ header, section {
         }
 
         .__caption {
-            font-family: $hbc-font-sans;
+            font-family: $elr-font-sans;
             color: var(--#{$abbr}-grey-70);
             max-width: 70%;
             margin: .4rem 0 0 0;
@@ -929,7 +929,7 @@ header, section {
         @extend .card-subtitle;
         
         font-weight: 400;
-        font-family: #{$hbc-font-sans-condensed};
+        font-family: #{$elr-font-sans-condensed};
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: 1em;
@@ -1161,7 +1161,7 @@ header, section {
 .hbc-blog-text {
     @extend .container;
     
-    font-family: #{$hbc-font-serif};
+    font-family: #{$elr-font-serif};
     
     .__container {
         @include make-row();
