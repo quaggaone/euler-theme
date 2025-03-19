@@ -713,8 +713,69 @@ header, section {
     }
 }
 
+.#{$abbr}-feature-box {
+    $block: &;
 
-/* CORE PAGE ELEMENTS */
+    @extend .container;
+
+    &__container {
+        @extend .row;
+        @extend .g-0;
+
+        --#{$abbr}-accordion-display-bg: transparent;
+
+        /* for bootstrap accordion */
+        --#{$abbr}-accordion-border-width: 4px;
+        --#{$abbr}-accordion-border-style: none;
+
+        background-color: var(--#{$abbr}-accordion-display-bg);
+        border-radius: $elr-border-radius;
+    }
+
+    &__col {
+        &--desc {
+            @extend .col-md-4;
+            @extend .px-3;
+        }
+
+        &--content {
+            @extend .col-md-8;
+
+            border-color: var(--#{$abbr}-80);
+            border-width: var(--#{$abbr}-accordion-border-width);
+            border-style: var(--#{$abbr}-accordion-border-style);
+        }
+    }
+
+    &--reverse {
+        #{$block} {
+            &__container {
+                @extend .flex-row-reverse;
+            }
+        }
+    }
+    
+    &--important {
+        #{$block} {
+            &__container {
+                --#{$abbr}-accordion-display-bg: var(--#{$abbr}-10);
+            }
+            
+            &__col {
+                &--desc {
+                    padding: calc(map-get($spacers, 3) + var(--#{$abbr}-accordion-border-width)) !important;
+                }
+                
+                &--content {
+                    --#{$abbr}-accordion-border-style: solid;
+                }
+            }
+        }
+    }
+}
+
+
+/* NESTABLE PAGE ELEMENTS */
 
 .#{$abbr}-card {
     $block: &;
@@ -831,7 +892,7 @@ header, section {
     &--bg-media {
         #{$block} {
             &__container {
-                --#{$prefix}card-color: var(--#{$abbr}-always-white);
+                --#{$prefix}card-color: #{default-color(90)};
 
                 background-color: #{default-color(10)};
                 min-height: 16rem;
@@ -882,6 +943,50 @@ header, section {
     }
 }
 
+.#{$abbr}-accordion {
+    $block: &;
+
+    @extend .accordion;
+    @extend .accordion-flush;
+
+    --bs-accordion-border-width: 0;
+    --bs-accordion-border-radius: $elr-border-radius;
+    --bs-accordion-border-color: transparent;
+    --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--#{$abbr}-accordion-border-width));
+    --bs-accordion-btn-padding-x: #{map-get($spacers, 3)};
+    --bs-accordion-bg: var(--#{$abbr}-10);
+    --bs-accordion-active-bg: var(--#{$abbr}-20);
+    --bs-accordion-active-color: var(--#{$abbr}-80);
+
+    border-radius: var(--bs-accordion-border-radius);
+    
+    &__item {
+        @extend .accordion-item;
+    }
+    
+    &__header {
+        @extend .accordion-header;
+    }
+    
+    &__button {
+        @extend .accordion-button;
+    
+        font-weight: 600;
+    }
+    
+    &__collapse {
+        @extend .accordion-collapse;
+    }
+    
+    &__body {
+        @extend .accordion-body;
+    
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
 // .hbc-card {    
     
 //     .hbc-grid ._team &, .hbc-grid ._company-cards & {
@@ -920,184 +1025,8 @@ header, section {
 //     }
 // }
 
-.modal {
-    padding: map-get($spacers, 2);
-    
-    .modal-dialog {
-        @extend .modal-xl;
-        @extend .modal-dialog-scrollable;
-        @extend .modal-dialog-centered;
-    }
-
-    .modal-header {
-        @include media-breakpoint-down(md) {
-            display: none;
-        }
-    }
-
-    .modal-body {
-        @extend .row;
-        @extend .gx-4;
-        @extend .gy-0;
-
-        margin-bottom: 0;
-        padding: map-get($spacers, 4);
-    }
-    
-    .modal-footer {
-        @extend .d-md-none;
-
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-            
-    .modal-title {
-        margin: 0 auto 0 0;
-    }
-
-    &._team-member {
-        img {
-            background-color: var(--#{$abbr}-10);
-        }
-
-        .modal-body-data {
-            @extend .col-md-4;
-
-            .__img {
-                padding: 0;
-            }
-
-            &>* {
-                margin-bottom: 1rem;
-            }
-
-            &>p {
-                margin-bottom: .5rem;
-            }
-
-            &>:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        .modal-body-text {
-            @extend .col-md-8;
-        }
-    }
-
-    &._company-card {
-        .modal-body {
-            @extend .row-cols-lg-2;
-        }
-
-        .modal-body-example-img img {
-            aspect-ratio: 2/1;
-            object-fit: cover;
-        }
-    }
-}
-
 
 /* PAGE ELEMENTS */
-
-.hbc-accordion {
-    @extend .container;
-
-    .__container {
-        @extend .row;
-        @extend .g-0;
-
-        --#{$abbr}-accordion-display-bg: transparent;
-
-        /* for bootstrap accordion */
-        --#{$abbr}-accordion-border-width: 4px;
-        --#{$abbr}-accordion-border-style: none;
-
-        background-color: var(--#{$abbr}-accordion-display-bg);
-        border-radius: $elr-border-radius;
-    }
-
-    .__col {
-        &._desc {
-            @extend .col-md-4;
-            @extend .px-3;
-        }
-
-        &._accordion {
-            @extend .col-md-8;
-
-        }
-    }
-    
-    .__accordion-container {
-        @extend .accordion;
-        @extend .accordion-flush;
-
-        --bs-accordion-border-width: 0;
-        --bs-accordion-border-radius: $elr-border-radius;
-        --bs-accordion-border-color: transparent;
-        --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--#{$abbr}-accordion-border-width));
-        --bs-accordion-btn-padding-x: #{map-get($spacers, 3)};
-        --bs-accordion-bg: var(--#{$abbr}-10);
-        --bs-accordion-active-bg: var(--#{$abbr}-20);
-        --bs-accordion-active-color: var(--#{$abbr}-80);
-
-        border-color: var(--#{$abbr}-80);
-        border-width: var(--#{$abbr}-accordion-border-width);
-        border-style: var(--#{$abbr}-accordion-border-style);
-        border-radius: var(--bs-accordion-border-radius);
-    }
-
-    .__accordion-item {
-        @extend .accordion-item;
-    }
-
-    .__accordion-header {
-        @extend .accordion-header;
-    }
-
-    .__accordion-button {
-        @extend .accordion-button;
-
-        font-weight: 600;
-    }
-
-    .__accordion-collapse {
-        @extend .accordion-collapse;
-    }
-
-    .__accordion-body {
-        @extend .accordion-body;
-
-        p:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    &._reverse {
-        .__container {
-            @extend .flex-row-reverse;
-        }
-    }
-
-    &._important {
-        .__container {
-            --#{$abbr}-accordion-display-bg: var(--#{$abbr}-10);
-        }
-
-        .__col {
-            &._desc {
-                padding: calc(map-get($spacers, 3) + var(--#{$abbr}-accordion-border-width)) !important;
-            }
-
-            &._accordion {
-                .accordion {
-                    --#{$abbr}-accordion-border-style: solid;
-                }
-            }
-        }
-    }
-}
 
 .hbc-image {
     @extend .container;
@@ -1391,5 +1320,84 @@ header, section {
     #{$block}__col {
         @include make-col-ready();
         @include make-col(6);
+    }
+}
+
+/* MISC ELEMENTS */
+
+.modal {
+    padding: map-get($spacers, 2);
+    
+    .modal-dialog {
+        @extend .modal-xl;
+        @extend .modal-dialog-scrollable;
+        @extend .modal-dialog-centered;
+    }
+
+    .modal-header {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    .modal-body {
+        @extend .row;
+        @extend .gx-4;
+        @extend .gy-0;
+
+        margin-bottom: 0;
+        padding: map-get($spacers, 4);
+    }
+    
+    .modal-footer {
+        @extend .d-md-none;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+            
+    .modal-title {
+        margin: 0 auto 0 0;
+    }
+
+    &._team-member {
+        img {
+            background-color: var(--#{$abbr}-10);
+        }
+
+        .modal-body-data {
+            @extend .col-md-4;
+
+            .__img {
+                padding: 0;
+            }
+
+            &>* {
+                margin-bottom: 1rem;
+            }
+
+            &>p {
+                margin-bottom: .5rem;
+            }
+
+            &>:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .modal-body-text {
+            @extend .col-md-8;
+        }
+    }
+
+    &._company-card {
+        .modal-body {
+            @extend .row-cols-lg-2;
+        }
+
+        .modal-body-example-img img {
+            aspect-ratio: 2/1;
+            object-fit: cover;
+        }
     }
 }

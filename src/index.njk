@@ -23,6 +23,10 @@ generic brand image
 
 {% include "partials/hbc-display-list.njk" %}
 
-{% include "partials/hbc-accordion.njk" %}
+{% set elrFeatureBoxContent %}
+{% set elrAccordionId %}accordionOne{% endset %}
+{% include "partials/elr-accordion.njk" %}
+{% endset %}
+{% include "partials/elr-feature-box.njk" %}
 
 {% include "partials/elr-card-grid.njk" %}
