@@ -1,3 +1,8 @@
+@function default-color($value, $color: "grey") {
+    $color-string: "var(--#{$abbr}-" + #{$value} + ", var(--#{$abbr}-" + #{$color} + "-" + #{$value} + "))";
+    @return $color-string;
+}
+
 @mixin elr-link-reset($text-only: false) {
     text-decoration: none;
     color: inherit;
