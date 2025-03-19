@@ -1219,10 +1219,10 @@ header, section {
     }
 }
 
-.hbc-cta {
+.#{$abbr}-cta {
     @extend .container;
     
-    .__container {
+    &__container {
         @include make-row(0);
         @include row-cols(1);
         
@@ -1237,7 +1237,7 @@ header, section {
         }
     }
     
-    .__col {
+    &__col {
         padding: map-get($spacers, 4);
 
         @include media-breakpoint-down(sm) {
@@ -1246,23 +1246,19 @@ header, section {
             }
         }
         
-        &._text {
+        &--content {
             &>* {
                 margin-bottom: map-get($spacers, 2);
             }
         }
         
-        &._img {
-            img {
+        &--media {
+            img, video {
                 aspect-ratio: 16/10;
                 object-fit: cover;
                 width: 100%;
             }
         }
-    }
-    
-    .__heading {
-        @extend .display-2;
     }
 }
 
