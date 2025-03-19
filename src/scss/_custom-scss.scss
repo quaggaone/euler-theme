@@ -799,6 +799,10 @@ header, section {
 
 /* NESTABLE PAGE ELEMENTS */
 
+.#{$abbr}-text {
+    $block: &;
+}
+
 .#{$abbr}-figure {
     $block: &;
 
@@ -1260,21 +1264,6 @@ header, section {
     .__heading {
         @extend .display-2;
     }
-}
-
-.hbc-text {
-    $block: &;
-
-    // @extend .container;
-
-    // #{$block}__container {
-    //     @include make-row(1rem);
-    // }
-
-    // #{$block}__col {
-    //     @include make-col-ready();
-    //     @include make-col();
-    // }
 }
 
 .hbc-blog-text {
