@@ -1266,12 +1266,12 @@ header, section {
     }
 }
 
-.hbc-blog-text {
+.#{$abbr}-blog-text {
     @extend .container;
     
     font-family: #{$elr-font-serif};
     
-    .__container {
+    &__container {
         @include make-row();
 
         flex-direction: column;
@@ -1281,11 +1281,11 @@ header, section {
         }
     }
 
-    .__col {
+    &__col {
         @include make-col-ready();
         @include make-col();
 
-        &._side-start {
+        &--side-start {
             order: 1;
     
             @include media-breakpoint-up(lg) {
@@ -1294,7 +1294,7 @@ header, section {
             }
         }
     
-        &._main-text {
+        &--main {
             order: 3;
     
             @include media-breakpoint-up(lg) {
@@ -1303,7 +1303,7 @@ header, section {
             }
         }
     
-        &._side-end {
+        &--side-end {
             order: 2;
             
             @include media-breakpoint-up(lg) {
