@@ -605,6 +605,8 @@ header, section {
 /* LAYOUT ELEMENTS */
 
 .#{$abbr}-grid {
+    $block: &;
+
     @extend .container;
     
     &__container {
@@ -615,101 +617,121 @@ header, section {
             @include make-col-ready();
             // @extend .col;
         }
-
-        &--row-cols-2 {
-            @include media-breakpoint-up(md) {
-                @include row-cols(1);
-            }
-
-            @include media-breakpoint-up(xl) {
-                @include row-cols(2);
-            }
-            // @extend .row-cols-xl-2;
-            // @extend .row-cols-md-1;
-        }
-
-        &--row-cols-3 {
-            @include media-breakpoint-up(xs) {
-                @include row-cols(1);
-            }
-
-            @include media-breakpoint-up(lg) {
-                @include row-cols(2);
-            }
-
-            @include media-breakpoint-up(xl) {
-                @include row-cols(3);
-            }
-            // @extend .row-cols-xl-3;
-            // @extend .row-cols-lg-2;
-            // @extend .row-cols-1;
-        }
-
-        &--row-cols-4 {
-            @include media-breakpoint-up(xs) {
-                @include row-cols(1);
-            }
-
-            @include media-breakpoint-up(md) {
-                @include row-cols(2);
-            }
-
-            @include media-breakpoint-up(lg) {
-                @include row-cols(3);
-            }
-
-            @include media-breakpoint-up(xl) {
-                @include row-cols(4);
-            }
-            // @extend .row-cols-xl-4;
-            // @extend .row-cols-lg-3;
-            // @extend .row-cols-md-2;
-            // @extend .row-cols-1;
-        }
+    }
+    
+    &__cta {
         
-        &--condensed {
-            @include media-breakpoint-up(xs) {
-                @include row-cols(2);
-            }
+    }
 
-            @include media-breakpoint-up(md) {
-                @include row-cols(3);
-            }
-
-            @include media-breakpoint-up(xl) {
-                @include row-cols(4);
-            }
-
-            .#{$abbr}-card {
-                &__container {
-                    @include media-breakpoint-down(md) {
-                        --#{$prefix}card-spacer-y: .5rem !important;
-                        --#{$prefix}card-spacer-x: .5rem !important;
-                    }
+    &--row-cols-2 {
+        #{$block} {
+            &__container {
+                @include media-breakpoint-up(md) {
+                    @include row-cols(1);
                 }
-            }
-            // @extend .row-cols-xl-4;
-            // @extend .row-cols-md-3;
-            // @extend .row-cols-2;
-        }
-
-        &--featured {
-            @include media-breakpoint-up(md) {
-                >:nth-child(-n+2) {
-                    width: 50%;
+        
+                @include media-breakpoint-up(xl) {
+                    @include row-cols(2);
                 }
-            }
-
-            @include media-breakpoint-up(lg) {
-                >:nth-child(n+3):nth-child(-n+8) {
-                    width: 33.33333333333333%;
-                }
+                // @extend .row-cols-xl-2;
+                // @extend .row-cols-md-1;
             }
         }
     }
 
-    &__cta {
+    &--row-cols-3 {
+        #{$block} {
+            &__container {
+                @include media-breakpoint-up(xs) {
+                    @include row-cols(1);
+                }
         
+                @include media-breakpoint-up(lg) {
+                    @include row-cols(2);
+                }
+        
+                @include media-breakpoint-up(xl) {
+                    @include row-cols(3);
+                }
+                // @extend .row-cols-xl-3;
+                // @extend .row-cols-lg-2;
+                // @extend .row-cols-1;
+            }
+        }
+    }
+
+    &--row-cols-4 {
+        #{$block} {
+            &__container {
+                @include media-breakpoint-up(xs) {
+                    @include row-cols(1);
+                }
+        
+                @include media-breakpoint-up(md) {
+                    @include row-cols(2);
+                }
+        
+                @include media-breakpoint-up(lg) {
+                    @include row-cols(3);
+                }
+        
+                @include media-breakpoint-up(xl) {
+                    @include row-cols(4);
+                }
+                // @extend .row-cols-xl-4;
+                // @extend .row-cols-lg-3;
+                // @extend .row-cols-md-2;
+                // @extend .row-cols-1;
+            }
+        }
+    }
+    
+    &--condensed {
+        #{$block} {
+            &__container {
+                @include media-breakpoint-up(xs) {
+                    @include row-cols(2);
+                }
+        
+                @include media-breakpoint-up(md) {
+                    @include row-cols(3);
+                }
+        
+                @include media-breakpoint-up(xl) {
+                    @include row-cols(4);
+                }
+            }
+        }
+
+        .#{$abbr}-card {
+            &__container {
+                @include media-breakpoint-down(md) {
+                    --#{$prefix}card-spacer-y: .5rem !important;
+                    --#{$prefix}card-spacer-x: .5rem !important;
+                }
+            }
+        }
+        // @extend .row-cols-xl-4;
+        // @extend .row-cols-md-3;
+        // @extend .row-cols-2;
+    }
+
+    &--featured {
+        #{$block} {
+            &__container {
+                @include media-breakpoint-up(md) {
+                    >:nth-child(-n+2) {
+                        width: 50%;
+                    }
+                }
+        
+                @include media-breakpoint-up(lg) {
+                    >:nth-child(n+3):nth-child(-n+8) {
+                        width: 33.33333333333333%;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -776,6 +798,37 @@ header, section {
 
 
 /* NESTABLE PAGE ELEMENTS */
+
+.#{$abbr}-figure {
+    $block: &;
+
+    display: flex;
+    justify-content: center;
+    
+    &__container {
+        @extend .m-0;
+    
+        img, video {
+            max-height: 30rem;
+        }
+    
+    }
+    
+    &__caption {
+        font-family: $elr-font-sans;
+        color: var(--#{$abbr}-grey-70);
+        max-width: 70%;
+        margin: .4rem 0 0 0;
+    }
+    
+    &--start {
+        justify-content: start;
+    }
+    
+    &--end {
+        justify-content: end;
+    }
+}
 
 .#{$abbr}-card {
     $block: &;
@@ -1027,42 +1080,6 @@ header, section {
 
 
 /* PAGE ELEMENTS */
-
-.hbc-image {
-    @extend .container;
-
-    .__container {
-        @extend .d-flex;
-        @extend .justify-content-center;
-    }
-
-    .__col {
-        @extend .m-0;
-
-        img {
-            max-height: 30rem;
-        }
-
-        .__caption {
-            font-family: $elr-font-sans;
-            color: var(--#{$abbr}-grey-70);
-            max-width: 70%;
-            margin: .4rem 0 0 0;
-        }
-    }
-
-    &._start {
-        .__container {
-            @extend .justify-content-start;
-        }
-    }
-
-    &._end {
-        .__container {
-            @extend .justify-content-end;
-        }
-    }
-}
 
 .hbc-statement {
     @extend .container;
