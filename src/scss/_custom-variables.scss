@@ -8,6 +8,10 @@ $elr-font-serif: "IBM Plex Serif", "Times New Roman";
 
 $elr-border-radius: none;
 
+$elr-header-full-height: 80vh;
+$elr-header-media-tint: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 60%);
+$elr-header-media-tint-mobile: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+
 
 // ## CUSTOM COLOR VALUES
 // ### WHITE + GRAY
@@ -539,7 +543,7 @@ $body-bg-dark: $elr-dark;
 
 
 $display-font-sizes: (
-    tagline: 3rem,
+    title: 3rem,
     1: 2.5rem,
     2: 2rem,
     3: 1.75rem,
