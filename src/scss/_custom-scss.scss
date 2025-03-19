@@ -3,7 +3,7 @@ img, .img, video {
     border-radius: calc($elr-border-radius + .25rem);
 }
 
-a {
+.#{$abbr}-link {
     @include elr-link();
 }
 
@@ -439,10 +439,6 @@ header, section {
 
     &__nav-link {
         @extend .nav-link;
-
-        &:hover, &:active {
-            background: none;
-        }
     }
 
     .dropdown {
@@ -606,12 +602,126 @@ header, section {
     }
 }
 
+/* LAYOUT ELEMENTS */
+
+.#{$abbr}-grid {
+    @extend .container;
+    
+    &__container {
+        @include make-row(1rem);
+
+        &>* {
+            // intruduces weird css sepcifity issues when using `@extend .row-cols-1`
+            @include make-col-ready();
+            // @extend .col;
+        }
+
+        &--row-cols-2 {
+            @include media-breakpoint-up(md) {
+                @include row-cols(1);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include row-cols(2);
+            }
+            // @extend .row-cols-xl-2;
+            // @extend .row-cols-md-1;
+        }
+
+        &--row-cols-3 {
+            @include media-breakpoint-up(xs) {
+                @include row-cols(1);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include row-cols(2);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include row-cols(3);
+            }
+            // @extend .row-cols-xl-3;
+            // @extend .row-cols-lg-2;
+            // @extend .row-cols-1;
+        }
+
+        &--row-cols-4 {
+            @include media-breakpoint-up(xs) {
+                @include row-cols(1);
+            }
+
+            @include media-breakpoint-up(md) {
+                @include row-cols(2);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include row-cols(3);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include row-cols(4);
+            }
+            // @extend .row-cols-xl-4;
+            // @extend .row-cols-lg-3;
+            // @extend .row-cols-md-2;
+            // @extend .row-cols-1;
+        }
+        
+        &--condensed {
+            @include media-breakpoint-up(xs) {
+                @include row-cols(2);
+            }
+
+            @include media-breakpoint-up(md) {
+                @include row-cols(3);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include row-cols(4);
+            }
+
+            .#{$abbr}-card {
+                &__container {
+                    @include media-breakpoint-down(md) {
+                        --#{$prefix}card-spacer-y: .5rem !important;
+                        --#{$prefix}card-spacer-x: .5rem !important;
+                    }
+                }
+            }
+            // @extend .row-cols-xl-4;
+            // @extend .row-cols-md-3;
+            // @extend .row-cols-2;
+        }
+
+        &--featured {
+            @include media-breakpoint-up(md) {
+                >:nth-child(-n+2) {
+                    width: 50%;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                >:nth-child(n+3):nth-child(-n+8) {
+                    width: 33.33333333333333%;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        
+    }
+}
+
+
 /* CORE PAGE ELEMENTS */
 
-.hbc-card {
+.#{$abbr}-card {
+    $block: &;
+
     margin-bottom: 1rem;
-    
-    .__container {
+
+    &__container {
         @extend .card;
         
         --#{$prefix}card-bg: #{default-color(10)};
@@ -629,38 +739,31 @@ header, section {
         border: transparent .25rem solid;
         padding: 0;
     }
-    
-    .__img {
+
+    &__media {
         padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
         padding-bottom: 0;
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
         
-        img {
-            width: 100%;
-            aspect-ratio: 16/10;
-            object-fit: cover;
-        }
-        
-        &:has(img[src=""]) {
+        &:has([src=""]) {
             display: none;
         }
     }
     
-    .__body {
+    &__body {
         @extend .card-body;
-
+    
         display: flex;
         flex-direction: column;
-        
-        // max-height: 100%;
-        // max-width: 100%;
-        // overflow: hidden;
     }
     
-    .__title {
+    &__title {
         @extend .card-title;
     }
     
-    .__subtitle {
+    &__subtitle {
         @extend .card-subtitle;
         
         font-weight: 400;
@@ -672,19 +775,19 @@ header, section {
         > * {
             display: flex;
         }
-        
-        .__icon::before {
-            padding-right: .25em;
-        }
-        
+           
         div+div::before {
             content: '\002022';
             padding: 0 .25em;
             color: var(--#{$prefix}card-subtitle-color);
         }
     }
+
+    &__icon::before {
+        padding-right: .25em;
+    }
     
-    .__text {
+    &__text {
         @extend .card-text;
         
         font-family: var(--#{$prefix}body-font-family);
@@ -700,7 +803,7 @@ header, section {
         }
     }
     
-    .__link-indicator {
+    &__link-indicator {
         // @extend .link-primary;
         @include elr-link();
         
@@ -709,127 +812,113 @@ header, section {
         margin-right: auto;
     }
     
-    @include media-breakpoint-up(lg) {
-        // .__img {
-        //     aspect-ratio: 1/1;
-        // }
-    }
-    
-    @include media-breakpoint-up(xl) {
-        // .__text {
-        //     -webkit-line-clamp: 5;
-        // }
-    }
-    
-    @include media-breakpoint-down(md) {
-        // .__text {
-        //     -webkit-line-clamp: 5;
-        // }
-    }
-    
-    a {
-        cursor: pointer;
-
-        &.__container {
-            &:hover,
-            &:active {
-                border: var(--#{$abbr}-40) .25rem solid;
-            }
-        }
-        
-        .__link-indicator {
-            display: inline-block;
-        }
-    }
-    
-    &._bg-img {
-        .__container {
-            background-color: #{default-color(10)};
-            min-height: 16rem;
-        }
-        
-        .__img {
-            padding: 0;
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-
-            img {
-                height: 100%;
+    &--link {
+        #{$block} {
+            &__container {
+                cursor: pointer;
+                
+                &:hover, &:active {
+                    border: var(--#{$abbr}-40) .25rem solid;
+                }
             }
             
-            &::before {
-                content: '';
-                // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+            &__link-indicator {
+                display: inline-block;
+            }
+        }
+    }
+    
+    &--bg-media {
+        #{$block} {
+            &__container {
+                --#{$prefix}card-color: var(--#{$abbr}-always-white);
+
+                background-color: #{default-color(10)};
+                min-height: 16rem;
+            }
+            
+            &__media {
+                padding: 0;
                 position: absolute;
-                inset: 0;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+        
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                
+                &::before {
+                    content: '';
+                    // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+                    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+                    position: absolute;
+                    inset: 0;
+                }
+                
+                &:has([src=""]) {
+                    display: block;
+                }
             }
             
-            &:has(img[src=""]) {
-                display: block;
+            &__body {
+                z-index: 2;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+            }
+
+            &__title {
+                @extend .h4;
             }
         }
-        
-        .__body {
-            z-index: 2;
-            margin: 0;
-            color: var(--#{$abbr}-60);
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
-        }
-
-        .__title {
-            @extend .h4;
-        }
-    }
-    
-    .hbc-grid ._team &, .hbc-grid ._company-cards & {
-        .__container {
-            @include media-breakpoint-down(md) {
-                --#{$prefix}card-spacer-y: .5rem;
-                --#{$prefix}card-spacer-x: .5rem;
-            }
-        }
-
-        .__img {
-            img {
-                aspect-ratio: 1/1;
-                background-color: var(--#{$abbr}-20);
-            }
-        }
-        
-        .__subtitle {
-            margin-bottom: 0;
-        }
-        
-        .__text {
-            display: none;
-        }
-        
-        .__link-indicator {
-            display: none;
-        }
-    }
-
-    .hbc-grid ._company-cards & {
-        @extend ._bg-img;
-    }
-
-    .hbc-grid ._blog & {
-        .__text {
-            margin-bottom: 0;
-        }
-        
-        // .__link-indicator {
-        //     display: none;
-        // }
     }
 }
+
+// .hbc-card {    
+    
+//     .hbc-grid ._team &, .hbc-grid ._company-cards & {
+//         .__img {
+//             img {
+//                 aspect-ratio: 1/1;
+//                 background-color: var(--#{$abbr}-20);
+//             }
+//         }
+        
+//         .__subtitle {
+//             margin-bottom: 0;
+//         }
+        
+//         .__text {
+//             display: none;
+//         }
+        
+//         .__link-indicator {
+//             display: none;
+//         }
+//     }
+
+//     .hbc-grid ._company-cards & {
+//         // @extend ._bg-img;
+//     }
+
+//     .hbc-grid ._blog & {
+//         .__text {
+//             margin-bottom: 0;
+//         }
+        
+//         // .__link-indicator {
+//         //     display: none;
+//         // }
+//     }
+// }
 
 .modal {
     padding: map-get($spacers, 2);
@@ -1281,74 +1370,13 @@ header, section {
     
         &._side-end {
             order: 2;
-    
+            
             @include media-breakpoint-up(lg) {
                 order: 3;
             }
         }
     }
-
-}
-
-.hbc-grid {
-    @extend .container;
     
-    .__layout {
-        @include make-row(1rem);
-
-        &>* {
-            @include make-col-ready();
-        }
-
-        &._row-cols-2 {
-            @extend .row-cols-xl-2;
-            @extend .row-cols-md-1;
-        }
-
-        &._row-cols-3 {
-            @extend .row-cols-xl-3;
-            @extend .row-cols-lg-2;
-            @extend .row-cols-1;
-        }
-
-        &._row-cols-4 {
-            @extend .row-cols-xl-4;
-            @extend .row-cols-lg-3;
-            @extend .row-cols-md-2;
-            @extend .row-cols-1;
-        }
-        
-        &._team, &._company-cards {
-            @extend .row-cols-xl-4;
-            @extend .row-cols-md-3;
-            @extend .row-cols-2;
-        }
-
-        &._blog {
-            @extend .row-cols-xl-4;
-            @extend .row-cols-lg-3;
-            @extend .row-cols-md-2;
-            @extend .row-cols-1;
-        }
-
-        &._highlighted {
-            @include media-breakpoint-up(md) {
-                >:nth-child(-n+2) {
-                    width: 50%;
-                }
-            }
-
-            @include media-breakpoint-up(lg) {
-                >:nth-child(n+3):nth-child(-n+8) {
-                    width: 33.33333333333333%;
-                }
-            }
-        }
-    }
-
-    .__btn {
-        
-    }
 }
 
 .hbc-company-card {

@@ -1,0 +1,19 @@
+<div class="{{ euler.abbr }}-card {{ euler.abbr }}-card--bg-media {{ elrCardModifier }}">
+    <a class="{{ euler.abbr }}-card__container" href="{{ elrCardLink }}">
+        <div class="{{ euler.abbr }}-card__media">
+            <img src="{{ elrCardImg }}" alt="">
+        </div>
+        <div class="{{ euler.abbr }}-card__body">
+            <h3 class="{{ euler.abbr }}-card__title">{{ elrCardTitle }}</h3>
+            <div class="{{ euler.abbr }}-card__subtitle">
+                {{ elrCardSubtitle | safe }}
+            </div>
+            <div class="{{ euler.abbr }}-card__text">
+                {{ elrCardText | safe }}
+            </div>
+            <div class="{{ euler.abbr }}-card__link-indicator">
+                Learn More
+            </div>
+        </div>
+    </a>
+</div>
