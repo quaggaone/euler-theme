@@ -602,6 +602,7 @@ header, section {
     }
 }
 
+
 /* LAYOUT ELEMENTS */
 
 .#{$abbr}-grid {
@@ -1085,22 +1086,21 @@ header, section {
 
 /* PAGE ELEMENTS */
 
-.hbc-statement {
+.#{$abbr}-statement {
     $block: &;
 
     @extend .container;
-    @extend .d-flex;
     @extend .flex-column;
     @extend .flex-md-row;
     @extend .row;
     @extend .mx-auto;
 
-    .__col {
-        &._heading {
+    &__col {
+        &--heading {
             @extend .col-md-6;
         }
 
-        &._text {
+        &--text {
             @extend .col-sm-8;
             @extend .col-md-6;
             @extend .col-lg-4;
@@ -1108,62 +1108,72 @@ header, section {
         }
     }
 
-    &._reverse {
+    &--reverse {
         @extend .flex-md-row-reverse;
 
-        .__col {
-            &._text {
-                @extend .ms-0;
-                @extend .me-auto;
+        #{$block} {
+            &__col {
+                &--text {
+                    @extend .ms-0;
+                    @extend .me-auto;
+                }
             }
         }
     }
 
-    &._center {
+    &--center {
         @extend .flex-md-column;
         @extend .align-items-center;
 
-        .__col {
-            @extend .col-sm-12;
-            @extend .col-md-10;
-            @extend .col-lg-8;
-
-            &._text {
-                @extend .m-0;
+        #{$block} {
+            &__col {
+                @extend .col-sm-12;
+                @extend .col-md-10;
+                @extend .col-lg-8;
+    
+                &--text {
+                    @extend .m-0;
+                }
             }
         }
     }
 
-    &._halfed {
-        .__col {
-            &._text {
-                @extend .col-lg-6;
+    &--halfed {
+        #{$block} {
+            &__col {
+                &--text {
+                    @extend .col-lg-6;
+                }
             }
         }
     }
 
-    &._only-heading {
-        .__col {
-            &._heading {
-                @extend .col-sm-10;
-                @extend .col-xl-8;
-            }
-
-            &._text {
-                @extend .d-none;
+    &--only-heading {
+        #{$block} {
+            &__col {
+                &--heading {
+                    @extend .col-sm-10;
+                    @extend .col-xl-8;
+                }
+    
+                &--text {
+                    @extend .d-none;
+                }
             }
         }
     }
 
-    &._only-text {
-        .__col {
-            &._heading {
-                @extend .d-none;
-            }
-
-            &._text {
-                @extend .col-sm-10;
-                @extend .col-xl-8;
+    &--only-text {
+        #{$block} {
+            &__col {
+                &--heading {
+                    @extend .d-none;
+                }
+        
+                &--text {
+                    @extend .col-sm-10;
+                    @extend .col-xl-8;
+                }
             }
         }
     }
