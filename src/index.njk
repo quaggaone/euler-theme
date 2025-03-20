@@ -97,7 +97,10 @@ bodyModifier: ""
 {% include "partials/elr-grid.njk" %}
 
 
-{% include "partials/hbc-display-list.njk" %}
+{% set elrDisplayListModifier %}
+    {{ euler.abbr }}-display-list--alternating
+{% endset %}
+{% include "partials/elr-display-list.njk" %}
 
 
 {% set elrFeatureBoxContent %}

@@ -541,7 +541,7 @@ header, section {
             >:first-child {
                 width: 100%;
                 max-height: 100%;
-                aspect-ratio: 16/10;
+                aspect-ratio: #{$elr-aspect-ratio};
                 object-fit: cover;
             }
         }
@@ -862,7 +862,7 @@ header, section {
         padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
         padding-bottom: 0;
         width: 100%;
-        aspect-ratio: 16/10;
+        aspect-ratio: #{$elr-aspect-ratio};
         object-fit: cover;
         
         &:has([src=""]) {
@@ -1086,6 +1086,8 @@ header, section {
 /* PAGE ELEMENTS */
 
 .hbc-statement {
+    $block: &;
+
     @extend .container;
     @extend .d-flex;
     @extend .flex-column;
@@ -1167,26 +1169,28 @@ header, section {
     }
 }
 
-.hbc-display-list {
+.#{$abbr}-display-list {
+    $block: &;
+
     @extend .container;
     
-    .__item {
+    &__item {
         @extend .row;
         @extend .mb-0;
         @extend .py-3;
         @extend .align-content-start;
     }
     
-    .__col {
+    &__col {
         @extend .col-md;
         
-        &._text {
+        &--content {
             @extend .px-3;
         }
         
-        &._img {
-            img {
-                aspect-ratio: 16 / 10;
+        &--media {
+            img, video {
+                aspect-ratio: #{$elr-aspect-ratio};
                 display: block;
                 object-fit: cover;
                 width: 100%;
@@ -1194,32 +1198,40 @@ header, section {
         }
     }
     
-    &._alternating {
-        .__item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-    }
-    
-    &._reverse {
-        .__item {
-            flex-direction: row-reverse;
-        }
-    }
-    
-    &._reverse._alternating {
-        .__item {
-            &:nth-child(even) {
-                flex-direction: row;
-            }
-            
-            &:nth-child(odd) {
+    &--alternating {
+        #{$block} {
+            &__item:nth-child(even) {
                 flex-direction: row-reverse;
+            }
+        }
+    }
+    
+    &--reverse {
+        #{$block} {
+            &__item {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+    
+    &--reverse#{$block}--alternating {
+        #{$block} {
+            &__item {
+                &:nth-child(even) {
+                    flex-direction: row;
+                }
+                
+                &:nth-child(odd) {
+                    flex-direction: row-reverse;
+                }
             }
         }
     }
 }
 
 .#{$abbr}-cta {
+    $block: &;
+    
     @extend .container;
     
     &__container {
@@ -1254,7 +1266,7 @@ header, section {
         
         &--media {
             img, video {
-                aspect-ratio: 16/10;
+                aspect-ratio: #{$elr-aspect-ratio};
                 object-fit: cover;
                 width: 100%;
             }
@@ -1263,6 +1275,8 @@ header, section {
 }
 
 .#{$abbr}-blog-text {
+    $block: &;
+
     @extend .container;
     
     font-family: #{$elr-font-serif};
