@@ -702,6 +702,25 @@ header, section {
     }
 }
 
+/* PAGE LAYOUTS */
+
+/* of course there is a regular layout. there is just no extra class for it */
+
+.#{$abbr}-layout-card {
+    $block: &;
+
+    @extend .container;
+
+    &__container {
+        @include make-row();
+    }
+
+    &__col {
+        @include make-col-ready();
+        @include make-col(6);
+    }
+}
+
 
 /* LAYOUT ELEMENTS */
 
@@ -1432,21 +1451,6 @@ header, section {
         }
     }
     
-}
-
-.hbc-company-card {
-    $block: &;
-
-    @extend .container;
-
-    #{$block}__container {
-        @include make-row();
-    }
-
-    #{$block}__col {
-        @include make-col-ready();
-        @include make-col(6);
-    }
 }
 
 /* MISC ELEMENTS */
