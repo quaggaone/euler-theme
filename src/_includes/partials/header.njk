@@ -135,6 +135,34 @@
                 <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--main">
                     <h2>Subtitle text here for a good introduction.</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo officia eius sunt id temporibus fugiat, eos praesentium tempore ipsum molestiae eum. Nemo ad totam nostrum iste cum, pariatur ea.</p>
+                    {% if elrTemplate == "partner" %}
+                        <div class="{{ euler.abbr }}-meta__table">
+                            <table class="{{ euler.abbr }}-table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Titel</th>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Titel</th>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Titel</th>
+                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit pariatur sequi illo velit deserunt expedita excepturi totam, iste temporibus tenetur molestiae cum doloremque quisquam modi labore impedit minus dolorum dolore?</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Titel</th>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Titel</th>
+                                        <td>Value</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endif %}
                     <div class="{{ euler.abbr }}-meta__info">
                         <div class="{{ euler.abbr }}-meta__author">
                             <img src="{{ euler.assetsDir }}brand/open-graph.png" alt="">

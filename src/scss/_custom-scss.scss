@@ -695,17 +695,29 @@ header, section {
     margin-top: map-get($spacers, 5);
     
     &__container--end {
-        #{$block}__col--main {
+        #{$block}__col {
             padding-bottom: map-get($spacers, 3);
-            border-bottom: 1px solid #{default-color(20)};
 
-            @include media-breakpoint-down($elr-layout-blog-breakpoint) {
-                margin-bottom: map-get($spacers, 3);
+            &--main {
+                border-bottom: 1px solid #{default-color(20)};
+                
+                @include media-breakpoint-down($elr-layout-blog-breakpoint) {
+                    margin-bottom: map-get($spacers, 3);
+                }
             }
+
         }
     }
 
     &__col {
+        &>* {
+            margin-bottom: map-get($spacers, 2);
+        }
+
+        &>:last-child, &>*>:last-child {
+            margin-bottom: 0;
+        }
+
         &--side-start {
             order: 1;
         }
@@ -760,6 +772,17 @@ header, section {
         
         span {
             vertical-align: middle;
+        }
+    }
+
+    &__table {
+        .#{$abbr}-table {
+            @extend .table-borderless;
+            @extend .table-sm;
+        }
+
+        th {
+            width: 25%;
         }
     }
 }
@@ -1610,4 +1633,8 @@ header, section {
             }
         }
     }
+}
+
+.#{$abbr}-table {
+    @extend .table;
 }

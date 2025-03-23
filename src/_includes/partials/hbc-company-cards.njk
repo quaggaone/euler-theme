@@ -1,19 +1,19 @@
-<section class="hbc-grid">
-    <div class="__layout _company-cards">
-        <div class="hbc-card {{ hbcCardOptions }}">
-            <a class="__container" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <div class="__img">
+<section class="{{ euler.abbr }}-grid {{ euler.abbr }}-grid--condensed">
+    <div class="{{ euler.abbr }}-grid__container">
+        <div class="{{ euler.abbr }}-card {{ euler.abbr }}-card--link {{ elrCardModifier }}">
+            <a class="{{ euler.abbr }}-card__container" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="{{ euler.abbr }}-card__media">
                     <img src="https://felixdimmerling.com/across/fd/images/me.jpg" alt="">
                 </div>
-                <div class="__body">
-                    <h3 class="__title">Company Card</h3>
-                    <div class="__subtitle">
+                <div class="{{ euler.abbr }}-card__body">
+                    <h3 class="{{ euler.abbr }}-card__title">Company Card</h3>
+                    <div class="{{ euler.abbr }}-card__subtitle">
                         Prototyping
                     </div>
-                    <div class="__text">
+                    <div class="{{ euler.abbr }}-card__text">
                         {{ elrCardText | safe }}
                     </div>
-                    <div class="__link-indicator">
+                    <div class="{{ euler.abbr }}-card__link-indicator">
                         Learn More
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Modal title</h5>
-                            <a href="company-card/">Open in Full-Screen</a>
+                            <a href="value-card/">Open in Full-Screen</a>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
