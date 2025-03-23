@@ -1,3 +1,9 @@
+2.0.0-alpha.5 [2025-03-23]
+---
+- general layout refinements
+- added book metadata (bottom)
+- adjusted hero layout for blogs
+
 2.0.0-alpha.4 [2025-03-23]
 ---
 - added meta layout inside header for blog articles
