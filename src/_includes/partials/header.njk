@@ -2,8 +2,8 @@
     <nav class="{{ euler.abbr }}-navbar">
         <div class="{{ euler.abbr }}-navbar__container">
             <a href="" class="{{ euler.abbr }}-navbar__brand">
-                <img class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--black-text" src="{{ euler.assetsDir }}brand/hotbird-logo-inline.png" alt="logo">
-                <img class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--white-text" src="{{ euler.assetsDir }}brand/hotbird-logo-inline-dark.png" alt="logo">
+                <img class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--black-text" src="{{ euler.assetsDir }}brand/euler-logo-inline-black.png" alt="logo">
+                <img class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--white-text" src="{{ euler.assetsDir }}brand/euler-logo-inline-white.png" alt="logo">
             </a>
             <button class="{{ euler.abbr }}-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#elr-navbar__collapse" aria-controls="elr-navbar__collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,6 +51,15 @@
                     <li class="{{ euler.abbr }}-navbar__nav-item">
                         <a class="{{ euler.abbr }}-navbar__nav-link" href="company-cards/">Company Cards</a>
                     </li>
+                    <li class="{{ euler.abbr }}-navbar__nav-item">
+                        <a class="{{ euler.abbr }}-navbar__nav-link" href="blog/">Blog Article</a>
+                    </li>
+                    <li class="{{ euler.abbr }}-navbar__nav-item">
+                        <a class="{{ euler.abbr }}-navbar__nav-link" href="book/">Book</a>
+                    </li>
+                    <li class="{{ euler.abbr }}-navbar__nav-item">
+                        <a class="{{ euler.abbr }}-navbar__nav-link" href="partner/">Partner</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,28 +67,99 @@
     <div class="{{ euler.abbr }}-hero">    
         <div class="{{ euler.abbr }}-hero__container">
             <div class="{{ euler.abbr }}-hero__col {{ euler.abbr }}-hero__col--content">
-                <div class="{{ euler.abbr }}-hero__main">
-                    <h1 class="{{ euler.abbr }}-hero__title">
-                        Your business is precious.
-                        <br>
-                        Together, we protect it.
-                    </h1>
-                    <div class="{{ euler.abbr }}-hero__subtitle">
-                        Cyber Security Solutions made to fit.
+                {% if not elrTemplateType == "book" %}
+                    <div class="{{ euler.abbr }}-hero__main">
+                        <h1 class="{{ euler.abbr }}-hero__title">
+                            Your business is precious.
+                            <br>
+                            Together, we protect it.
+                        </h1>
+                        <div class="{{ euler.abbr }}-hero__subtitle">
+                            Cyber Security Solutions made to fit.
+                        </div>
+                        <div class="{{ euler.abbr }}-hero__cta">
+                            <a href="" class="btn">Browse</a>
+                        </div>
                     </div>
-                    <div class="{{ euler.abbr }}-hero__cta">
-                        <a href="" class="btn">Browse</a>
+                    <div class="{{ euler.abbr }}-hero__supplement">
+                        <div class="{{ euler.abbr }}-hero__introtext">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis nostrum a rerum vero impedit doloribus, voluptates nemo quia ad, praesentium ut maxime eveniet numquam saepe quaerat harum voluptatibus sint explicabo.
+                        </div>
                     </div>
-                </div>
-                <div class="{{ euler.abbr }}-hero__supplement">
-                    <div class="{{ euler.abbr }}-hero__introtext">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis nostrum a rerum vero impedit doloribus, voluptates nemo quia ad, praesentium ut maxime eveniet numquam saepe quaerat harum voluptatibus sint explicabo.
+                {% else %}
+                    <div class="{{ euler.abbr }}-hero__main">
+                        <h1 class="{{ euler.abbr }}-hero__title">
+                            Your business is precious.
+                            <br>
+                            Together, we protect it.
+                        </h1>
                     </div>
-                </div>
+                {% endif %}
             </div>
             <div class="{{ euler.abbr }}-hero__col {{ euler.abbr }}-hero__col--media">
                 <img src="{{ euler.assetsDir }}brand/open-graph.png" alt="">
             </div>
         </div>
     </div>
+    {% if elrTemplateType == "blog" %}
+        <div class="{{ euler.abbr }}-meta">
+            <div class="{{ euler.abbr }}-meta__container {{ euler.abbr }}-meta__container--start">
+                <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-start">
+
+                </div>
+                <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--main">
+                    <div class="{{ euler.abbr }}-pill-group">
+                        <div class="{{ euler.abbr }}-pill-group__wrapper">
+                            <a href="" class="{{ euler.abbr }}-pill-group__item {{ euler.abbr }}-pill-group__item--link">Aktionsfeld</a>
+                            <a href="" class="{{ euler.abbr }}-pill-group__item {{ euler.abbr }}-pill-group__item--link">Mehrwert</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-end">
+
+                </div>
+            </div>
+            <div class="{{ euler.abbr }}-meta__container {{ euler.abbr }}-meta__container--end">
+                <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-start">
+                    {% if elrTemplate == "book" %}
+                        <div class="{{ euler.abbr }}-meta__media">
+                            <img src="{{ euler.assetsDir }}brand/open-graph-vertical.png" alt="">
+                        </div>
+                    {% endif %}
+                    {% if elrTemplate == "partner" %}
+                        <div class="{{ euler.abbr }}-meta__media">
+                            <img src="{{ euler.assetsDir }}brand/euler-logo-inline-black.png" alt="">
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--main">
+                    <h2>Subtitle text here for a good introduction.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo officia eius sunt id temporibus fugiat, eos praesentium tempore ipsum molestiae eum. Nemo ad totam nostrum iste cum, pariatur ea.</p>
+                    <div class="{{ euler.abbr }}-meta__info">
+                        <div class="{{ euler.abbr }}-meta__author">
+                            <img src="{{ euler.assetsDir }}brand/open-graph.png" alt="">
+                            <span>Bernd das Brot</span>
+                        </div>
+                        <div class="{{ euler.abbr }}-meta__published">
+                            <span>01.01.1970</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-end">
+                    <div class="{{ euler.abbr }}-pill-group">
+                        <small class="{{ euler.abbr }}-pill-group__title">Topics</small>
+                        <div class="{{ euler.abbr }}-pill-group__wrapper">
+                            <span class="{{ euler.abbr }}-pill-group__item">Innovation</span>
+                            <span class="{{ euler.abbr }}-pill-group__item">Erneuerung</span>
+                            <span class="{{ euler.abbr }}-pill-group__item">Ausbildung</span>
+                            <span class="{{ euler.abbr }}-pill-group__item">Innovation Culture</span>
+                            <span class="{{ euler.abbr }}-pill-group__item">Innovation Ecosystem</span>
+                            <span class="{{ euler.abbr }}-pill-group__item">Business Strategy</span>
+                            <span class="{{ euler.abbr }}-pill-group__item">Ecosystem Assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 </header>
