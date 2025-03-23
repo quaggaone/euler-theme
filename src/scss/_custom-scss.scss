@@ -206,16 +206,16 @@ body {
     --bs-btn-font-weight: 600;
     // --bs-btn-line-height: ;
     --bs-btn-color: var(--#{$abbr}-10);
-    --bs-btn-bg: var(--#{$abbr}-50);
+    --bs-btn-bg: var(--#{$abbr}-60);
     // --bs-btn-border-width: ;
     --bs-btn-border-color: transparent;
     --bs-btn-border-radius: #{$elr-border-radius};
     --bs-btn-hover-color: var(--#{$abbr}-10);
-    --bs-btn-hover-bg: var(--#{$abbr}-40);
+    --bs-btn-hover-bg: var(--#{$abbr}-50);
     --bs-btn-hover-border-color: transparent;
 
     --bs-btn-active-color: var(--#{$abbr}-10);
-    --bs-btn-active-bg: var(--#{$abbr}-30);
+    --bs-btn-active-bg: var(--#{$abbr}-40);
     --bs-btn-active-border-color: transparent;
 
     // --bs-btn-border-color: var(--bd-violet);
@@ -1548,32 +1548,60 @@ header, section {
         @extend .modal-xl;
         @extend .modal-dialog-scrollable;
         @extend .modal-dialog-centered;
+        // @extend .container;
     }
 
     .modal-header {
+        flex-wrap: wrap;
+        
         @include media-breakpoint-down(md) {
             display: none;
         }
+        
+        .btn-close {
+            margin: calc(0.25*var(--bs-modal-header-padding-y)) calc(0.25*var(--bs-modal-header-padding-x));
+            padding: calc(0.25*var(--bs-modal-header-padding-y)) calc(0.25*var(--bs-modal-header-padding-x));
+        }
     }
-
+    
     .modal-body {
         @extend .row;
         @extend .gx-4;
         @extend .gy-0;
-
+        
         margin-bottom: 0;
         padding: map-get($spacers, 4);
     }
     
     .modal-footer {
         @extend .d-md-none;
-
+        
+        flex-wrap: wrap;
         padding-left: 1rem;
         padding-right: 1rem;
     }
-            
+    
     .modal-title {
         margin: 0 auto 0 0;
+    }
+    
+    .modal-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: map-get($spacers, 2);
+
+        @each $color, $value in $elr-greys {
+            --#{$abbr}-#{$color}: #{$value};
+        }
+
+        @media (prefers-color-scheme: dark) {
+            @each $color, $value in $elr-greys-dark {
+                --#{$abbr}-#{$color}: #{$value};
+            }
+        }
     }
 
     &._team-member {
@@ -1603,17 +1631,6 @@ header, section {
 
         .modal-body-text {
             @extend .col-md-8;
-        }
-    }
-
-    &._company-card {
-        .modal-body {
-            @extend .row-cols-lg-2;
-        }
-
-        .modal-body-example-img img {
-            aspect-ratio: 2/1;
-            object-fit: cover;
         }
     }
 }

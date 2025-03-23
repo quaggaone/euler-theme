@@ -1,3 +1,7 @@
+2.0.0-alpha.6 [2025-03-24]
+---
+- refined modal
+
 2.0.0-alpha.5 [2025-03-23]
 ---
 - general layout refinements
