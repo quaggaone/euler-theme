@@ -1,8 +1,13 @@
+2.0.0-alpha.4 [2025-03-23]
+---
+- added meta layout inside header for blog articles
+- added pill-group
+- added meta table
+- adjusted layout-card approach
+
 2.0.0-alpha.3 [2025-03-22]
 ---
 - added page layout card
-- added meta layout inside header for blog articles
-- added pill-group
 
 1.0.1 []
 ---
