@@ -31,3 +31,74 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus. Qua
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus. Quam qui eos velit, itaque ipsam omnis sint veritatis nisi dolore illo exercitationem dolores necessitatibus laborum tempore nostrum veniam delectus?
 {% endset %}
 {% include "partials/elr-blog-text.njk" %}
+
+<div class="elr-meta">
+    <div class="elr-meta__container">
+        <div class="elr-meta__col elr-meta__col--side-start">
+            
+        </div>
+        <div class="elr-meta__col elr-meta__col--main">
+            <div class="elr-meta__table">
+                <table class="elr-table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Titel kurz</th>
+                            <td>[[*pagetitle]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Titel lang</th>
+                            <td>[[*longtitle]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Untertitel</th>
+                            <td>[[*elr_subtitle]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Autor / Autoren</th>
+                            <td>[[*elr_meta_author]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Auflage</th>
+                            <td>[[*elr_meta_book_edition]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Verlag</th>
+                            <td>[[*elr_meta_publisher]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ISBN</th>
+                            <td>[[*elr_meta_isbn]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Umfang</th>
+                            <td>[[*elr_meta_book_attributes]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Berufe</th>
+                            <td>[[*elr_meta_targetoccupation]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Zielgruppe</th>
+                            <td>[[*elr_meta_targetgroup]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kategorie</th>
+                            <td>[[*elr_meta_tag]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Buchform</th>
+                            <td>[[*elr_meta_book_medium]]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sprache</th>
+                            <td>[[*elr_meta_lang]]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="elr-meta__col elr-meta__col--side-end">
+            
+        </div>
+    </div>
+</div>

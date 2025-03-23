@@ -67,7 +67,15 @@
     <div class="{{ euler.abbr }}-hero">    
         <div class="{{ euler.abbr }}-hero__container">
             <div class="{{ euler.abbr }}-hero__col {{ euler.abbr }}-hero__col--content">
-                {% if not elrTemplateType == "blog" %}
+                {% if elrTemplateType == "blog" %}
+                    <div class="{{ euler.abbr }}-hero__main">
+                        <h1 class="{{ euler.abbr }}-hero__title">
+                            Your business is precious.
+                            <br>
+                            Together, we protect it.
+                        </h1>
+                    </div>
+                {% else %}
                     <div class="{{ euler.abbr }}-hero__main">
                         <h1 class="{{ euler.abbr }}-hero__title">
                             Your business is precious.
@@ -86,14 +94,6 @@
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis nostrum a rerum vero impedit doloribus, voluptates nemo quia ad, praesentium ut maxime eveniet numquam saepe quaerat harum voluptatibus sint explicabo.
                         </div>
                     </div>
-                {% else %}
-                    <div class="{{ euler.abbr }}-hero__main">
-                        <h1 class="{{ euler.abbr }}-hero__title">
-                            Your business is precious.
-                            <br>
-                            Together, we protect it.
-                        </h1>
-                    </div>
                 {% endif %}
             </div>
             <div class="{{ euler.abbr }}-hero__col {{ euler.abbr }}-hero__col--media">
@@ -103,7 +103,7 @@
     </div>
     {% if elrTemplateType == "blog" %}
         <div class="{{ euler.abbr }}-meta">
-            <div class="{{ euler.abbr }}-meta__container {{ euler.abbr }}-meta__container--start">
+            <div class="{{ euler.abbr }}-meta__container">
                 <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-start">
 
                 </div>
@@ -119,7 +119,7 @@
 
                 </div>
             </div>
-            <div class="{{ euler.abbr }}-meta__container {{ euler.abbr }}-meta__container--end">
+            <div class="{{ euler.abbr }}-meta__container">
                 <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-start">
                     {% if elrTemplate == "book" %}
                         <div class="{{ euler.abbr }}-meta__media">
@@ -133,7 +133,8 @@
                     {% endif %}
                 </div>
                 <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--main">
-                    <h2>Subtitle text here for a good introduction.</h2>
+                    <h2>This is the Long Title field.</h2>
+                    <h3>Subtitle text here for a good introduction.</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo officia eius sunt id temporibus fugiat, eos praesentium tempore ipsum molestiae eum. Nemo ad totam nostrum iste cum, pariatur ea.</p>
                     {% if elrTemplate == "partner" %}
                         <div class="{{ euler.abbr }}-meta__table">

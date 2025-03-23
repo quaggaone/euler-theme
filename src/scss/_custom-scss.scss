@@ -430,7 +430,7 @@ header, section {
                 min-height: var(--#{$abbr}-header-height);
                 background-color: transparent;
                 position: relative;
-                margin-bottom: 10vh;
+                margin-bottom: 5vh;
             }
 
             &__col {
@@ -439,7 +439,7 @@ header, section {
                 &--content {
                     position: absolute;
                     right: 0;
-                    bottom: -10vh;
+                    bottom: -5vh;
                     width: 50vw;
                     background-color: var(--#{$abbr}-20);
 
@@ -694,18 +694,35 @@ header, section {
 
     margin-top: map-get($spacers, 5);
     
-    &__container--end {
-        #{$block}__col {
-            padding-bottom: map-get($spacers, 3);
+    &__container {
+        &:first-child {
+            #{$block}__col {
+                padding-top: map-get($spacers, 3);
 
-            &--main {
-                border-bottom: 1px solid #{default-color(20)};
-                
-                @include media-breakpoint-down($elr-layout-blog-breakpoint) {
-                    margin-bottom: map-get($spacers, 3);
+                &--main {
+                    border-top: 1px solid #{default-color(20)};
+                    
+                    .#{$abbr}-header & {
+                        border-top: none;
+                        padding-top: 0;
+                    }
                 }
             }
+        }
 
+        &:last-child {
+            #{$block}__col {
+                padding-bottom: map-get($spacers, 3);
+    
+                &--main {
+                    border-bottom: 1px solid #{default-color(20)};
+                    
+                    @include media-breakpoint-down($elr-layout-blog-breakpoint) {
+                        margin-bottom: map-get($spacers, 3);
+                    }
+                }
+    
+            }
         }
     }
 
@@ -1620,14 +1637,15 @@ header, section {
     }
 
     &__item {
-        @include elr-link-reset($only-text: true);
         padding: map-get($spacers, 1) map-get($spacers, 2);
         background-color: #{default-color(10)};
         margin-right: map-get($spacers, 2);
         margin-bottom: map-get($spacers, 2);
         display: inline-block;
-
+        color: #{default-color(80)};
+        
         &--link {
+            @include elr-link-reset($only-text: true);
             &:hover, &:active {
                 background-color: #{default-color(20)};
             }
