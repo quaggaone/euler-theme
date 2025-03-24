@@ -256,6 +256,12 @@ header, section {
     $navbar: ".#{$abbr}-navbar";
     $hero: ".#{$abbr}-hero";
 
+    &--no-navbar {
+        #{$navbar} {
+            display: none;
+        }
+    }
+
     &--no-hero {
         #{$hero} {
             display: none;
@@ -1541,6 +1547,7 @@ header, section {
 
 /* MISC ELEMENTS */
 
+/* has to stay with this name and not BEM because of the nessecary javascript from bootstrap */
 .modal {
     padding: map-get($spacers, 2);
     
