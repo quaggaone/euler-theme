@@ -1,6 +1,8 @@
 2.0.0-alpha.6 [2025-03-24]
 ---
 - refined modal
+- converted footer
+- added map germany
 
 2.0.0-alpha.5 [2025-03-23]
 ---
