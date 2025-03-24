@@ -28,175 +28,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* .logo {
-    @include media-breakpoint-down(lg) {
-        width: 40%;
-        margin-right: auto;
-    }
-}
-
-.logo-light {
-    @media (prefers-color-scheme: dark) {
-        display: none;
-    }
-}
-
-.logo-dark {
-    display: none;
-
-    @media (prefers-color-scheme: dark) {
-        display: block;
-    }
-} */
-
-// .stay-tuned {
-//     margin-bottom: .75em;
-//     background-color: #C4A764;
-//     padding: .25em .75em;
-//     border-radius: 1em;
-//     font-family: var(--#{$prefix}font-monospace);
-//     font-weight: 700;
-//     color: #000000;
-//     display: inline-block;
-// }
-
-// .slogan {
-//     .__main {
-//         letter-spacing: .0125em;
-//         font-weight: 400;
-//     }
-
-//     .__alt {
-//         @extend .h4;
-//         font-weight: 300;
-//     }
-// }
-
-// .values {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-
-//     .__item {
-//         display: flex;
-//         flex-direction: column;
-//         width: 25%;
-//         padding: .625rem;
-
-//         @include media-breakpoint-down(lg) {
-//             width: 42%;
-//             padding-left: 1.5rem;
-//             padding-right: 1.5rem;
-//         }
-//     }
-
-//     img {
-//         width: 100%;
-//         padding: 1rem;
-//         border: .125rem solid black;
-
-//         @media (prefers-color-scheme: dark) {
-//             filter: invert(1);
-//         }
-//     }
-
-//     span {
-//         margin-top: .125em;
-//         font-family: $elr-font-sans-condensed;
-//         font-size: 1.125rem;
-//         line-break: anywhere;
-//     }
-// }
-
-// @include media-breakpoint-down(lg) {
-//     .map {
-//         order: 2;
-//     }
-
-//     .culture {
-//         order: 3;
-//     }
-
-//     .connect {
-//         order: 1;
-//     }
-// }
-
-// .locations {
-//     font-family: $elr-font-sans-condensed;
-
-//     @include media-breakpoint-down(lg) {
-//         text-align: right;
-//     }
-
-//     .__country {
-//         font-weight: 500;
-//     }
-
-//     .__map {
-//         max-width: 30rem;
-//         width: 100%;
-
-//         &._white {
-//             display: none !important;
-    
-//             @media (prefers-color-scheme: dark) {
-//                 display: block !important;
-//             }
-//         }
-    
-//         &._black {
-//             @media (prefers-color-scheme: dark) {
-//                 display: none !important;
-//             }
-//         }
-//     }
-// }
-
-// .culture {
-//     @include font-size(.8rem);
-// }
-
-// small {
-//     text-transform: uppercase;
-//     font-weight: 300;
-//     font-family: $elr-font-sans-condensed;
-//     letter-spacing: .1em;
-//     font-size: 1rem;
-// }
-
-// .connect {
-
-//     .__contact {
-//         border-left: .125rem solid var(--#{$abbr}-50);
-//         padding-left: .5rem;
-
-//         .__email {
-//             color: var(--#{$abbr}-70);
-//         }
-//     }
-
-// }
-
-.__social {
-    display: flex;
-    flex-direction: row;
-    font-size: 1.5rem;
-    
-    a {
-        @include elr-link-reset();
-        
-        text-decoration: none;
-        margin-right: .5em;
-        // color: var(--#{$prefix}font-color);
-        color: var(--#{$abbr}-50);
-
-        &:hover {
-            color: var(--#{$abbr}-40);
-        }
-    }
-}
-
 
 .btn {
     // --bs-btn-padding-x: ;
@@ -810,15 +641,118 @@ header, section {
     }
 }
 
-.footer {
-    @extend .d-flex;
-    @extend .flex-column;
+.#{$abbr}-footer {
+    $block: &;
+
+    // @extend .d-flex;
+    // @extend .flex-column;
     @extend .p-4;
     @extend .mt-5;
 
     background-color: var(--#{$abbr}-10);
 
-    #legal {
+    &__container {
+        @extend .row;
+    }
+    
+    &__col {
+        &--connect {
+            @extend .col-lg-4;
+        }
+        
+        &--culture {
+            @extend .col-lg-5;
+            @include font-size(.8rem);
+        }
+        
+        &--map {
+            @extend .col-lg-3;
+        }
+        
+        @include media-breakpoint-down(lg) {
+            &--connect {
+                order: 1;
+            }
+            
+            &--culture {
+                order: 3;
+            }
+            
+            &--map {
+                order: 2;
+            }
+        }
+    }
+
+    small {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: $elr-font-sans-condensed;
+        letter-spacing: .1em;
+        font-size: 1rem;
+    }
+    
+    &__contact {
+        border-left: .125rem solid var(--#{$abbr}-50);
+        padding-left: .5rem;
+
+    }
+
+    &__email {
+        color: var(--#{$abbr}-70);
+    }
+    
+    &__social {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+        
+        a {
+            @include elr-link-reset();
+            
+            text-decoration: none;
+            margin-right: .5em;
+            color: var(--#{$prefix}font-color);
+            color: var(--#{$abbr}-50);
+    
+            &:hover {
+                color: var(--#{$abbr}-40);
+            }
+        }
+    }
+
+    &__locations {
+        font-family: $elr-font-sans-condensed;
+    
+        @include media-breakpoint-down(lg) {
+            text-align: right;
+        }
+    }
+
+    &__map {
+        max-width: 30rem;
+        width: 100%;
+
+        &--white {
+            display: none !important;
+    
+            @media (prefers-color-scheme: dark) {
+                display: block !important;
+            }
+        }
+    
+        &--black {
+            @media (prefers-color-scheme: dark) {
+                display: none !important;
+            }
+        }
+    }
+
+    &__country {
+        font-weight: 500;
+    }
+
+    &__legal {
         ul {
             @extend .p-0;
             @extend .mb-0;
