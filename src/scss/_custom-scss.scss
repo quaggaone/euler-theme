@@ -1,6 +1,8 @@
-img, .img, video {
+img,
+.img,
+video {
     max-width: 100%;
-    border-radius: calc($elr-border-radius + .25rem);
+    border-radius: calc($elr-border-radius + 0.25rem);
 }
 
 .#{$abbr}-link {
@@ -27,7 +29,6 @@ body {
 .row {
     margin-bottom: 2rem;
 }
-
 
 .btn {
     // --bs-btn-padding-x: ;
@@ -59,7 +60,7 @@ body {
     // --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
 
     text-transform: uppercase;
-    letter-spacing: .2ch;
+    letter-spacing: 0.2ch;
 
     &_link {
         @extend .btn-link;
@@ -75,10 +76,10 @@ body {
     }
 }
 
-header, section {
+header,
+section {
     @extend .mb-5;
 }
-
 
 /* CORE PAGE LAYOUT */
 
@@ -120,12 +121,12 @@ header, section {
                     &--white-text {
                         display: block !important;
                     }
-                    
+
                     &--black-text {
                         display: none !important;
                     }
                 }
-                
+
                 &__nav {
                     // --#{$prefix}navbar-color: #{shade-color(#ffffff, 10%)};
                     // --#{$prefix}navbar-hover-color: #{shade-color(#ffffff, 5%)};
@@ -155,27 +156,27 @@ header, section {
                     height: $elr-header-height-full;
 
                     &::before {
-                        content: '';
+                        content: "";
                         background-image: $elr-header-media-tint;
                         position: absolute;
                         inset: 0;
                     }
 
-                    >* {
+                    > * {
                         display: none;
                         height: 100%;
                         width: 100%;
                         border-radius: 0;
                         object-fit: cover;
                     }
-        
-                    >:first-child {
+
+                    > :first-child {
                         display: block;
                     }
-                        
+
                     @include media-breakpoint-down(lg) {
                         // max-height: $elr-header-height-full;
-                        
+
                         &::before {
                             background-image: $elr-header-media-tint-mobile;
                         }
@@ -191,7 +192,7 @@ header, section {
                 @extend .container;
                 @extend .mx-auto;
 
-                padding: 0 .75rem;
+                padding: 0 0.75rem;
             }
 
             &__col {
@@ -201,7 +202,7 @@ header, section {
                     flex-direction: row;
                     width: 100%;
 
-                    >* {
+                    > * {
                         @extend .col;
                     }
                 }
@@ -241,12 +242,12 @@ header, section {
         //             &--white-text {
         //                 display: block !important;
         //             }
-                    
+
         //             &--black-text {
         //                 display: none !important;
         //             }
         //         }
-                
+
         //         &__nav {
         //             // --#{$prefix}navbar-color: #{shade-color(#ffffff, 10%)};
         //             // --#{$prefix}navbar-hover-color: #{shade-color(#ffffff, 5%)};
@@ -283,7 +284,7 @@ header, section {
                     $widths: (
                         xl: 70vw,
                         lg: 80vw,
-                        md: 90vw
+                        md: 90vw,
                     );
 
                     @each $breakpoint, $width in $widths {
@@ -306,21 +307,21 @@ header, section {
                     //     inset: 0;
                     // }
 
-                    >* {
+                    > * {
                         display: none;
                         height: 100%;
                         width: 100%;
                         border-radius: 0;
                         object-fit: cover;
                     }
-        
-                    >:first-child {
+
+                    > :first-child {
                         display: block;
                     }
-                        
+
                     @include media-breakpoint-down(lg) {
                         // max-height: $elr-header-height-full;
-                        
+
                         &::before {
                             background-image: $elr-header-media-tint-mobile;
                         }
@@ -352,7 +353,7 @@ header, section {
 
         &--white-text {
             display: none !important;
-        
+
             @media (prefers-color-scheme: dark) {
                 display: block !important;
             }
@@ -360,7 +361,7 @@ header, section {
 
         &--black-text {
             display: block !important;
-        
+
             @media (prefers-color-scheme: dark) {
                 display: none !important;
             }
@@ -390,7 +391,7 @@ header, section {
     .dropdown {
         display: flex;
         flex-wrap: wrap;
-        
+
         .dropdown {
             @include media-breakpoint-up(lg) {
                 /* this property is crucial to make multi-layered dropdowns work on expanded navbars */
@@ -401,11 +402,11 @@ header, section {
                 margin: 1rem;
             }
         }
-        
+
         @media (hover: hover) {
             @include media-breakpoint-up(lg) {
                 &:hover {
-                    &>.dropdown-menu {
+                    & > .dropdown-menu {
                         /* only enables dropdown reveal on hover if navbar is expanded and on devices with precise hover input (eg. not ipads with cursor) */
                         // @extend .show;
                         display: block;
@@ -419,10 +420,10 @@ header, section {
 
     .dropdown-toggle {
         @extend .nav-link;
-        
+
         padding-left: 0 !important;
         padding: 0;
-        
+
         @include media-breakpoint-down(lg) {
             margin-left: auto;
             width: 12%;
@@ -435,7 +436,7 @@ header, section {
             display: none;
         }
     }
-    
+
     .dropdown-menu {
         @include media-breakpoint-down(lg) {
             width: 100%;
@@ -486,7 +487,7 @@ header, section {
             //     max-height: 50vh;
             // }
 
-            >:first-child {
+            > :first-child {
                 width: 100%;
                 max-height: 100%;
                 aspect-ratio: #{$elr-aspect-ratio};
@@ -498,7 +499,7 @@ header, section {
     &__main {
         @extend .my-auto;
 
-        &>* {
+        & > * {
             margin-bottom: map-get($spacers, 2);
         }
     }
@@ -530,7 +531,7 @@ header, section {
     @include elr-layout-blog();
 
     margin-top: map-get($spacers, 5);
-    
+
     &__container {
         &:first-child {
             #{$block}__col {
@@ -538,7 +539,7 @@ header, section {
 
                 &--main {
                     border-top: 1px solid #{default-color(20)};
-                    
+
                     .#{$abbr}-header & {
                         border-top: none;
                         padding-top: 0;
@@ -550,25 +551,27 @@ header, section {
         &:last-child {
             #{$block}__col {
                 padding-bottom: map-get($spacers, 3);
-    
+
                 &--main {
                     border-bottom: 1px solid #{default-color(20)};
-                    
-                    @include media-breakpoint-down($elr-layout-blog-breakpoint) {
+
+                    @include media-breakpoint-down(
+                        $elr-layout-blog-breakpoint
+                    ) {
                         margin-bottom: map-get($spacers, 3);
                     }
                 }
-    
             }
         }
     }
 
     &__col {
-        &>* {
+        & > * {
             margin-bottom: map-get($spacers, 2);
         }
 
-        &>:last-child, &>*>:last-child {
+        & > :last-child,
+        & > * > :last-child {
             margin-bottom: 0;
         }
 
@@ -589,7 +592,7 @@ header, section {
 
     &__media {
         max-width: 50vw;
-        
+
         img {
             max-height: rfs-fluid-value(18rem);
             // aspect-ratio: 2/3;
@@ -602,7 +605,7 @@ header, section {
         display: flex;
         align-items: baseline;
     }
-    
+
     &__author {
         img {
             width: 3.5rem;
@@ -623,7 +626,7 @@ header, section {
         margin-left: auto;
         font-family: $elr-font-sans-condensed;
         font-weight: 200;
-        
+
         span {
             vertical-align: middle;
         }
@@ -654,30 +657,30 @@ header, section {
     &__container {
         @extend .row;
     }
-    
+
     &__col {
         &--connect {
             @extend .col-lg-4;
         }
-        
+
         &--culture {
             @extend .col-lg-5;
-            @include font-size(.8rem);
+            @include font-size(0.8rem);
         }
-        
+
         &--map {
             @extend .col-lg-3;
         }
-        
+
         @include media-breakpoint-down(lg) {
             &--connect {
                 order: 1;
             }
-            
+
             &--culture {
                 order: 3;
             }
-            
+
             &--map {
                 order: 2;
             }
@@ -688,33 +691,32 @@ header, section {
         text-transform: uppercase;
         font-weight: 300;
         font-family: $elr-font-sans-condensed;
-        letter-spacing: .1em;
+        letter-spacing: 0.1em;
         font-size: 1rem;
     }
-    
-    &__contact {
-        border-left: .125rem solid var(--#{$abbr}-50);
-        padding-left: .5rem;
 
+    &__contact {
+        border-left: 0.125rem solid var(--#{$abbr}-50);
+        padding-left: 0.5rem;
     }
 
     &__email {
         color: var(--#{$abbr}-70);
     }
-    
+
     &__social {
         display: flex;
         flex-direction: row;
         font-size: 1.5rem;
-        
+
         a {
             @include elr-link-reset();
-            
+
             text-decoration: none;
-            margin-right: .5em;
+            margin-right: 0.5em;
             color: var(--#{$prefix}font-color);
             color: var(--#{$abbr}-50);
-    
+
             &:hover {
                 color: var(--#{$abbr}-40);
             }
@@ -723,7 +725,7 @@ header, section {
 
     &__locations {
         font-family: $elr-font-sans-condensed;
-    
+
         @include media-breakpoint-down(lg) {
             text-align: right;
         }
@@ -735,12 +737,12 @@ header, section {
 
         &--white {
             display: none !important;
-    
+
             @media (prefers-color-scheme: dark) {
                 display: block !important;
             }
         }
-    
+
         &--black {
             @media (prefers-color-scheme: dark) {
                 display: none !important;
@@ -789,26 +791,24 @@ header, section {
 //     }
 // }
 
-
 /* LAYOUT ELEMENTS */
 
 .#{$abbr}-grid {
     $block: &;
 
     @extend .container;
-    
+
     &__container {
         @include make-row(1rem);
 
-        &>* {
+        & > * {
             // intruduces weird css sepcifity issues when using `@extend .row-cols-1`
             @include make-col-ready();
             // @extend .col;
         }
     }
-    
+
     &__cta {
-        
     }
 
     &--row-cols-2 {
@@ -817,7 +817,7 @@ header, section {
                 @include media-breakpoint-up(md) {
                     @include row-cols(1);
                 }
-        
+
                 @include media-breakpoint-up(xl) {
                     @include row-cols(2);
                 }
@@ -833,11 +833,11 @@ header, section {
                 @include media-breakpoint-up(xs) {
                     @include row-cols(1);
                 }
-        
+
                 @include media-breakpoint-up(lg) {
                     @include row-cols(2);
                 }
-        
+
                 @include media-breakpoint-up(xl) {
                     @include row-cols(3);
                 }
@@ -854,15 +854,15 @@ header, section {
                 @include media-breakpoint-up(xs) {
                     @include row-cols(1);
                 }
-        
+
                 @include media-breakpoint-up(md) {
                     @include row-cols(2);
                 }
-        
+
                 @include media-breakpoint-up(lg) {
                     @include row-cols(3);
                 }
-        
+
                 @include media-breakpoint-up(xl) {
                     @include row-cols(4);
                 }
@@ -873,18 +873,18 @@ header, section {
             }
         }
     }
-    
+
     &--condensed {
         #{$block} {
             &__container {
                 @include media-breakpoint-up(xs) {
                     @include row-cols(2);
                 }
-        
+
                 @include media-breakpoint-up(md) {
                     @include row-cols(3);
                 }
-        
+
                 @include media-breakpoint-up(xl) {
                     @include row-cols(4);
                 }
@@ -894,8 +894,8 @@ header, section {
         .#{$abbr}-card {
             &__container {
                 @include media-breakpoint-down(md) {
-                    --#{$prefix}card-spacer-y: .5rem !important;
-                    --#{$prefix}card-spacer-x: .5rem !important;
+                    --#{$prefix}card-spacer-y: 0.5rem !important;
+                    --#{$prefix}card-spacer-x: 0.5rem !important;
                 }
             }
         }
@@ -908,13 +908,13 @@ header, section {
         #{$block} {
             &__container {
                 @include media-breakpoint-up(md) {
-                    >:nth-child(-n+2) {
+                    > :nth-child(-n + 2) {
                         width: 50%;
                     }
                 }
-        
+
                 @include media-breakpoint-up(lg) {
-                    >:nth-child(n+3):nth-child(-n+8) {
+                    > :nth-child(n + 3):nth-child(-n + 8) {
                         width: 33.33333333333333%;
                     }
                 }
@@ -964,18 +964,21 @@ header, section {
             }
         }
     }
-    
+
     &--important {
         #{$block} {
             &__container {
                 --#{$abbr}-accordion-display-bg: var(--#{$abbr}-10);
             }
-            
+
             &__col {
                 &--desc {
-                    padding: calc(map-get($spacers, 3) + var(--#{$abbr}-accordion-border-width)) !important;
+                    padding: calc(
+                        map-get($spacers, 3) +
+                            var(--#{$abbr}-accordion-border-width)
+                    ) !important;
                 }
-                
+
                 &--content {
                     --#{$abbr}-accordion-border-style: solid;
                 }
@@ -983,7 +986,6 @@ header, section {
         }
     }
 }
-
 
 /* NESTABLE PAGE ELEMENTS */
 
@@ -996,27 +998,27 @@ header, section {
 
     display: flex;
     justify-content: center;
-    
+
     &__container {
         @extend .m-0;
-    
-        img, video {
+
+        img,
+        video {
             max-height: 30rem;
         }
-    
     }
-    
+
     &__caption {
         font-family: $elr-font-sans;
         color: var(--#{$abbr}-grey-70);
         max-width: 70%;
-        margin: .4rem 0 0 0;
+        margin: 0.4rem 0 0 0;
     }
-    
+
     &--start {
         justify-content: start;
     }
-    
+
     &--end {
         justify-content: end;
     }
@@ -1029,73 +1031,77 @@ header, section {
 
     &__container {
         @extend .card;
-        
+
         --#{$prefix}card-bg: #{default-color(10)};
-        
+        --#{$prefix}card-border-width: 0;
+
         @include elr-link-reset($only-text: true);
-        
-        transition-duration: .3s;
-        animation-duration: .3s;
+
+        transition-duration: 0.3s;
+        animation-duration: 0.3s;
         transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
         animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
-        transition-property: padding, border-color;
-        
+        transition-property: padding, border-color, background-color;
+
         height: 100%;
-        
-        border: transparent .25rem solid;
+
+        // border: transparent 0.25rem solid;
         padding: 0;
     }
 
     &__media {
-        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+        // padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
         padding-bottom: 0;
         width: 100%;
-        aspect-ratio: #{$elr-aspect-ratio};
-        object-fit: cover;
-        
-        &:has([src=""]) {
+
+        & > * {
+            aspect-ratio: #{$elr-aspect-ratio};
+            object-fit: cover;
+        }
+
+        & > :has([src=""]) {
             display: none;
         }
     }
-    
+
     &__body {
         @extend .card-body;
-    
+
         display: flex;
         flex-direction: column;
     }
-    
+
     &__title {
         @extend .card-title;
     }
-    
+
     &__subtitle {
         @extend .card-subtitle;
-        
+
         font-weight: 400;
         font-family: #{$elr-font-sans-condensed};
-        letter-spacing: .1em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-bottom: 1em;
-        
+
         > * {
             display: flex;
         }
-           
-        div+div::before {
-            content: '\002022';
-            padding: 0 .25em;
+
+        div + div::before {
+            content: "\002022";
+            padding: 0 0.25em;
             color: var(--#{$prefix}card-subtitle-color);
         }
     }
 
     &__icon::before {
-        padding-right: .25em;
+        padding-right: 0.25em;
     }
-    
+
     &__text {
         @extend .card-text;
-        
+
         font-family: var(--#{$prefix}body-font-family);
         font-weight: var(--#{$prefix}body-font-weight);
         font-size: var(--#{$prefix}body-font-size);
@@ -1103,37 +1109,40 @@ header, section {
         // -webkit-box-orient: vertical;
         // -webkit-line-clamp: 7;
         // overflow: hidden;
-        
-        &>:last-child {
+
+        & > :last-child {
             margin-bottom: 0;
         }
     }
-    
+
+    // TODO remove if visual indication for hyperlink is accomplished someway else (eg. icon/symbol)
     &__link-indicator {
         // @extend .link-primary;
         @include elr-link();
-        
+
         display: none;
         margin-top: auto;
         margin-right: auto;
     }
-    
+
     &--link {
         #{$block} {
             &__container {
                 cursor: pointer;
-                
-                &:hover, &:active {
-                    border: var(--#{$abbr}-40) .25rem solid;
+
+                &:hover,
+                &:active {
+                    // border: var(--#{$abbr}-40) 0.25rem solid;
+                    background-color: #{default-color(20)};
                 }
             }
-            
+
             &__link-indicator {
                 display: inline-block;
             }
         }
     }
-    
+
     &--bg-media {
         #{$block} {
             &__container {
@@ -1142,7 +1151,7 @@ header, section {
                 background-color: #{default-color(10)};
                 min-height: 16rem;
             }
-            
+
             &__media {
                 padding: 0;
                 position: absolute;
@@ -1153,26 +1162,30 @@ header, section {
                 left: 0;
                 height: 100%;
                 width: 100%;
-        
+
                 img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
                 }
-                
+
                 &::before {
-                    content: '';
+                    content: "";
                     // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-                    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+                    background-image: linear-gradient(
+                        to right,
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                    );
                     position: absolute;
                     inset: 0;
                 }
-                
+
                 &:has([src=""]) {
                     display: block;
                 }
             }
-            
+
             &__body {
                 z-index: 2;
                 margin: 0;
@@ -1197,43 +1210,47 @@ header, section {
     --bs-accordion-border-width: 0;
     --bs-accordion-border-radius: $elr-border-radius;
     --bs-accordion-border-color: transparent;
-    --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--#{$abbr}-accordion-border-width));
+    --bs-accordion-inner-border-radius: calc(
+        var(--bs-accordion-border-radius) - var(
+                --#{$abbr}-accordion-border-width
+            )
+    );
     --bs-accordion-btn-padding-x: #{map-get($spacers, 3)};
     --bs-accordion-bg: var(--#{$abbr}-10);
     --bs-accordion-active-bg: var(--#{$abbr}-20);
     --bs-accordion-active-color: var(--#{$abbr}-80);
 
     border-radius: var(--bs-accordion-border-radius);
-    
+
     &__item {
         @extend .accordion-item;
     }
-    
+
     &__header {
         @extend .accordion-header;
     }
-    
+
     &__button {
         @extend .accordion-button;
-    
+
         font-weight: 600;
     }
-    
+
     &__collapse {
         @extend .accordion-collapse;
     }
-    
+
     &__body {
         @extend .accordion-body;
-    
+
         p:last-child {
             margin-bottom: 0;
         }
     }
 }
 
-// .hbc-card {    
-    
+// .hbc-card {
+
 //     .hbc-grid ._team &, .hbc-grid ._company-cards & {
 //         .__img {
 //             img {
@@ -1241,15 +1258,15 @@ header, section {
 //                 background-color: var(--#{$abbr}-20);
 //             }
 //         }
-        
+
 //         .__subtitle {
 //             margin-bottom: 0;
 //         }
-        
+
 //         .__text {
 //             display: none;
 //         }
-        
+
 //         .__link-indicator {
 //             display: none;
 //         }
@@ -1263,13 +1280,12 @@ header, section {
 //         .__text {
 //             margin-bottom: 0;
 //         }
-        
+
 //         // .__link-indicator {
 //         //     display: none;
 //         // }
 //     }
 // }
-
 
 /* STANDALONE PAGE ELEMENTS */
 
@@ -1317,7 +1333,7 @@ header, section {
                 @extend .col-sm-12;
                 @extend .col-md-10;
                 @extend .col-lg-8;
-    
+
                 &--text {
                     @extend .m-0;
                 }
@@ -1342,7 +1358,7 @@ header, section {
                     @extend .col-sm-10;
                     @extend .col-xl-8;
                 }
-    
+
                 &--text {
                     @extend .d-none;
                 }
@@ -1356,7 +1372,7 @@ header, section {
                 &--heading {
                     @extend .d-none;
                 }
-        
+
                 &--text {
                     @extend .col-sm-10;
                     @extend .col-xl-8;
@@ -1370,23 +1386,24 @@ header, section {
     $block: &;
 
     @extend .container;
-    
+
     &__item {
         @extend .row;
         @extend .mb-0;
         @extend .py-3;
         @extend .align-content-start;
     }
-    
+
     &__col {
         @extend .col-md;
-        
+
         &--content {
             @extend .px-3;
         }
-        
+
         &--media {
-            img, video {
+            img,
+            video {
                 aspect-ratio: #{$elr-aspect-ratio};
                 display: block;
                 object-fit: cover;
@@ -1394,7 +1411,7 @@ header, section {
             }
         }
     }
-    
+
     &--alternating {
         #{$block} {
             &__item:nth-child(even) {
@@ -1402,7 +1419,7 @@ header, section {
             }
         }
     }
-    
+
     &--reverse {
         #{$block} {
             &__item {
@@ -1410,14 +1427,14 @@ header, section {
             }
         }
     }
-    
+
     &--reverse#{$block}--alternating {
         #{$block} {
             &__item {
                 &:nth-child(even) {
                     flex-direction: row;
                 }
-                
+
                 &:nth-child(odd) {
                     flex-direction: row-reverse;
                 }
@@ -1428,41 +1445,41 @@ header, section {
 
 .#{$abbr}-cta {
     $block: &;
-    
+
     @extend .container;
-    
+
     &__container {
         @include make-row(0);
         @include row-cols(1);
-        
+
         flex-direction: column-reverse;
         background-color: var(--#{$abbr}-10);
-        
-        
+
         @include media-breakpoint-up(sm) {
             @include row-cols(2);
-            
+
             flex-direction: row;
         }
     }
-    
+
     &__col {
         padding: map-get($spacers, 4);
 
         @include media-breakpoint-down(sm) {
-            &+& {
+            & + & {
                 padding-top: 0;
             }
         }
-        
+
         &--content {
-            &>* {
+            & > * {
                 margin-bottom: map-get($spacers, 2);
             }
         }
-        
+
         &--media {
-            img, video {
+            img,
+            video {
                 aspect-ratio: #{$elr-aspect-ratio};
                 object-fit: cover;
                 width: 100%;
@@ -1475,7 +1492,7 @@ header, section {
     $block: &;
 
     @include elr-layout-blog();
-    
+
     font-family: #{$elr-font-serif};
 }
 
@@ -1484,7 +1501,7 @@ header, section {
 /* has to stay with this name and not BEM because of the nessecary javascript from bootstrap */
 .modal {
     padding: map-get($spacers, 2);
-    
+
     .modal-dialog {
         @extend .modal-xl;
         @extend .modal-dialog-scrollable;
@@ -1494,38 +1511,40 @@ header, section {
 
     .modal-header {
         flex-wrap: wrap;
-        
+
         @include media-breakpoint-down(md) {
             display: none;
         }
-        
+
         .btn-close {
-            margin: calc(0.25*var(--bs-modal-header-padding-y)) calc(0.25*var(--bs-modal-header-padding-x));
-            padding: calc(0.25*var(--bs-modal-header-padding-y)) calc(0.25*var(--bs-modal-header-padding-x));
+            margin: calc(0.25 * var(--bs-modal-header-padding-y))
+                calc(0.25 * var(--bs-modal-header-padding-x));
+            padding: calc(0.25 * var(--bs-modal-header-padding-y))
+                calc(0.25 * var(--bs-modal-header-padding-x));
         }
     }
-    
+
     .modal-body {
         @extend .row;
         @extend .gx-4;
         @extend .gy-0;
-        
+
         margin-bottom: 0;
         padding: map-get($spacers, 4);
     }
-    
+
     .modal-footer {
         @extend .d-md-none;
-        
+
         flex-wrap: wrap;
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    
+
     .modal-title {
         margin: 0 auto 0 0;
     }
-    
+
     .modal-controls {
         display: flex;
         flex-direction: row;
@@ -1557,15 +1576,15 @@ header, section {
                 padding: 0;
             }
 
-            &>* {
+            & > * {
                 margin-bottom: 1rem;
             }
 
-            &>p {
-                margin-bottom: .5rem;
+            & > p {
+                margin-bottom: 0.5rem;
             }
 
-            &>:last-child {
+            & > :last-child {
                 margin-bottom: 0;
             }
         }
@@ -1578,13 +1597,13 @@ header, section {
 
 .#{$abbr}-pill-group {
     $block: &;
-    
+
     font-family: $elr-font-sans-condensed;
 
     &__title {
         text-transform: uppercase;
         font-weight: 300;
-        letter-spacing: .05em;
+        letter-spacing: 0.05em;
         font-size: 1rem;
     }
 
@@ -1601,10 +1620,11 @@ header, section {
         margin-bottom: map-get($spacers, 2);
         display: inline-block;
         color: #{default-color(80)};
-        
+
         &--link {
             @include elr-link-reset($only-text: true);
-            &:hover, &:active {
+            &:hover,
+            &:active {
                 background-color: #{default-color(20)};
             }
         }
