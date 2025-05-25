@@ -5,6 +5,7 @@
   - class is applied to `elr-grid__container` instead of `elr-grid`
   - added explicit `--row-cols-1` modifier
   - WHY: this fixes nesting issues with modals containing grids. (neccessary because of MODX implementation and usage -> "layer 3 content")
+- ADDED `elr-grid` modifier: `row-cols-6` & `blog-style` (centered column at 50% width)
 
 2.0.0-alpha.6 [2025-03-24]
 ---

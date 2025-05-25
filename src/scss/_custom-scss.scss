@@ -862,6 +862,24 @@ section {
             // @extend .row-cols-1;
         }
 
+        &--row-cols-6 {
+            @include media-breakpoint-up(xs) {
+                @include row-cols(2);
+            }
+
+            @include media-breakpoint-up(md) {
+                @include row-cols(3);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include row-cols(4);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                @include row-cols(6);
+            }
+        }
+
         &--condensed {
             @include media-breakpoint-up(xs) {
                 @include row-cols(2);
@@ -898,6 +916,20 @@ section {
             @include media-breakpoint-up(lg) {
                 > :nth-child(n + 3):nth-child(-n + 8) {
                     width: 33.33333333333333%;
+                }
+            }
+        }
+
+        &--blog-style {
+            & > * {
+                @include make-col(12);
+
+                @include media-breakpoint-up($elr-layout-blog-breakpoint) {
+                    @include make-col(3);
+
+                    &:nth-child(3n-1) {
+                        @include make-col(6);
+                    }
                 }
             }
         }
