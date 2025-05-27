@@ -10,6 +10,13 @@ $elr-border-radius: none;
 
 $elr-aspect-ratio: "16/10";
 
+$elr-section-gaps: (
+    6: 5rem,
+    7: 7rem,
+    8: 9rem,
+    9: 12rem
+);
+
 $elr-header-width-max: 125rem;
 $elr-header-height-full: 80vh;
 $elr-header-height-medium: 40vh;

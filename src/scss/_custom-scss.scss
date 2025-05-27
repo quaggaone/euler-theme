@@ -78,7 +78,7 @@ body {
 
 header,
 section {
-    @extend .mb-5;
+    margin-bottom: map-get($spacers, 5);
 }
 
 /* CORE PAGE LAYOUT */
@@ -1649,4 +1649,16 @@ section {
 
 .#{$abbr}-table {
     @extend .table;
+}
+
+/* GLOBAL MODIFIERS */
+
+.--gap-bottom {
+    $block: &;
+
+    @each $key, $value in $elr-section-gaps {
+        &-#{$key} {
+            margin-bottom: #{$value};
+        }
+    }
 }

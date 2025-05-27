@@ -1,5 +1,7 @@
 2.0.0-alpha.7 []
 ---
+- CHANGE removed `card` padding around media
+- FIX image aspect-ratio not working on `card` media
 - BREAKING `elr-grid` `row-cols` modifier now to apply on the container (not block root class)
   - class has been renamed (now `elr-grid__container--modifier`)
   - class is applied to `elr-grid__container` instead of `elr-grid`
@@ -7,6 +9,7 @@
   - WHY: this fixes nesting issues with modals containing grids. (neccessary because of MODX implementation and usage -> "layer 3 content")
 - ADDED `elr-grid` modifier: `row-cols-6` & `blog-style` (centered column at 50% width)
 - CHANGE all `headings` to a condensed font-family
+- ADDED section gaps global modifier classes (`margin-bottom`)
 
 2.0.0-alpha.6 [2025-03-24]
 ---
