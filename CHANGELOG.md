@@ -1,4 +1,4 @@
-2.0.0-alpha.8 []
+2.0.0-alpha.8 [2025-05-28]
 ---
 - CHANGE renamed section gap modifier to `section-spacer`
 - ADDED many images' `aspect-ratio` and `object-fit` now adjustable through global modifiers or CSS variables
