@@ -490,8 +490,8 @@ section {
             > :first-child {
                 width: 100%;
                 max-height: 100%;
-                aspect-ratio: #{$elr-aspect-ratio};
-                object-fit: cover;
+                aspect-ratio: var(--#{$abbr}-aspect-ratio);
+                object-fit: var(--#{$abbr}-object-fit);
             }
         }
     }
@@ -1071,8 +1071,8 @@ section {
         width: 100%;
 
         & > * {
-            aspect-ratio: #{$elr-aspect-ratio};
-            object-fit: cover;
+            aspect-ratio: var(--#{$abbr}-aspect-ratio);
+            object-fit: var(--#{$abbr}-object-fit);
         }
 
         & > :has([src=""]) {
@@ -1420,9 +1420,9 @@ section {
         &--media {
             img,
             video {
-                aspect-ratio: #{$elr-aspect-ratio};
+                aspect-ratio: var(--#{$abbr}-aspect-ratio);
                 display: block;
-                object-fit: cover;
+                object-fit: var(--#{$abbr}-object-fit);
                 width: 100%;
             }
         }
@@ -1496,8 +1496,8 @@ section {
         &--media {
             img,
             video {
-                aspect-ratio: #{$elr-aspect-ratio};
-                object-fit: cover;
+                aspect-ratio: var(--#{$abbr}-aspect-ratio);
+                object-fit: var(--#{$abbr}-object-fit);
                 width: 100%;
             }
         }
@@ -1653,12 +1653,32 @@ section {
 
 /* GLOBAL MODIFIERS */
 
-.--gap-bottom {
+.#{$abbr}--section-spacer-bottom {
     $block: &;
 
     @each $key, $value in $elr-section-gaps {
         &-#{$key} {
             margin-bottom: #{$value};
+        }
+    }
+}
+
+.#{$abbr}--aspect-ratio {
+    $block: &;
+
+    @each $key, $value in $elr-aspect-ratios {
+        &-#{$key} {
+            --#{$abbr}-aspect-ratio: #{$value};
+        }
+    }
+}
+
+.#{$abbr}--object-fit {
+    $block: &;
+
+    @each $key, $value in $elr-object-fits {
+        &-#{$key} {
+            --#{$abbr}-object-fit: #{$value};
         }
     }
 }

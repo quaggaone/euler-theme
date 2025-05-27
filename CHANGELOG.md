@@ -1,3 +1,8 @@
+2.0.0-alpha.8 []
+---
+- CHANGE renamed section gap modifier to `section-spacer`
+- ADDED many images' `aspect-ratio` and `object-fit` now adjustable through global modifiers or CSS variables
+
 2.0.0-alpha.7 [2025-05-27]
 ---
 - CHANGE removed `card` padding around media

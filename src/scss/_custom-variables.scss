@@ -9,6 +9,19 @@ $elr-font-serif: "IBM Plex Serif", "Times New Roman";
 $elr-border-radius: none;
 
 $elr-aspect-ratio: "16/10";
+$elr-aspect-ratios: (
+    "1-1": "1/1",
+    "5-4": "5/4",
+    "16-10": "16/10",
+    "16-9": "16/9",
+    "2-1": "2/1",
+    "5-2": "5/2"
+);
+$elr-object-fit: "cover";
+$elr-object-fits: (
+    "cover": "cover",
+    "contain": "contain"
+);
 
 $elr-section-gaps: (
     6: 5rem,

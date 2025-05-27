@@ -41,6 +41,18 @@
     @each $color, $value in $elr-greys {
         --#{$abbr}-#{$color}: #{$value};
     }
+
+    --#{$abbr}-aspect-ratio: #{$elr-aspect-ratio};
+
+    @each $key, $value in $elr-aspect-ratios {
+        --#{$abbr}-aspect-ratio-#{$key}: #{$value};
+    }
+
+    --#{$abbr}-object-fit: #{$elr-object-fit};
+
+    @each $key, $value in $elr-object-fits {
+        --#{$abbr}-object-fit-#{$key}: #{$value};
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -79,7 +91,7 @@
         @each $color, $value in $elr-yellows-dark {
             --#{$abbr}-yellow-#{$color}: #{$value};
         }
-    
+
         @each $color, $value in $elr-greys-dark {
             --#{$abbr}-#{$color}: #{$value};
         }
@@ -143,43 +155,43 @@ body {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--amaranth, .--amaranth {
             @each $color, $value in $elr-amaranths-dark {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--gold, .--gold {
             @each $color, $value in $elr-golds-dark {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--steel, .--steel {
             @each $color, $value in $elr-steels-dark {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--black-violet, .--black-violet {
             @each $color, $value in $elr-black-violets-dark {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--green, .--green {
             @each $color, $value in $elr-greens-dark {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--orange, .--orange {
             @each $color, $value in $elr-oranges-dark {
                 --#{$abbr}-#{$color}: #{$value};
             }
         }
-    
+
         &.--yellow, .--yellow {
             @each $color, $value in $elr-yellows-dark {
                 --#{$abbr}-#{$color}: #{$value};
