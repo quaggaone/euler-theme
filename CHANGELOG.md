@@ -1,4 +1,4 @@
-2.0.0-alpha.7 []
+2.0.0-alpha.7 [2025-05-27]
 ---
 - CHANGE removed `card` padding around media
 - FIX image aspect-ratio not working on `card` media
