@@ -1,6 +1,6 @@
 {
   "name": "euler-theme",
-  "version": "2.0.0-alpha.8",
+  "version": "2.0.0-alpha.9",
   "description": "website theme containing multiple different elements styled with modifiers in BEM format",
   "homepage": "https://github.com/quaggaone/euler-theme",
   "main": "index.js",

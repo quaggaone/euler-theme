@@ -1,4 +1,4 @@
-2.0.0-alpha.9 []
+2.0.0-alpha.9 [2025-05-30]
 ---
 - FIX `elr-card` layout (text spacing and media handling)
 - ADDED `elr-grid` modifier: `row-cols-5`
