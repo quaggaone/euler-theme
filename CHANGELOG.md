@@ -3,6 +3,7 @@
 - FIX `elr-card` layout (text spacing and media handling)
 - ADDED `elr-grid` modifier: `row-cols-5`
 - ADDED `elr-card__logo` class for company logos on cards
+- CHANGE look of links (`elr-link()` mixin)
 
 2.0.0-alpha.8 [2025-05-28]
 ---
