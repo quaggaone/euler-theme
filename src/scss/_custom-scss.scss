@@ -1086,6 +1086,7 @@ section {
 
     &__media {
         // padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+        position: relative;
         padding-bottom: 0;
         width: 100%;
 
@@ -1098,6 +1099,19 @@ section {
         & > [src=""] {
             display: none;
         }
+    }
+
+    &__logo {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: auto;
+        max-width: 60%;
+        max-height: 60%;
+        aspect-ratio: initial;
+        object-fit: contain;
+        padding: map-get($spacers, 1);
+        background-color: var(--elr-always-white);
     }
 
     &__body {
