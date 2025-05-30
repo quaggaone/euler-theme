@@ -1094,9 +1094,11 @@ section {
             aspect-ratio: var(--#{$abbr}-aspect-ratio);
             object-fit: var(--#{$abbr}-object-fit);
             width: 100%; // need to fix the size of one dimension (firefox doesn't respect the aspect-ratio: property otherwise)
+            background-color: var(--#{$abbr}-20);
         }
 
-        & > [src=""] {
+        /* applies if there are elements with an empty src attribute, that are not the logo class */
+        &:has(> [src=""]:not(#{$block}__logo)) {
             display: none;
         }
     }
@@ -1528,6 +1530,8 @@ section {
         }
 
         &--media {
+            padding: 0;
+
             img,
             video {
                 aspect-ratio: var(--#{$abbr}-aspect-ratio);

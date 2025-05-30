@@ -4,6 +4,7 @@
 - ADDED `elr-grid` modifier: `row-cols-5`
 - ADDED `elr-card__logo` class for company logos on cards
 - CHANGE look of links (`elr-link()` mixin)
+- CHANGE removed borders/passing on `elr-cta`
 
 2.0.0-alpha.8 [2025-05-28]
 ---
