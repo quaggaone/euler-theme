@@ -862,6 +862,20 @@ section {
             // @extend .row-cols-1;
         }
 
+        &--row-cols-5 {
+            @include media-breakpoint-up(sm) {
+                @include row-cols(2);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include row-cols(3);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                @include row-cols(5);
+            }
+        }
+
         &--row-cols-6 {
             @include media-breakpoint-up(xs) {
                 @include row-cols(2);
@@ -898,7 +912,12 @@ section {
                     @include media-breakpoint-down(md) {
                         --#{$prefix}card-spacer-y: 0.5rem !important;
                         --#{$prefix}card-spacer-x: 0.5rem !important;
+
                     }
+                }
+
+                &__body > :last-child {
+                    margin-bottom: 0;
                 }
             }
             // @extend .row-cols-xl-4;
