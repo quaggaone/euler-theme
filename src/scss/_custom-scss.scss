@@ -85,8 +85,11 @@ section {
 
 /* yes header, navbar and hero are separated here even though they are all related inside the header. it is mostly to keep the classes short and flat. */
 .#{$abbr}-header {
+    $block: &;
     $navbar: ".#{$abbr}-navbar";
     $hero: ".#{$abbr}-hero";
+
+    --#{$abbr}-header-height: ;
 
     &--no-navbar {
         #{$navbar} {
@@ -101,9 +104,11 @@ section {
     }
 
     &--bg-media {
+        --#{$abbr}-header-height: #{map-get($elr-header-heights, "large")};
+
         display: flex;
         flex-direction: column;
-        height: $elr-header-height-full;
+        height: var(--#{$abbr}-header-height);
         color: var(--#{$abbr}-always-white);
 
         #{$navbar} {
@@ -128,10 +133,6 @@ section {
                 }
 
                 &__nav {
-                    // --#{$prefix}navbar-color: #{shade-color(#ffffff, 10%)};
-                    // --#{$prefix}navbar-hover-color: #{shade-color(#ffffff, 5%)};
-                    // --#{$prefix}navbar-disabled-color: #{shade-color(#ffffff, 12%)};
-                    // --#{$prefix}navbar-active-color: #{shade-color(#ffffff, 2%)};
                     --#{$prefix}navbar-color: #{$navbar-dark-color};
                     --#{$prefix}navbar-hover-color: #{$navbar-dark-hover-color};
                     --#{$prefix}navbar-disabled-color: #{$navbar-dark-disabled-color};
@@ -153,7 +154,7 @@ section {
                     inset: 0;
                     z-index: 10;
                     width: 100%;
-                    height: $elr-header-height-full;
+                    height: var(--#{$abbr}-header-height);
 
                     &::before {
                         content: "";
@@ -175,14 +176,23 @@ section {
                     }
 
                     @include media-breakpoint-down(lg) {
-                        // max-height: $elr-header-height-full;
-
                         &::before {
                             background-image: $elr-header-media-tint-mobile;
                         }
                     }
                 }
             }
+        }
+    }
+
+    &--bg-media-medium {
+        @extend #{$block}--bg-media;
+
+        --#{$abbr}-header-height: #{map-get($elr-header-heights, "medium")};
+
+        #{$hero}__main {
+            padding: map-get($spacers, 3);
+            background-color: var(--#{$abbr}-80);
         }
     }
 
@@ -221,45 +231,10 @@ section {
     }
 
     &--blog {
-        --#{$abbr}-header-height: #{$elr-header-height-medium};
+        --#{$abbr}-header-height: #{map-get($elr-header-heights, "smedium")};
 
         display: flex;
         flex-direction: column;
-        // color: var(--#{$abbr}-always-white);
-
-        // #{$navbar} {
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     background-color: var(--#{$abbr}-white);
-        //     z-index: 50;
-
-        //     @include media-breakpoint-up(lg) {
-        //         background-color: transparent;
-
-        //         &__logo {
-        //             &--white-text {
-        //                 display: block !important;
-        //             }
-
-        //             &--black-text {
-        //                 display: none !important;
-        //             }
-        //         }
-
-        //         &__nav {
-        //             // --#{$prefix}navbar-color: #{shade-color(#ffffff, 10%)};
-        //             // --#{$prefix}navbar-hover-color: #{shade-color(#ffffff, 5%)};
-        //             // --#{$prefix}navbar-disabled-color: #{shade-color(#ffffff, 12%)};
-        //             // --#{$prefix}navbar-active-color: #{shade-color(#ffffff, 2%)};
-        //             --#{$prefix}navbar-color: #{$navbar-dark-color};
-        //             --#{$prefix}navbar-hover-color: #{$navbar-dark-hover-color};
-        //             --#{$prefix}navbar-disabled-color: #{$navbar-dark-disabled-color};
-        //             --#{$prefix}navbar-active-color: #{$navbar-dark-active-color};
-        //         }
-        //     }
-        // }
 
         #{$hero} {
             background-color: transparent;
@@ -300,13 +275,6 @@ section {
                     z-index: 10;
                     width: 100%;
 
-                    // &::before {
-                    //     content: '';
-                    //     background-image: $elr-header-media-tint;
-                    //     position: absolute;
-                    //     inset: 0;
-                    // }
-
                     > * {
                         display: none;
                         height: 100%;
@@ -318,16 +286,14 @@ section {
                     > :first-child {
                         display: block;
                     }
-
-                    @include media-breakpoint-down(lg) {
-                        // max-height: $elr-header-height-full;
-
-                        &::before {
-                            background-image: $elr-header-media-tint-mobile;
-                        }
-                    }
                 }
             }
+        }
+    }
+
+    @each $key, $value in $elr-header-heights {
+        &--height-#{$key} {
+            --#{$abbr}-header-height: #{$value};
         }
     }
 }
@@ -497,9 +463,10 @@ section {
     }
 
     &__main {
-        @extend .my-auto;
+        margin-top: auto;
+        margin-bottom: map-get($spacers, 4);
 
-        & > * {
+        & > *:not(:last-child) {
             margin-bottom: map-get($spacers, 2);
         }
     }

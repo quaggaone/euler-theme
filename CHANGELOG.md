@@ -5,6 +5,8 @@
 - ADDED `elr-card__logo` class for company logos on cards
 - CHANGE look of links (`elr-link()` mixin)
 - CHANGE removed borders/passing on `elr-cta`
+- ADDED `elr-header` height modifier classes
+- ADDED `elr-header` `--bg-media-medium` option (with colored bg on text-box)
 
 2.0.0-alpha.8 [2025-05-28]
 ---

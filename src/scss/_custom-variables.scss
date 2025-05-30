@@ -31,8 +31,12 @@ $elr-section-gaps: (
 );
 
 $elr-header-width-max: 125rem;
-$elr-header-height-full: 80vh;
-$elr-header-height-medium: 40vh;
+$elr-header-heights: (
+    "large": 80vh,
+    "medium": 55vh,
+    "smedium": 40vh,
+    "small": 25vh
+);
 $elr-header-media-tint: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.5),
