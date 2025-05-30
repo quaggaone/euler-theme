@@ -1073,9 +1073,10 @@ section {
         & > * {
             aspect-ratio: var(--#{$abbr}-aspect-ratio);
             object-fit: var(--#{$abbr}-object-fit);
+            width: 100%; // need to fix the size of one dimension (firefox doesn't respect the aspect-ratio: property otherwise)
         }
 
-        & > :has([src=""]) {
+        & > [src=""] {
             display: none;
         }
     }
@@ -1096,9 +1097,9 @@ section {
 
         font-weight: 400;
         font-family: #{$elr-font-sans-condensed};
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
-        margin-bottom: 1em;
+        margin-bottom: 0.3em;
 
         > * {
             display: flex;

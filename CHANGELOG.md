@@ -1,3 +1,7 @@
+2.0.0-alpha.9 []
+---
+- FIX `elr-card` layout (text spacing and media handling)
+
 2.0.0-alpha.8 [2025-05-28]
 ---
 - CHANGE renamed section gap modifier to `section-spacer`
