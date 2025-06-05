@@ -1,7 +1,8 @@
 2.0.0-alpha.10 []
 ---
 - FIXED `elr-header--bg-media-medium` background color in dark mode
-- FIXED make `elr-card` titles smaller for high-column grids
+- FIX make `elr-card` titles smaller for high-column grids
+- FIX `elr-accordion` button `font-width` to support custom formatting
 
 2.0.0-alpha.9 [2025-05-30]
 ---

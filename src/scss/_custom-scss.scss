@@ -808,7 +808,6 @@ section {
         }
 
         &--row-cols-4 {
-
             .#{$abbr}-card__container {
                 --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
                 --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
@@ -881,6 +880,12 @@ section {
         }
 
         &--condensed {
+            .#{$abbr}-card__container {
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.25)};
+            }
+
             @include media-breakpoint-up(xs) {
                 @include row-cols(2);
             }
@@ -1264,11 +1269,7 @@ section {
     --bs-accordion-border-width: 0;
     --bs-accordion-border-radius: #{$elr-border-radius};
     --bs-accordion-border-color: transparent;
-    --bs-accordion-inner-border-radius: calc(
-        var(--bs-accordion-border-radius) - var(
-                --#{$abbr}-accordion-border-width
-            )
-    );
+    --bs-accordion-inner-border-radius: calc(var(--bs-accordion-border-radius) - var(--#{$abbr}-accordion-border-width));
     --bs-accordion-btn-padding-x: #{map-get($spacers, 3)};
     --bs-accordion-bg: var(--#{$abbr}-10);
     --bs-accordion-active-bg: var(--#{$abbr}-20);
@@ -1286,8 +1287,6 @@ section {
 
     &__button {
         @extend .accordion-button;
-
-        font-weight: 600;
     }
 
     &__collapse {
