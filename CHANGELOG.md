@@ -1,4 +1,4 @@
-2.0.0-alpha.10 []
+2.0.0-alpha.10 [2025-06-05]
 ---
 - FIXED `elr-header--bg-media-medium` background color in dark mode
 - FIX make `elr-card` titles smaller for high-column grids
