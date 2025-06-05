@@ -808,6 +808,13 @@ section {
         }
 
         &--row-cols-4 {
+
+            .#{$abbr}-card__container {
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.25)};
+            }
+
             @include media-breakpoint-up(xs) {
                 @include row-cols(1);
             }
@@ -830,6 +837,12 @@ section {
         }
 
         &--row-cols-5 {
+            .#{$abbr}-card__container {
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.25)};
+            }
+
             @include media-breakpoint-up(sm) {
                 @include row-cols(2);
             }
@@ -844,6 +857,12 @@ section {
         }
 
         &--row-cols-6 {
+            .#{$abbr}-card__container {
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.5)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.5)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.5)};
+            }
+
             @include media-breakpoint-up(xs) {
                 @include row-cols(2);
             }
@@ -1037,6 +1056,10 @@ section {
         --#{$prefix}card-bg: #{default-color(10)};
         --#{$prefix}card-border-width: 0;
 
+        --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2))};
+        --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3))};
+        --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4))};
+
         @include elr-link-reset($only-text: true);
 
         transition-duration: 0.3s;
@@ -1092,6 +1115,18 @@ section {
 
     &__title {
         @extend .card-title;
+
+        @at-root h2#{&} {
+            font-size: var(--#{$abbr}-card-title-h2-size);
+        }
+
+        @at-root h3#{&} {
+            font-size: var(--#{$abbr}-card-title-h3-size);
+        }
+
+        @at-root h4#{&} {
+            font-size: var(--#{$abbr}-card-title-h4-size);
+        }
     }
 
     &__subtitle {
