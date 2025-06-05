@@ -40,6 +40,7 @@
 
     @each $color, $value in $elr-greys {
         --#{$abbr}-#{$color}: #{$value};
+        --#{$abbr}-always-#{$color}: #{$value};
     }
 
     --#{$abbr}-aspect-ratio: #{$elr-aspect-ratio};
@@ -102,48 +103,56 @@ body {
     &.--grey, .--grey {
         @each $color, $value in $elr-greys {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--amaranth, .--amaranth {
         @each $color, $value in $elr-amaranths {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--gold, .--gold {
         @each $color, $value in $elr-golds {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--steel, .--steel {
         @each $color, $value in $elr-steels {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--black-violet, .--black-violet {
         @each $color, $value in $elr-black-violets {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--green, .--green {
         @each $color, $value in $elr-greens {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--orange, .--orange {
         @each $color, $value in $elr-oranges {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 
     &.--yellow, .--yellow {
         @each $color, $value in $elr-yellows {
             --#{$abbr}-#{$color}: #{$value};
+            --#{$abbr}-always-#{$color}: #{$value};
         }
     }
 }

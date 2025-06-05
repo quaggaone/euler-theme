@@ -192,7 +192,7 @@ section {
 
         #{$hero}__main {
             padding: map-get($spacers, 3);
-            background-color: var(--#{$abbr}-80);
+            background-color: var(--#{$abbr}-always-80);
         }
     }
 
@@ -779,7 +779,7 @@ section {
         }
 
         &--row-cols-2 {
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up(sm) {
                 @include row-cols(1);
             }
 
