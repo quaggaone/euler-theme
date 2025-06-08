@@ -1,10 +1,14 @@
+2.0.0-alpha.11 []
+---
+- ADD global `elr-subtitle` mixin
+- ADD title class for team-member pages
+- FIX blog author reference is now a link
+
 2.0.0-alpha.10 [2025-06-05]
 ---
 - FIXED `elr-header--bg-media-medium` background color in dark mode
 - FIX make `elr-card` titles smaller for high-column grids
 - FIX `elr-accordion` button `font-width` to support custom formatting
-- ADD global `elr-subtitle` mixin
-- ADD title class for team-member pages
 
 2.0.0-alpha.9 [2025-05-30]
 ---
