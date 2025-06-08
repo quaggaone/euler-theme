@@ -49,6 +49,9 @@
                         <a class="{{ euler.abbr }}-navbar__nav-link" href="team/">Team</a>
                     </li>
                     <li class="{{ euler.abbr }}-navbar__nav-item">
+                        <a class="{{ euler.abbr }}-navbar__nav-link" href="team-member/">Team Member</a>
+                    </li>
+                    <li class="{{ euler.abbr }}-navbar__nav-item">
                         <a class="{{ euler.abbr }}-navbar__nav-link" href="value-cards/">Value Cards</a>
                     </li>
                     <li class="{{ euler.abbr }}-navbar__nav-item">
@@ -64,7 +67,7 @@
             </div>
         </div>
     </nav>
-    <div class="{{ euler.abbr }}-hero">    
+    <div class="{{ euler.abbr }}-hero">
         <div class="{{ euler.abbr }}-hero__container">
             <div class="{{ euler.abbr }}-hero__col {{ euler.abbr }}-hero__col--content">
                 {% if elrTemplateType == "blog" %}
@@ -134,6 +137,9 @@
                 </div>
                 <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--main">
                     <h2>This is the Long Title field.</h2>
+                    {% if elrTemplate == "teammember" %}
+                        <p class="{{ euler.abbr }}-meta__title">This is the persons title</p>
+                    {% endif %}
                     <h3>Subtitle text here for a good introduction.</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo officia eius sunt id temporibus fugiat, eos praesentium tempore ipsum molestiae eum. Nemo ad totam nostrum iste cum, pariatur ea.</p>
                     {% if elrTemplate == "partner" %}

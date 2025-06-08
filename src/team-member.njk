@@ -1,0 +1,19 @@
+---
+layout: "base.njk"
+title: "Blog"
+elrTemplateType: "blog"
+elrTemplate: "teammember"
+elrHeaderModifier: "elr-header--blog"
+elrBodyModifier: ""
+---
+
+{% set elrBlogTextContent %}
+<h2>Hello World Zine!</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus. Quam qui eos velit, itaque ipsam omnis sint veritatis nisi dolore illo exercitationem dolores necessitatibus laborum tempore nostrum veniam delectus?
+{% endset %}
+{% include "partials/elr-blog-text.njk" %}
+
+{% set elrBlogTextContent %}
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus. Quam qui eos velit, itaque ipsam omnis sint veritatis nisi dolore illo exercitationem dolores necessitatibus laborum tempore nostrum veniam delectus?
+{% endset %}
+{% include "partials/elr-blog-text.njk" %}
