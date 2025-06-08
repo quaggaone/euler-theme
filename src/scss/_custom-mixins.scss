@@ -1,3 +1,5 @@
+// STYLE MIXINS
+
 @function default-color($value, $color: "grey") {
     $color-string: "var(--#{$abbr}-" + #{$value} + ", var(--#{$abbr}-" + #{$color} + "-" + #{$value} + "))";
     @return $color-string;
@@ -33,6 +35,14 @@
         color: var(--#{$abbr}-60);
         text-decoration-color: var(--#{$abbr}-60);
     }
+}
+
+@mixin elr-subtitle() {
+    font-weight: 400;
+    font-family: #{$elr-font-sans-condensed};
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.3em;
 }
 
 

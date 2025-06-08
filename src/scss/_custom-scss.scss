@@ -567,6 +567,10 @@ section {
         }
     }
 
+    &__title {
+        @include elr-subtitle();
+    }
+
     &__info {
         margin-top: auto;
         display: flex;
@@ -1137,11 +1141,7 @@ section {
     &__subtitle {
         @extend .card-subtitle;
 
-        font-weight: 400;
-        font-family: #{$elr-font-sans-condensed};
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        margin-bottom: 0.3em;
+        @include elr-subtitle();
 
         > * {
             display: flex;
@@ -1174,7 +1174,6 @@ section {
         }
     }
 
-    // TODO remove if visual indication for hyperlink is accomplished someway else (eg. icon/symbol)
     &__link-indicator {
         // @extend .link-primary;
         @include elr-link();
