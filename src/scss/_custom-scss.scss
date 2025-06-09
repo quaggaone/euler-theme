@@ -815,9 +815,10 @@ section {
 
         &--row-cols-4 {
             .#{$abbr}-card__container {
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.25)};
+                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.9375)};
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.9375)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.9375)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.9375)};
             }
 
             @include media-breakpoint-up(xs) {
@@ -843,9 +844,10 @@ section {
 
         &--row-cols-5 {
             .#{$abbr}-card__container {
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.25)};
+                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.9375)};
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.9375)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.9375)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.9375)};
             }
 
             @include media-breakpoint-up(sm) {
@@ -863,9 +865,10 @@ section {
 
         &--row-cols-6 {
             .#{$abbr}-card__container {
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.5)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.5)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.5)};
+                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.875)};
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.875)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.875)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.875)};
             }
 
             @include media-breakpoint-up(xs) {
@@ -887,9 +890,10 @@ section {
 
         &--condensed {
             .#{$abbr}-card__container {
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) - 0.25)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) - 0.25)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) - 0.25)};
+                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.9375)};
+                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.9375)};
+                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.9375)};
+                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.9375)};
             }
 
             @include media-breakpoint-up(xs) {
@@ -1098,8 +1102,8 @@ section {
             background-color: var(--#{$abbr}-20);
         }
 
-        /* applies if there are elements with an empty src attribute, that are not the logo class */
         &:has(> [src=""]:not(#{$block}__logo)) {
+            /* applies if there are elements with an empty src attribute, that are not the logo class */
             display: none;
         }
     }
@@ -1109,8 +1113,8 @@ section {
         left: 0;
         bottom: 0;
         width: auto;
-        max-width: 60%;
-        max-height: 60%;
+        max-width: 40%;
+        max-height: 40%;
         aspect-ratio: initial;
         object-fit: contain;
         padding: map-get($spacers, 1);
