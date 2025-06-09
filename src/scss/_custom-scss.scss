@@ -1126,22 +1126,22 @@ section {
 
         display: flex;
         flex-direction: column;
+
+        h2 {
+            font-size: var(--#{$abbr}-card-title-h2-size);
+        }
+
+        h3 {
+            font-size: var(--#{$abbr}-card-title-h3-size);
+        }
+
+        h4 {
+            font-size: var(--#{$abbr}-card-title-h4-size);
+        }
     }
 
     &__title {
         @extend .card-title;
-
-        @at-root h2#{&} {
-            font-size: var(--#{$abbr}-card-title-h2-size);
-        }
-
-        @at-root h3#{&} {
-            font-size: var(--#{$abbr}-card-title-h3-size);
-        }
-
-        @at-root h4#{&} {
-            font-size: var(--#{$abbr}-card-title-h4-size);
-        }
     }
 
     &__subtitle {
