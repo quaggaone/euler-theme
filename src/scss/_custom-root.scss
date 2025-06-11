@@ -8,34 +8,42 @@
 
     @each $color, $value in $elr-greys {
         --#{$abbr}-grey-#{$color}: #{$value};
+        --#{$abbr}-always-grey-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-amaranths {
         --#{$abbr}-amaranth-#{$color}: #{$value};
+        --#{$abbr}-always-amaranth-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-golds {
         --#{$abbr}-gold-#{$color}: #{$value};
+        --#{$abbr}-always-gold-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-steels {
         --#{$abbr}-steel-#{$color}: #{$value};
+        --#{$abbr}-always-steel-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-black-violets {
         --#{$abbr}-black-violet-#{$color}: #{$value};
+        --#{$abbr}-always-black-violet-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-greens {
         --#{$abbr}-green-#{$color}: #{$value};
+        --#{$abbr}-always-green-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-oranges {
         --#{$abbr}-orange-#{$color}: #{$value};
+        --#{$abbr}-always-orange-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-yellows {
         --#{$abbr}-yellow-#{$color}: #{$value};
+        --#{$abbr}-always-yellow-#{$color}: #{$value};
     }
 
     @each $color, $value in $elr-greys {
