@@ -61,6 +61,7 @@ body {
 
     text-transform: uppercase;
     letter-spacing: 0.2ch;
+    align-self: center;
 
     &_link {
         @extend .btn-link;
@@ -574,7 +575,17 @@ section {
     &__info {
         margin-top: auto;
         display: flex;
-        align-items: baseline;
+    }
+
+    &__info-end {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        >:nth-child(n + 2) {
+            content: "";
+            margin-left: 0.25em;
+        }
     }
 
     &__author {
@@ -596,7 +607,6 @@ section {
     }
 
     &__published {
-        margin-left: auto;
         font-family: $elr-font-sans-condensed;
         font-weight: 200;
 

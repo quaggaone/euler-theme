@@ -8,6 +8,7 @@
 - FIX removed `card` media background (option to readd on `grid`)
 - ADD persistent (`always`) colors to all specific color CSS variables
 - ADD new transparent look to `card`, `accordion` and `cta` (with option to specify on parent layout block and reoverride on specific block)
+- ADD `meta__info-start` and `meta__info-end` classes for more general meta head left/right alignment (author info, date, linkedin, contact button)
 
 2.0.0-alpha.10 [2025-06-05]
 ---
