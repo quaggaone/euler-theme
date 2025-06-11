@@ -1,4 +1,4 @@
-2.0.0-alpha.11 []
+2.0.0-alpha.11 [2025-06-11]
 ---
 - ADD global `elr-subtitle` mixin
 - ADD title class for team-member pages
