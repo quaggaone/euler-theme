@@ -957,6 +957,12 @@ section {
 
     &__cta {
     }
+
+    &--media-bg {
+        .#{$abbr}-card__container {
+            --#{$abbr}-card-media-bg: var(--#{$abbr}-20);
+        }
+    }
 }
 
 .#{$abbr}-feature-box {
@@ -1074,6 +1080,7 @@ section {
         --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2))};
         --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3))};
         --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4))};
+        --#{$abbr}-card-media-bg: transparent;
 
         @include elr-link-reset($only-text: true);
 
@@ -1099,7 +1106,7 @@ section {
             aspect-ratio: var(--#{$abbr}-aspect-ratio);
             object-fit: var(--#{$abbr}-object-fit);
             width: 100%; // need to fix the size of one dimension (firefox doesn't respect the aspect-ratio: property otherwise)
-            background-color: var(--#{$abbr}-20);
+            background-color: var(--#{$abbr}-card-media-bg);
         }
 
         &:has(> [src=""]:not(#{$block}__logo)) {

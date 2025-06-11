@@ -5,6 +5,7 @@
 - FIX blog author reference is now a link
 - FIX `font-size` on cards for certain column layouts
 - FIX `heading` font resizing on cards now for all headings (fix for RTE inserted heading without proper class)
+- FIX removed `card` media background (option to readd on `grid`)
 
 2.0.0-alpha.10 [2025-06-05]
 ---
