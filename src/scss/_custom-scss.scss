@@ -1613,6 +1613,11 @@ section {
             }
         }
 
+        & > :last-child {
+            margin-bottom: 0;
+        }
+
+
         &--content {
             & > * {
                 margin-bottom: map-get($spacers, 2);
