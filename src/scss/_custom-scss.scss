@@ -766,6 +766,24 @@ section {
 
 /* LAYOUT ELEMENTS */
 
+@mixin elr-global-layout-style-modifiers {
+    &--transparent {
+        @extend %parent-override-elr-card--transparent;
+
+        .#{$abbr}-accordion {
+            @extend %parent-override-elr-accordion--transparent;
+        }
+    }
+
+    &--default {
+        @extend %parent-override-elr-card--default;
+
+        .#{$abbr}-accordion {
+            @extend %parent-override-elr-accordion--default;
+        }
+    }
+}
+
 .#{$abbr}-grid {
     $block: &;
 
@@ -963,6 +981,8 @@ section {
             --#{$abbr}-card-media-bg: var(--#{$abbr}-20);
         }
     }
+
+    @include elr-global-layout-style-modifiers;
 }
 
 .#{$abbr}-feature-box {
@@ -1027,6 +1047,8 @@ section {
             }
         }
     }
+
+    @include elr-global-layout-style-modifiers;
 }
 
 /* NESTABLE PAGE ELEMENTS */
@@ -1270,6 +1292,33 @@ section {
             }
         }
     }
+
+    // this "double declaration" (once at-root with a sass placeholder (%) and once regular as a class) is necessary to support easy overrides by parent blocks and then reoverrides by the specific element.
+    // both the parent block definition and the actual block have a two class specifity (0-2-0) therefore the more important definition (actual block) needs to be lower in the cascade to take precedent.
+    @at-root %parent-override-elr-card--transparent {
+        #{$block}__container {
+            --#{$prefix}card-bg: transparent;
+        }
+    }
+
+    @at-root %parent-override-elr-card--default {
+        #{$block}__container {
+            --#{$prefix}card-bg: #{default-color(10)};
+        }
+    }
+
+    // the double parent selector is necessary to match the specificity of the parent blocks override (see comment above).
+    &#{&}--transparent {
+        #{$block}__container {
+            --#{$prefix}card-bg: transparent;
+        }
+    }
+
+    &#{&}--default {
+        #{$block}__container {
+            --#{$prefix}card-bg: #{default-color(10)};
+        }
+    }
 }
 
 .#{$abbr}-accordion {
@@ -1311,6 +1360,22 @@ section {
         p:last-child {
             margin-bottom: 0;
         }
+    }
+
+    @at-root %parent-override-elr-accordion--transparent {
+        --bs-accordion-bg: transparent;
+    }
+
+    @at-root %parent-override-elr-accordion--default {
+        --bs-accordion-bg: #{default-color(10)};
+    }
+
+    &#{&}--transparent {
+        --bs-accordion-bg: transparent;
+    }
+
+    &#{&}--default {
+        --bs-accordion-bg: #{default-color(10)};
     }
 }
 
@@ -1513,12 +1578,14 @@ section {
 
     @extend .container;
 
+    --#{$abbr}-cta-bg: var(--#{$abbr}-10);
+
     &__container {
         @include make-row(0);
         @include row-cols(1);
 
         flex-direction: column-reverse;
-        background-color: var(--#{$abbr}-10);
+        background-color: var(--#{$abbr}-cta-bg);
 
         @include media-breakpoint-up(sm) {
             @include row-cols(2);
@@ -1552,6 +1619,14 @@ section {
                 width: 100%;
             }
         }
+    }
+
+    &--transparent {
+        --#{$abbr}-cta-bg: transparent;
+    }
+
+    &--default {
+        --#{$abbr}-cta-bg: var(--#{$abbr}-10);
     }
 }
 

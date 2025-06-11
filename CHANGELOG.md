@@ -7,6 +7,7 @@
 - FIX `heading` font resizing on cards now for all headings (fix for RTE inserted heading without proper class)
 - FIX removed `card` media background (option to readd on `grid`)
 - ADD persistent (`always`) colors to all specific color CSS variables
+- ADD new transparent look to `card`, `accordion` and `cta` (with option to specify on parent layout block and reoverride on specific block)
 
 2.0.0-alpha.10 [2025-06-05]
 ---
