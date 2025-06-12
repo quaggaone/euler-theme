@@ -1,3 +1,7 @@
+2.0.0-alpha.12 []
+---
+- FIX make global style modifier universal (not tied to specific layout block)
+
 2.0.0-alpha.11 [2025-06-11]
 ---
 - ADD global `elr-subtitle` mixin

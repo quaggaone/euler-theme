@@ -776,24 +776,6 @@ section {
 
 /* LAYOUT ELEMENTS */
 
-@mixin elr-global-layout-style-modifiers {
-    &--transparent {
-        @extend %parent-override-elr-card--transparent;
-
-        .#{$abbr}-accordion {
-            @extend %parent-override-elr-accordion--transparent;
-        }
-    }
-
-    &--default {
-        @extend %parent-override-elr-card--default;
-
-        .#{$abbr}-accordion {
-            @extend %parent-override-elr-accordion--default;
-        }
-    }
-}
-
 .#{$abbr}-grid {
     $block: &;
 
@@ -991,8 +973,6 @@ section {
             --#{$abbr}-card-media-bg: var(--#{$abbr}-20);
         }
     }
-
-    @include elr-global-layout-style-modifiers;
 }
 
 .#{$abbr}-feature-box {
@@ -1057,8 +1037,6 @@ section {
             }
         }
     }
-
-    @include elr-global-layout-style-modifiers;
 }
 
 /* NESTABLE PAGE ELEMENTS */
@@ -1820,6 +1798,25 @@ section {
     @each $key, $value in $elr-object-fits {
         &-#{$key} {
             --#{$abbr}-object-fit: #{$value};
+        }
+    }
+}
+
+/* GLOBAL MODIFIERS for NESTED BLOCKS */
+.#{$abbr} {
+    &--transparent {
+        @extend %parent-override-elr-card--transparent;
+
+        .#{$abbr}-accordion {
+            @extend %parent-override-elr-accordion--transparent;
+        }
+    }
+
+    &--default {
+        @extend %parent-override-elr-card--default;
+
+        .#{$abbr}-accordion {
+            @extend %parent-override-elr-accordion--default;
         }
     }
 }
