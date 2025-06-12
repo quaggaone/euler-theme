@@ -1,4 +1,4 @@
-2.0.0-alpha.12 []
+2.0.0-alpha.12 [2025-06-13]
 ---
 - FIX make global style modifier universal (not tied to specific layout block)
 
