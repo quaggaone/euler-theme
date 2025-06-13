@@ -825,10 +825,10 @@ section {
 
         &--row-cols-4 {
             .#{$abbr}-card__container {
-                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.9375)};
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.9375)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.9375)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.9375)};
+                @include rfs($font-size-base * 0.9375, --#{$prefix}body-font-size);
+                @include rfs(map-get($font-sizes, 2) * 0.9375, --#{$abbr}-card-title-h2-size);
+                @include rfs(map-get($font-sizes, 3) * 0.9375, --#{$abbr}-card-title-h3-size);
+                @include rfs(map-get($font-sizes, 4) * 0.9375, --#{$abbr}-card-title-h4-size);
             }
 
             @include media-breakpoint-up(xs) {
@@ -854,10 +854,10 @@ section {
 
         &--row-cols-5 {
             .#{$abbr}-card__container {
-                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.9375)};
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.9375)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.9375)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.9375)};
+                @include rfs($font-size-base * 0.9375, --#{$prefix}body-font-size);
+                @include rfs(map-get($font-sizes, 2) * 0.9375, --#{$abbr}-card-title-h2-size);
+                @include rfs(map-get($font-sizes, 3) * 0.9375, --#{$abbr}-card-title-h3-size);
+                @include rfs(map-get($font-sizes, 4) * 0.9375, --#{$abbr}-card-title-h4-size);
             }
 
             @include media-breakpoint-up(sm) {
@@ -875,10 +875,10 @@ section {
 
         &--row-cols-6 {
             .#{$abbr}-card__container {
-                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.875)};
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.875)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.875)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.875)};
+                @include rfs($font-size-base * 0.875, --#{$prefix}body-font-size);
+                @include rfs(map-get($font-sizes, 2) * 0.875, --#{$abbr}-card-title-h2-size);
+                @include rfs(map-get($font-sizes, 3) * 0.875, --#{$abbr}-card-title-h3-size);
+                @include rfs(map-get($font-sizes, 4) * 0.875, --#{$abbr}-card-title-h4-size);
             }
 
             @include media-breakpoint-up(xs) {
@@ -900,10 +900,10 @@ section {
 
         &--condensed {
             .#{$abbr}-card__container {
-                --#{$prefix}body-font-size: #{rfs-fluid-value($font-size-base * 0.9375)};
-                --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2) * 0.9375)};
-                --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3) * 0.9375)};
-                --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4) * 0.9375)};
+                @include rfs($font-size-base * 0.9375, --#{$prefix}body-font-size);
+                @include rfs(map-get($font-sizes, 2) * 0.9375, --#{$abbr}-card-title-h2-size);
+                @include rfs(map-get($font-sizes, 3) * 0.9375, --#{$abbr}-card-title-h3-size);
+                @include rfs(map-get($font-sizes, 4) * 0.9375, --#{$abbr}-card-title-h4-size);
             }
 
             @include media-breakpoint-up(xs) {
@@ -1087,9 +1087,10 @@ section {
         --#{$prefix}card-bg: #{default-color(10)};
         --#{$prefix}card-border-width: 0;
 
-        --#{$abbr}-card-title-h2-size: #{rfs-fluid-value(map-get($font-sizes, 2))};
-        --#{$abbr}-card-title-h3-size: #{rfs-fluid-value(map-get($font-sizes, 3))};
-        --#{$abbr}-card-title-h4-size: #{rfs-fluid-value(map-get($font-sizes, 4))};
+        @include rfs(map-get($font-sizes, 2), --#{$abbr}-card-title-h2-size);
+        @include rfs(map-get($font-sizes, 3), --#{$abbr}-card-title-h3-size);
+        @include rfs(map-get($font-sizes, 4), --#{$abbr}-card-title-h4-size);
+
         --#{$abbr}-card-media-bg: transparent;
 
         @include elr-link-reset($only-text: true);

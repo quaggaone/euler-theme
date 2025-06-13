@@ -1,3 +1,7 @@
+2.0.0-alpha.13 []
+---
+- FIX change rfs implementation on card fonts for upper resizing limit (non-fluid rfs value)
+
 2.0.0-alpha.12 [2025-06-13]
 ---
 - FIX make global style modifier universal (not tied to specific layout block)
