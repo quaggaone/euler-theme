@@ -1,4 +1,4 @@
-2.0.0-alpha.13 []
+2.0.0-alpha.13 [2025-06-13]
 ---
 - FIX change rfs implementation on card fonts for upper resizing limit (non-fluid rfs value)
 
