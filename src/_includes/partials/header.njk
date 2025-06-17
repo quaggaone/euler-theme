@@ -2,8 +2,8 @@
     <nav class="{{ euler.abbr }}-navbar">
         <div class="{{ euler.abbr }}-navbar__container">
             <a href="" class="{{ euler.abbr }}-navbar__brand">
-                <img class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--black-text" src="{{ euler.assetsDir }}brand/euler-logo-inline-black.png" alt="logo">
-                <img class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--white-text" src="{{ euler.assetsDir }}brand/euler-logo-inline-white.png" alt="logo">
+                <img srcset="" sizes="40vw" class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--black-text" src="{{ euler.assetsDir }}brand/euler-logo-inline-black.png" alt="logo">
+                <img srcset="" sizes="40vw" class="{{ euler.abbr }}-navbar__logo {{ euler.abbr }}-navbar__logo--white-text" src="{{ euler.assetsDir }}brand/euler-logo-inline-white.png" alt="logo">
             </a>
             <button class="{{ euler.abbr }}-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#elr-navbar__collapse" aria-controls="elr-navbar__collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -100,7 +100,7 @@
                 {% endif %}
             </div>
             <div class="{{ euler.abbr }}-hero__col {{ euler.abbr }}-hero__col--media">
-                <img src="{{ euler.assetsDir }}brand/open-graph.png" alt="">
+                <img srcset="" sizes="130vw" src="{{ euler.assetsDir }}brand/open-graph.png" alt="">
             </div>
         </div>
     </div>
@@ -126,12 +126,12 @@
                 <div class="{{ euler.abbr }}-meta__col {{ euler.abbr }}-meta__col--side-start">
                     {% if elrTemplate == "book" %}
                         <div class="{{ euler.abbr }}-meta__media">
-                            <img src="{{ euler.assetsDir }}brand/open-graph-vertical.png" alt="">
+                            <img srcset="" sizes="(min-width: 992px) 25vw, 50vw" src="{{ euler.assetsDir }}brand/open-graph-vertical.png" alt="">
                         </div>
                     {% endif %}
                     {% if elrTemplate == "partner" %}
                         <div class="{{ euler.abbr }}-meta__media">
-                            <img src="{{ euler.assetsDir }}brand/euler-logo-inline-black.png" alt="">
+                            <img srcset="" sizes="(min-width: 992px) 25vw, 50vw" src="{{ euler.assetsDir }}brand/euler-logo-inline-black.png" alt="">
                         </div>
                     {% endif %}
                 </div>
@@ -173,7 +173,7 @@
                     <div class="{{ euler.abbr }}-meta__info">
                         <div class="{{ euler.abbr }}-meta__info-start">
                             <a href="team-member/" class="{{ euler.abbr }}-meta__author">
-                                <img src="{{ euler.assetsDir }}brand/open-graph.png" alt="">
+                                <img srcset="" sizes="3.5rem" src="{{ euler.assetsDir }}brand/open-graph.png" alt="">
                                 <span>Bernd das Brot</span>
                             </a>
                         </div>
