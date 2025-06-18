@@ -1,0 +1,60 @@
+---
+layout: "base.njk"
+title: "Contact"
+elrTemplateType: ""
+elrTemplate: ""
+elrHeaderModifier: ""
+elrBodyModifier: ""
+---
+
+<p class="container" style="max-width: 80ch">
+    [[!+fi.validation_error_message:notempty=`[[!+fi.validation_error_message]]`]]
+    [[!+fi.successMessage]]
+</p>
+<form action="[[~[[*id]]]]" id="form-contact" method="post" class="container" style="max-width: 80ch">
+	<input type="hidden" name="workemail" value="[[!+fi.workemail]]">
+	<div class="row mb-0">
+		<div class="form-group col-md-6">
+			<input class="form-control" type="text" id="first-name" name="first-name" placeholder="" value="[[!+fi.first-name]]">
+			<label class="form-label" for="first-name">Vorname*<span class="invalid-feedback d-block">[[!+fi.error.first-name]]</span></label>
+		</div>
+		<div class="form-group col-md-6">
+			<input class="form-control" type="text" id="last-name" name="last-name" placeholder="" value="[[!+fi.last-name]]">
+			<label class="form-label" for="last-name">Nachname*<span class="invalid-feedback d-block">[[!+fi.error.last-name]]</span></label>
+		</div>
+	</div>
+	<div class="row mb-0">
+	    <div class="form-group col-md-6">
+    		<input class="form-control" type="email" id="email" name="email" placeholder="" value="[[!+fi.email]]">
+    		<label class="form-label" for="email">eMail*<span class="invalid-feedback d-block">[[!+fi.error.email]]</span></label>
+	    </div>
+	    <div class="form-group col-md-6">
+    		<input class="form-control" type="text" id="company" name="company" placeholder="" value="[[!+fi.email]]">
+    		<label class="form-label" for="email">Firma/Idee*<span class="invalid-feedback d-block">[[!+fi.error.email]]</span></label>
+	    </div>
+	</div>
+	<div class="form-group">
+		<input class="form-control" type="text" id="subject" name="subject" placeholder="" value="[[!+fi.subject]]">
+		<label class="form-label" for="subject">Betreff*<span class="invalid-feedback d-block">[[!+fi.error.subject]]</span></label>
+	</div>
+	<div class="form-group">
+		<textarea class="form-control" type="text" id="message" name="message" rows="4" placeholder="">[[!+fi.message]]</textarea>
+		<label class="form-label" for="message">Nachricht*<span class="invalid-feedback d-block">[[!+fi.error.message]]</span></label>
+	</div>
+	<small class="form-text">Bedingungen:</small>
+	<div class="form-check">
+		<input class="form-check-input terms" type="checkbox" id="terms-storage-acknowledged" name="terms-storage-acknowledged" value="true">
+		<label class="form-check-label terms" for="terms-storage-acknowledged">Ich bin mit der Speicherung aller für das Absenden des Formulars erforderlichen Daten einverstanden.* <span class="invalid-feedback d-block">[[!+fi.error.terms-storage]]</span></label>
+	</div>
+	<div class="form-group">
+		<small class="form-text">* Dieses Feld muss ausgefüllt werden.</small>
+	</div>
+	<div class="form-group">
+        [[!recaptchav2_render]]
+        [[!+fi.error.recaptchav2_error]]
+    </div>
+	<br>
+	<button type="submit" name="submit" class="btn btn-accent">
+        Absenden
+    </button>
+</form>

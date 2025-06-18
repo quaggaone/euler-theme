@@ -1,6 +1,7 @@
 2.0.0-alpha.14 []
 ---
 - ADD `sizes` attribute for responsive sizes on `img` tags
+- ADD contact form
 
 2.0.0-alpha.13 [2025-06-13]
 ---
