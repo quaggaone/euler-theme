@@ -1,4 +1,4 @@
-2.0.0-alpha.14 []
+2.0.0-alpha.14 [2025-06-30]
 ---
 - ADD `sizes` attribute for responsive sizes on `img` tags
 - ADD contact form
