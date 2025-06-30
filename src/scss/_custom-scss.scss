@@ -575,18 +575,37 @@ section {
     &__info {
         margin-top: auto;
         display: flex;
-    }
 
-    &__info-end {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
+        &-start {
+            a:has([class^="bi-"]) {
+                @include elr-link-reset();
 
-        >:nth-child(n + 2) {
-            content: "";
-            margin-left: 0.25em;
+                display: flex;
+                flex-direction: row;
+                font-size: 1.5rem;
+                text-decoration: none;
+                margin-right: 0.5em;
+                color: var(--#{$prefix}font-color);
+                color: var(--#{$abbr}-50);
+
+                &:hover {
+                    color: var(--#{$abbr}-40);
+                }
+            }
+        }
+
+        &-end {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+
+            >:nth-child(n + 2) {
+                content: "";
+                margin-left: 0.25em;
+            }
         }
     }
+
 
     &__author {
         @include elr-link-reset();

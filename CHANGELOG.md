@@ -1,6 +1,7 @@
 2.0.0-alpha.16 []
 ---
 - FIX further contact form fixes
+- ADD icon formatting in `meta__info`
 
 2.0.0-alpha.15 [2025-06-30]
 ---
