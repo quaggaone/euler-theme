@@ -1,4 +1,4 @@
-2.0.0-alpha.15 []
+2.0.0-alpha.15 [2025-06-30]
 ---
 - FIX contact form company field
 
