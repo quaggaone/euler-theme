@@ -1,3 +1,7 @@
+2.0.0-alpha.15 []
+---
+- FIX contact form company field
+
 2.0.0-alpha.14 [2025-06-30]
 ---
 - ADD `sizes` attribute for responsive sizes on `img` tags
