@@ -1,3 +1,10 @@
+2.0.0-alpha.17 []
+---
+- FIX hero spacing refinements and specificity issues
+  - remove redundant mobile margin from hero__col--content
+  - add margin-bottom override for blog hero__main
+  - fix last-child margin specificity for hero__main children
+
 2.0.0-alpha.16 [2025-06-30]
 ---
 - FIX further contact form fixes

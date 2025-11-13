@@ -247,6 +247,11 @@ section {
                 margin-bottom: 5vh;
             }
 
+            // blog layout has no supplement, no margin needed
+            &__main {
+                margin-bottom: 0;
+            }
+
             &__col {
                 z-index: 20;
 
@@ -440,10 +445,6 @@ section {
             display: flex;
             flex-direction: column;
             padding: map-get($spacers, 4);
-
-            @extend .mb-3;
-            @extend .mb-lg-0;
-            // @extend .pe-lg-3;
         }
 
         &--media {
@@ -467,8 +468,12 @@ section {
         margin-top: auto;
         margin-bottom: map-get($spacers, 4);
 
-        & > *:not(:last-child) {
+        & > * {
             margin-bottom: map-get($spacers, 2);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
