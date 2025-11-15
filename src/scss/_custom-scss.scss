@@ -195,6 +195,13 @@ section {
             padding: map-get($spacers, 3);
             background-color: var(--#{$abbr}-always-80);
         }
+
+        // mobile: limit media height so image is not entirely covered by opaque text box
+        #{$hero}__col--media {
+            @include media-breakpoint-down(lg) {
+                max-height: calc(var(--#{$abbr}-header-height) - 15vh);
+            }
+        }
     }
 
     &--only-text {
