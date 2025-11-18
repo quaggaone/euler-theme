@@ -191,6 +191,10 @@ section {
 
         --#{$abbr}-header-height: #{map-get($elr-header-heights, "medium")};
 
+        #{$hero} {
+            background-color: var(--#{$abbr}-always-90);
+        }
+
         #{$hero}__main {
             padding: map-get($spacers, 3);
             background-color: var(--#{$abbr}-always-80);
@@ -473,7 +477,7 @@ section {
 
     &__main {
         margin-top: auto;
-        margin-bottom: map-get($spacers, 4);
+        margin-bottom: map-get($spacers, 3);
 
         & > * {
             margin-bottom: map-get($spacers, 2);

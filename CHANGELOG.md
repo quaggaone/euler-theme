@@ -1,3 +1,8 @@
+2.0.1 []
+---
+- FIX hero spacing issues
+- FIX bg color for --bg-media-medium modifier
+
 2.0.0 [2025-11-18]
 ---
 - FIX hero spacing refinements and specificity issues
