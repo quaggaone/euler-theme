@@ -1,9 +1,10 @@
-2.0.0-alpha.17 []
+2.0.0 [2025-11-18]
 ---
 - FIX hero spacing refinements and specificity issues
   - remove redundant mobile margin from hero__col--content
   - add margin-bottom override for blog hero__main
   - fix last-child margin specificity for hero__main children
+- FIX limit background image height on mobile for --bg-media-medium modifier
 
 2.0.0-alpha.16 [2025-06-30]
 ---
