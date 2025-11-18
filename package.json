@@ -1,14 +1,16 @@
 {
   "name": "euler-theme",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "website theme containing multiple different elements styled with modifiers in BEM format",
   "homepage": "https://github.com/quaggaone/euler-theme",
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
-    "watch:sass": "sass --watch --style=compressed --source-map --embed-sources --no-error-css src/scss/:_site/assets/themes/hotbird/css/",
-    "build:sass": "sass --style=compressed --source-map --embed-sources --no-error-css src/scss/:_site/assets/themes/hotbird/css/",
+    "dist": "npm-run-all dist:*",
+    "watch:sass": "sass --watch --style=compressed --source-map --embed-sources --no-error-css src/scss/:_site/assets/themes/euler/css/",
+    "build:sass": "sass --style=compressed --source-map --embed-sources --no-error-css src/scss/:_site/assets/themes/euler/css/",
+    "dist:sass": "sass --style=compressed --source-map --embed-sources --no-error-css src/scss/:dist/css/",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,533 +1,380 @@
 // # CUSTOM GLOBAL VALUES
-$abbr: "hbc"; // project abbreviation for CSS variables (to make code copiable between projects)
+$abbr: "elr"; // project abbreviation for CSS variables (to make code copiable between projects)
 
-$hbc-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$hbc-font-sans-condensed: "IBM Plex Sans Condensed", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$hbc-font-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$hbc-font-serif: "IBM Plex Serif", "Times New Roman";
+$elr-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$elr-font-sans-condensed: "IBM Plex Sans Condensed", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$elr-font-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$elr-font-serif: "IBM Plex Serif", "Times New Roman";
 
-$hbc-border-radius: none;
+$elr-border-radius: none;
+
+$elr-aspect-ratio: "16/10";
+$elr-aspect-ratios: (
+    "1-1": "1/1",
+    "5-4": "5/4",
+    "16-10": "16/10",
+    "16-9": "16/9",
+    "2-1": "2/1",
+    "5-2": "5/2"
+);
+$elr-object-fit: "cover";
+$elr-object-fits: (
+    "cover": "cover",
+    "contain": "contain"
+);
+
+$elr-section-gaps: (
+    6: 5rem,
+    7: 7rem,
+    8: 9rem,
+    9: 12rem
+);
+
+$elr-header-width-max: 125rem;
+$elr-header-heights: (
+    "large": 80vh,
+    "medium": 55vh,
+    "smedium": 40vh,
+    "small": 25vh
+);
+$elr-header-media-tint: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0) 60%
+);
+$elr-header-media-tint-mobile: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3)
+);
+
+$elr-layout-blog-breakpoint: lg;
 
 
 // ## CUSTOM COLOR VALUES
 // ### WHITE + GRAY
-$hbc-white: #f2f2f2;
-$hbc-dark: #0d0d0d;
+$elr-white: #f2f2f2;
+$elr-dark: #0d0d0d;
 
-// ### GREYS
-$hbc-grey: #808080;
-$hbc-grey-10: tint-color($hbc-grey, 80%);
-$hbc-grey-20: tint-color($hbc-grey, 60%);
-$hbc-grey-30: tint-color($hbc-grey, 40%);
-$hbc-grey-40: tint-color($hbc-grey, 20%);
-$hbc-grey-50: $hbc-grey;
-$hbc-grey-60: shade-color($hbc-grey, 20%);
-$hbc-grey-70: shade-color($hbc-grey, 40%);
-$hbc-grey-80: shade-color($hbc-grey, 60%);
-$hbc-grey-90: shade-color($hbc-grey, 80%);
+// ### GRAYS
+$elr-grey: #808080;
+$elr-grey-10: tint-color($elr-grey, 80%);
+$elr-grey-20: tint-color($elr-grey, 60%);
+$elr-grey-30: tint-color($elr-grey, 40%);
+$elr-grey-40: tint-color($elr-grey, 20%);
+$elr-grey-50: $elr-grey;
+$elr-grey-60: shade-color($elr-grey, 20%);
+$elr-grey-70: shade-color($elr-grey, 40%);
+$elr-grey-80: shade-color($elr-grey, 60%);
+$elr-grey-90: shade-color($elr-grey, 80%);
 
-$hbc-greys: (
-    "10": $hbc-grey-10,
-    "20": $hbc-grey-20,
-    "30": $hbc-grey-30,
-    "40": $hbc-grey-40,
-    "50": $hbc-grey-50,
-    "60": $hbc-grey-60,
-    "70": $hbc-grey-70,
-    "80": $hbc-grey-80,
-    "90": $hbc-grey-90
+$elr-greys: (
+    "10": $elr-grey-10,
+    "20": $elr-grey-20,
+    "30": $elr-grey-30,
+    "40": $elr-grey-40,
+    "50": $elr-grey-50,
+    "60": $elr-grey-60,
+    "70": $elr-grey-70,
+    "80": $elr-grey-80,
+    "90": $elr-grey-90
 );
 
-$hbc-greys-dark: (
-    "10": $hbc-grey-90,
-    "20": $hbc-grey-80,
-    "30": $hbc-grey-70,
-    "40": $hbc-grey-60,
-    "50": $hbc-grey-50,
-    "60": $hbc-grey-40,
-    "70": $hbc-grey-30,
-    "80": $hbc-grey-20,
-    "90": $hbc-grey-10
+$elr-greys-dark: (
+    "10": $elr-grey-90,
+    "20": $elr-grey-80,
+    "30": $elr-grey-70,
+    "40": $elr-grey-60,
+    "50": $elr-grey-50,
+    "60": $elr-grey-40,
+    "70": $elr-grey-30,
+    "80": $elr-grey-20,
+    "90": $elr-grey-10
 );
 
 // ### COLORS
-$hbc-amaranth: #AD0040;
-$hbc-amaranth-10: tint-color($hbc-amaranth, 80%);
-$hbc-amaranth-20: tint-color($hbc-amaranth, 60%);
-$hbc-amaranth-30: tint-color($hbc-amaranth, 40%);
-$hbc-amaranth-40: tint-color($hbc-amaranth, 20%);
-$hbc-amaranth-50: $hbc-amaranth;
-$hbc-amaranth-60: shade-color($hbc-amaranth, 20%);
-$hbc-amaranth-70: shade-color($hbc-amaranth, 40%);
-$hbc-amaranth-80: shade-color($hbc-amaranth, 60%);
-$hbc-amaranth-90: shade-color($hbc-amaranth, 80%);
+$elr-amaranth: #AD0040;
+$elr-amaranth-10: tint-color($elr-amaranth, 80%);
+$elr-amaranth-20: tint-color($elr-amaranth, 60%);
+$elr-amaranth-30: tint-color($elr-amaranth, 40%);
+$elr-amaranth-40: tint-color($elr-amaranth, 20%);
+$elr-amaranth-50: $elr-amaranth;
+$elr-amaranth-60: shade-color($elr-amaranth, 20%);
+$elr-amaranth-70: shade-color($elr-amaranth, 40%);
+$elr-amaranth-80: shade-color($elr-amaranth, 60%);
+$elr-amaranth-90: shade-color($elr-amaranth, 80%);
 
-$hbc-gold: #C4A765;
-$hbc-gold-10: tint-color($hbc-gold, 80%);
-$hbc-gold-20: tint-color($hbc-gold, 60%);
-$hbc-gold-30: tint-color($hbc-gold, 40%);
-$hbc-gold-40: tint-color($hbc-gold, 20%);
-$hbc-gold-50: $hbc-gold;
-$hbc-gold-60: shade-color($hbc-gold, 20%);
-$hbc-gold-70: shade-color($hbc-gold, 40%);
-$hbc-gold-80: shade-color($hbc-gold, 60%);
-$hbc-gold-90: shade-color($hbc-gold, 80%);
+$elr-gold: #C4A765;
+$elr-gold-10: tint-color($elr-gold, 80%);
+$elr-gold-20: tint-color($elr-gold, 60%);
+$elr-gold-30: tint-color($elr-gold, 40%);
+$elr-gold-40: tint-color($elr-gold, 20%);
+$elr-gold-50: $elr-gold;
+$elr-gold-60: shade-color($elr-gold, 20%);
+$elr-gold-70: shade-color($elr-gold, 40%);
+$elr-gold-80: shade-color($elr-gold, 60%);
+$elr-gold-90: shade-color($elr-gold, 80%);
 
-$hbc-steel: #356D9A;
-$hbc-steel-10: tint-color($hbc-steel, 80%);
-$hbc-steel-20: tint-color($hbc-steel, 60%);
-$hbc-steel-30: tint-color($hbc-steel, 40%);
-$hbc-steel-40: tint-color($hbc-steel, 20%);
-$hbc-steel-50: $hbc-steel;
-$hbc-steel-60: shade-color($hbc-steel, 20%);
-$hbc-steel-70: shade-color($hbc-steel, 40%);
-$hbc-steel-80: shade-color($hbc-steel, 60%);
-$hbc-steel-90: shade-color($hbc-steel, 80%);
+$elr-steel: #356D9A;
+$elr-steel-10: tint-color($elr-steel, 80%);
+$elr-steel-20: tint-color($elr-steel, 60%);
+$elr-steel-30: tint-color($elr-steel, 40%);
+$elr-steel-40: tint-color($elr-steel, 20%);
+$elr-steel-50: $elr-steel;
+$elr-steel-60: shade-color($elr-steel, 20%);
+$elr-steel-70: shade-color($elr-steel, 40%);
+$elr-steel-80: shade-color($elr-steel, 60%);
+$elr-steel-90: shade-color($elr-steel, 80%);
 
-$hbc-black-violet: #0F0CB3;
-$hbc-black-violet-10: tint-color($hbc-black-violet, 80%);
-$hbc-black-violet-20: tint-color($hbc-black-violet, 60%);
-$hbc-black-violet-30: tint-color($hbc-black-violet, 40%);
-$hbc-black-violet-40: tint-color($hbc-black-violet, 20%);
-$hbc-black-violet-50: $hbc-black-violet;
-$hbc-black-violet-60: shade-color($hbc-black-violet, 20%);
-$hbc-black-violet-70: shade-color($hbc-black-violet, 40%);
-$hbc-black-violet-80: shade-color($hbc-black-violet, 60%);
-$hbc-black-violet-90: shade-color($hbc-black-violet, 80%);
+$elr-black-violet: #0F0CB3;
+$elr-black-violet-10: tint-color($elr-black-violet, 80%);
+$elr-black-violet-20: tint-color($elr-black-violet, 60%);
+$elr-black-violet-30: tint-color($elr-black-violet, 40%);
+$elr-black-violet-40: tint-color($elr-black-violet, 20%);
+$elr-black-violet-50: $elr-black-violet;
+$elr-black-violet-60: shade-color($elr-black-violet, 20%);
+$elr-black-violet-70: shade-color($elr-black-violet, 40%);
+$elr-black-violet-80: shade-color($elr-black-violet, 60%);
+$elr-black-violet-90: shade-color($elr-black-violet, 80%);
 
-$hbc-green: #34C759;
-$hbc-green-10: tint-color($hbc-green, 80%);
-$hbc-green-20: tint-color($hbc-green, 60%);
-$hbc-green-30: tint-color($hbc-green, 40%);
-$hbc-green-40: tint-color($hbc-green, 20%);
-$hbc-green-50: $hbc-green;
-$hbc-green-60: shade-color($hbc-green, 20%);
-$hbc-green-70: shade-color($hbc-green, 40%);
-$hbc-green-80: shade-color($hbc-green, 60%);
-$hbc-green-90: shade-color($hbc-green, 80%);
+$elr-green: #34C759;
+$elr-green-10: tint-color($elr-green, 80%);
+$elr-green-20: tint-color($elr-green, 60%);
+$elr-green-30: tint-color($elr-green, 40%);
+$elr-green-40: tint-color($elr-green, 20%);
+$elr-green-50: $elr-green;
+$elr-green-60: shade-color($elr-green, 20%);
+$elr-green-70: shade-color($elr-green, 40%);
+$elr-green-80: shade-color($elr-green, 60%);
+$elr-green-90: shade-color($elr-green, 80%);
 
-$hbc-orange: #FF6900;
-$hbc-orange-10: tint-color($hbc-orange, 80%);
-$hbc-orange-20: tint-color($hbc-orange, 60%);
-$hbc-orange-30: tint-color($hbc-orange, 40%);
-$hbc-orange-40: tint-color($hbc-orange, 20%);
-$hbc-orange-50: $hbc-orange;
-$hbc-orange-60: shade-color($hbc-orange, 20%);
-$hbc-orange-70: shade-color($hbc-orange, 40%);
-$hbc-orange-80: shade-color($hbc-orange, 60%);
-$hbc-orange-90: shade-color($hbc-orange, 80%);
+$elr-orange: #FF6900;
+$elr-orange-10: tint-color($elr-orange, 80%);
+$elr-orange-20: tint-color($elr-orange, 60%);
+$elr-orange-30: tint-color($elr-orange, 40%);
+$elr-orange-40: tint-color($elr-orange, 20%);
+$elr-orange-50: $elr-orange;
+$elr-orange-60: shade-color($elr-orange, 20%);
+$elr-orange-70: shade-color($elr-orange, 40%);
+$elr-orange-80: shade-color($elr-orange, 60%);
+$elr-orange-90: shade-color($elr-orange, 80%);
 
-$hbc-yellow: #FF9F0A;
-$hbc-yellow-10: tint-color($hbc-yellow, 80%);
-$hbc-yellow-20: tint-color($hbc-yellow, 60%);
-$hbc-yellow-30: tint-color($hbc-yellow, 40%);
-$hbc-yellow-40: tint-color($hbc-yellow, 20%);
-$hbc-yellow-50: $hbc-yellow;
-$hbc-yellow-60: shade-color($hbc-yellow, 20%);
-$hbc-yellow-70: shade-color($hbc-yellow, 40%);
-$hbc-yellow-80: shade-color($hbc-yellow, 60%);
-$hbc-yellow-90: shade-color($hbc-yellow, 80%);
+$elr-yellow: #FF9F0A;
+$elr-yellow-10: tint-color($elr-yellow, 80%);
+$elr-yellow-20: tint-color($elr-yellow, 60%);
+$elr-yellow-30: tint-color($elr-yellow, 40%);
+$elr-yellow-40: tint-color($elr-yellow, 20%);
+$elr-yellow-50: $elr-yellow;
+$elr-yellow-60: shade-color($elr-yellow, 20%);
+$elr-yellow-70: shade-color($elr-yellow, 40%);
+$elr-yellow-80: shade-color($elr-yellow, 60%);
+$elr-yellow-90: shade-color($elr-yellow, 80%);
 
 // ### DARK-MODE COLORS
-$hbc-amaranth-dark: #BD3366;
-$hbc-amaranth-dark-10: tint-color($hbc-amaranth-dark, 80%);
-$hbc-amaranth-dark-20: tint-color($hbc-amaranth-dark, 60%);
-$hbc-amaranth-dark-30: tint-color($hbc-amaranth-dark, 40%);
-$hbc-amaranth-dark-40: tint-color($hbc-amaranth-dark, 20%);
-$hbc-amaranth-dark-50: $hbc-amaranth-dark;
-$hbc-amaranth-dark-60: shade-color($hbc-amaranth-dark, 20%);
-$hbc-amaranth-dark-70: shade-color($hbc-amaranth-dark, 40%);
-$hbc-amaranth-dark-80: shade-color($hbc-amaranth-dark, 60%);
-$hbc-amaranth-dark-90: shade-color($hbc-amaranth-dark, 80%);
+$elr-amaranth-dark: #BD3366;
+$elr-amaranth-dark-10: tint-color($elr-amaranth-dark, 80%);
+$elr-amaranth-dark-20: tint-color($elr-amaranth-dark, 60%);
+$elr-amaranth-dark-30: tint-color($elr-amaranth-dark, 40%);
+$elr-amaranth-dark-40: tint-color($elr-amaranth-dark, 20%);
+$elr-amaranth-dark-50: $elr-amaranth-dark;
+$elr-amaranth-dark-60: shade-color($elr-amaranth-dark, 20%);
+$elr-amaranth-dark-70: shade-color($elr-amaranth-dark, 40%);
+$elr-amaranth-dark-80: shade-color($elr-amaranth-dark, 60%);
+$elr-amaranth-dark-90: shade-color($elr-amaranth-dark, 80%);
 
-$hbc-black-violet-dark: #645FFF;
-$hbc-black-violet-dark-10: tint-color($hbc-black-violet-dark, 80%);
-$hbc-black-violet-dark-20: tint-color($hbc-black-violet-dark, 60%);
-$hbc-black-violet-dark-30: tint-color($hbc-black-violet-dark, 40%);
-$hbc-black-violet-dark-40: tint-color($hbc-black-violet-dark, 20%);
-$hbc-black-violet-dark-50: $hbc-black-violet-dark;
-$hbc-black-violet-dark-60: shade-color($hbc-black-violet-dark, 20%);
-$hbc-black-violet-dark-70: shade-color($hbc-black-violet-dark, 40%);
-$hbc-black-violet-dark-80: shade-color($hbc-black-violet-dark, 60%);
-$hbc-black-violet-dark-90: shade-color($hbc-black-violet-dark, 80%);
+$elr-black-violet-dark: #645FFF;
+$elr-black-violet-dark-10: tint-color($elr-black-violet-dark, 80%);
+$elr-black-violet-dark-20: tint-color($elr-black-violet-dark, 60%);
+$elr-black-violet-dark-30: tint-color($elr-black-violet-dark, 40%);
+$elr-black-violet-dark-40: tint-color($elr-black-violet-dark, 20%);
+$elr-black-violet-dark-50: $elr-black-violet-dark;
+$elr-black-violet-dark-60: shade-color($elr-black-violet-dark, 20%);
+$elr-black-violet-dark-70: shade-color($elr-black-violet-dark, 40%);
+$elr-black-violet-dark-80: shade-color($elr-black-violet-dark, 60%);
+$elr-black-violet-dark-90: shade-color($elr-black-violet-dark, 80%);
 
 // ### MAPS
-$hbc-amaranths: (
-    "10": $hbc-amaranth-10,
-    "20": $hbc-amaranth-20,
-    "30": $hbc-amaranth-30,
-    "40": $hbc-amaranth-40,
-    "50": $hbc-amaranth-50,
-    "60": $hbc-amaranth-60,
-    "70": $hbc-amaranth-70,
-    "80": $hbc-amaranth-80,
-    "90": $hbc-amaranth-90
+$elr-amaranths: (
+    "10": $elr-amaranth-10,
+    "20": $elr-amaranth-20,
+    "30": $elr-amaranth-30,
+    "40": $elr-amaranth-40,
+    "50": $elr-amaranth-50,
+    "60": $elr-amaranth-60,
+    "70": $elr-amaranth-70,
+    "80": $elr-amaranth-80,
+    "90": $elr-amaranth-90
 );
 
-$hbc-golds: (
-    "10": $hbc-gold-10,
-    "20": $hbc-gold-20,
-    "30": $hbc-gold-30,
-    "40": $hbc-gold-40,
-    "50": $hbc-gold-50,
-    "60": $hbc-gold-60,
-    "70": $hbc-gold-70,
-    "80": $hbc-gold-80,
-    "90": $hbc-gold-90
+$elr-golds: (
+    "10": $elr-gold-10,
+    "20": $elr-gold-20,
+    "30": $elr-gold-30,
+    "40": $elr-gold-40,
+    "50": $elr-gold-50,
+    "60": $elr-gold-60,
+    "70": $elr-gold-70,
+    "80": $elr-gold-80,
+    "90": $elr-gold-90
 );
 
-$hbc-steels: (
-    "10": $hbc-steel-10,
-    "20": $hbc-steel-20,
-    "30": $hbc-steel-30,
-    "40": $hbc-steel-40,
-    "50": $hbc-steel-50,
-    "60": $hbc-steel-60,
-    "70": $hbc-steel-70,
-    "80": $hbc-steel-80,
-    "90": $hbc-steel-90
+$elr-steels: (
+    "10": $elr-steel-10,
+    "20": $elr-steel-20,
+    "30": $elr-steel-30,
+    "40": $elr-steel-40,
+    "50": $elr-steel-50,
+    "60": $elr-steel-60,
+    "70": $elr-steel-70,
+    "80": $elr-steel-80,
+    "90": $elr-steel-90
 );
 
-$hbc-black-violets: (
-    "10": $hbc-black-violet-10,
-    "20": $hbc-black-violet-20,
-    "30": $hbc-black-violet-30,
-    "40": $hbc-black-violet-40,
-    "50": $hbc-black-violet-50,
-    "60": $hbc-black-violet-60,
-    "70": $hbc-black-violet-70,
-    "80": $hbc-black-violet-80,
-    "90": $hbc-black-violet-90
+$elr-black-violets: (
+    "10": $elr-black-violet-10,
+    "20": $elr-black-violet-20,
+    "30": $elr-black-violet-30,
+    "40": $elr-black-violet-40,
+    "50": $elr-black-violet-50,
+    "60": $elr-black-violet-60,
+    "70": $elr-black-violet-70,
+    "80": $elr-black-violet-80,
+    "90": $elr-black-violet-90
 );
 
-$hbc-greens: (
-    "10": $hbc-green-10,
-    "20": $hbc-green-20,
-    "30": $hbc-green-30,
-    "40": $hbc-green-40,
-    "50": $hbc-green-50,
-    "60": $hbc-green-60,
-    "70": $hbc-green-70,
-    "80": $hbc-green-80,
-    "90": $hbc-green-90
+$elr-greens: (
+    "10": $elr-green-10,
+    "20": $elr-green-20,
+    "30": $elr-green-30,
+    "40": $elr-green-40,
+    "50": $elr-green-50,
+    "60": $elr-green-60,
+    "70": $elr-green-70,
+    "80": $elr-green-80,
+    "90": $elr-green-90
 );
 
-$hbc-oranges: (
-    "10": $hbc-orange-10,
-    "20": $hbc-orange-20,
-    "30": $hbc-orange-30,
-    "40": $hbc-orange-40,
-    "50": $hbc-orange-50,
-    "60": $hbc-orange-60,
-    "70": $hbc-orange-70,
-    "80": $hbc-orange-80,
-    "90": $hbc-orange-90
+$elr-oranges: (
+    "10": $elr-orange-10,
+    "20": $elr-orange-20,
+    "30": $elr-orange-30,
+    "40": $elr-orange-40,
+    "50": $elr-orange-50,
+    "60": $elr-orange-60,
+    "70": $elr-orange-70,
+    "80": $elr-orange-80,
+    "90": $elr-orange-90
 );
 
-$hbc-yellows: (
-    "10": $hbc-yellow-10,
-    "20": $hbc-yellow-20,
-    "30": $hbc-yellow-30,
-    "40": $hbc-yellow-40,
-    "50": $hbc-yellow-50,
-    "60": $hbc-yellow-60,
-    "70": $hbc-yellow-70,
-    "80": $hbc-yellow-80,
-    "90": $hbc-yellow-90
+$elr-yellows: (
+    "10": $elr-yellow-10,
+    "20": $elr-yellow-20,
+    "30": $elr-yellow-30,
+    "40": $elr-yellow-40,
+    "50": $elr-yellow-50,
+    "60": $elr-yellow-60,
+    "70": $elr-yellow-70,
+    "80": $elr-yellow-80,
+    "90": $elr-yellow-90
 );
 
 // ### DARK-MODE MAPS
-$hbc-amaranths-dark: (
-    "10": $hbc-amaranth-dark-90,
-    "20": $hbc-amaranth-dark-80,
-    "30": $hbc-amaranth-dark-70,
-    "40": $hbc-amaranth-dark-60,
-    "50": $hbc-amaranth-dark-50,
-    "60": $hbc-amaranth-dark-40,
-    "70": $hbc-amaranth-dark-30,
-    "80": $hbc-amaranth-dark-20,
-    "90": $hbc-amaranth-dark-10
+$elr-amaranths-dark: (
+    "10": $elr-amaranth-dark-90,
+    "20": $elr-amaranth-dark-80,
+    "30": $elr-amaranth-dark-70,
+    "40": $elr-amaranth-dark-60,
+    "50": $elr-amaranth-dark-50,
+    "60": $elr-amaranth-dark-40,
+    "70": $elr-amaranth-dark-30,
+    "80": $elr-amaranth-dark-20,
+    "90": $elr-amaranth-dark-10
 );
 
-$hbc-golds-dark: (
-    "10": $hbc-gold-90,
-    "20": $hbc-gold-80,
-    "30": $hbc-gold-70,
-    "40": $hbc-gold-60,
-    "50": $hbc-gold-50,
-    "60": $hbc-gold-40,
-    "70": $hbc-gold-30,
-    "80": $hbc-gold-20,
-    "90": $hbc-gold-10
+$elr-golds-dark: (
+    "10": $elr-gold-90,
+    "20": $elr-gold-80,
+    "30": $elr-gold-70,
+    "40": $elr-gold-60,
+    "50": $elr-gold-50,
+    "60": $elr-gold-40,
+    "70": $elr-gold-30,
+    "80": $elr-gold-20,
+    "90": $elr-gold-10
 );
 
-$hbc-steels-dark: (
-    "10": $hbc-steel-90,
-    "20": $hbc-steel-80,
-    "30": $hbc-steel-70,
-    "40": $hbc-steel-60,
-    "50": $hbc-steel-50,
-    "60": $hbc-steel-40,
-    "70": $hbc-steel-30,
-    "80": $hbc-steel-20,
-    "90": $hbc-steel-10
+$elr-steels-dark: (
+    "10": $elr-steel-90,
+    "20": $elr-steel-80,
+    "30": $elr-steel-70,
+    "40": $elr-steel-60,
+    "50": $elr-steel-50,
+    "60": $elr-steel-40,
+    "70": $elr-steel-30,
+    "80": $elr-steel-20,
+    "90": $elr-steel-10
 );
 
-$hbc-black-violets-dark: (
-    "10": $hbc-black-violet-dark-90,
-    "20": $hbc-black-violet-dark-80,
-    "30": $hbc-black-violet-dark-70,
-    "40": $hbc-black-violet-dark-60,
-    "50": $hbc-black-violet-dark-50,
-    "60": $hbc-black-violet-dark-40,
-    "70": $hbc-black-violet-dark-30,
-    "80": $hbc-black-violet-dark-20,
-    "90": $hbc-black-violet-dark-10
+$elr-black-violets-dark: (
+    "10": $elr-black-violet-dark-90,
+    "20": $elr-black-violet-dark-80,
+    "30": $elr-black-violet-dark-70,
+    "40": $elr-black-violet-dark-60,
+    "50": $elr-black-violet-dark-50,
+    "60": $elr-black-violet-dark-40,
+    "70": $elr-black-violet-dark-30,
+    "80": $elr-black-violet-dark-20,
+    "90": $elr-black-violet-dark-10
 );
 
-$hbc-greens-dark: (
-    "10": $hbc-green-90,
-    "20": $hbc-green-80,
-    "30": $hbc-green-70,
-    "40": $hbc-green-60,
-    "50": $hbc-green-50,
-    "60": $hbc-green-40,
-    "70": $hbc-green-30,
-    "80": $hbc-green-20,
-    "90": $hbc-green-10
+$elr-greens-dark: (
+    "10": $elr-green-90,
+    "20": $elr-green-80,
+    "30": $elr-green-70,
+    "40": $elr-green-60,
+    "50": $elr-green-50,
+    "60": $elr-green-40,
+    "70": $elr-green-30,
+    "80": $elr-green-20,
+    "90": $elr-green-10
 );
 
-$hbc-oranges-dark: (
-    "10": $hbc-orange-90,
-    "20": $hbc-orange-80,
-    "30": $hbc-orange-70,
-    "40": $hbc-orange-60,
-    "50": $hbc-orange-50,
-    "60": $hbc-orange-40,
-    "70": $hbc-orange-30,
-    "80": $hbc-orange-20,
-    "90": $hbc-orange-10
+$elr-oranges-dark: (
+    "10": $elr-orange-90,
+    "20": $elr-orange-80,
+    "30": $elr-orange-70,
+    "40": $elr-orange-60,
+    "50": $elr-orange-50,
+    "60": $elr-orange-40,
+    "70": $elr-orange-30,
+    "80": $elr-orange-20,
+    "90": $elr-orange-10
 );
 
-$hbc-yellows-dark: (
-    "10": $hbc-yellow-90,
-    "20": $hbc-yellow-80,
-    "30": $hbc-yellow-70,
-    "40": $hbc-yellow-60,
-    "50": $hbc-yellow-50,
-    "60": $hbc-yellow-40,
-    "70": $hbc-yellow-30,
-    "80": $hbc-yellow-20,
-    "90": $hbc-yellow-10
+$elr-yellows-dark: (
+    "10": $elr-yellow-90,
+    "20": $elr-yellow-80,
+    "30": $elr-yellow-70,
+    "40": $elr-yellow-60,
+    "50": $elr-yellow-50,
+    "60": $elr-yellow-40,
+    "70": $elr-yellow-30,
+    "80": $elr-yellow-20,
+    "90": $elr-yellow-10
 );
-
-
-@function default-color($value, $color: "grey") {
-    $color-string: "var(--#{$abbr}-" + #{$value} + ", var(--#{$abbr}-" + #{$color} + "-" + #{$value} + "))";
-    @return $color-string;
-}
-
-
-// CSS VARIABLES
-
-:root {
-    --hbc-white: #{$hbc-white};
-    --hbc-dark: #{$hbc-dark};
-
-    --hbc-always-white: #{$hbc-white};
-
-    @each $color, $value in $hbc-greys {
-        --hbc-grey-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-amaranths {
-        --hbc-amaranth-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-golds {
-        --hbc-gold-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-steels {
-        --hbc-steel-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-black-violets {
-        --hbc-black-violet-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-greens {
-        --hbc-green-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-oranges {
-        --hbc-orange-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-yellows {
-        --hbc-yellow-#{$color}: #{$value};
-    }
-
-    @each $color, $value in $hbc-greys {
-        --hbc-#{$color}: #{$value};
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --hbc-white: #{$hbc-dark};
-        --hbc-dark: #{$hbc-white};
-
-        @each $color, $value in $hbc-greys-dark {
-            --hbc-grey-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-amaranths-dark {
-            --hbc-amaranth-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-golds-dark {
-            --hbc-gold-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-steels-dark {
-            --hbc-steel-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-black-violets-dark {
-            --hbc-black-violet-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-greens-dark {
-            --hbc-green-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-oranges-dark {
-            --hbc-orange-#{$color}: #{$value};
-        }
-
-        @each $color, $value in $hbc-yellows-dark {
-            --hbc-yellow-#{$color}: #{$value};
-        }
-    
-        @each $color, $value in $hbc-greys-dark {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-}
-
-body {
-    &._grey, ._grey {
-        @each $color, $value in $hbc-greys {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._amaranth, ._amaranth {
-        @each $color, $value in $hbc-amaranths {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._gold, ._gold {
-        @each $color, $value in $hbc-golds {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._steel, ._steel {
-        @each $color, $value in $hbc-steels {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._black-violet, ._black-violet {
-        @each $color, $value in $hbc-black-violets {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._green, ._green {
-        @each $color, $value in $hbc-greens {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._orange, ._orange {
-        @each $color, $value in $hbc-oranges {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-
-    &._yellow, ._yellow {
-        @each $color, $value in $hbc-yellows {
-            --hbc-#{$color}: #{$value};
-        }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        &._grey, ._grey {
-            @each $color, $value in $hbc-greys-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._amaranth, ._amaranth {
-            @each $color, $value in $hbc-amaranths-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._gold, ._gold {
-            @each $color, $value in $hbc-golds-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._steel, ._steel {
-            @each $color, $value in $hbc-steels-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._black-violet, ._black-violet {
-            @each $color, $value in $hbc-black-violets-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._green, ._green {
-            @each $color, $value in $hbc-greens-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._orange, ._orange {
-            @each $color, $value in $hbc-oranges-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    
-        &._yellow, ._yellow {
-            @each $color, $value in $hbc-yellows-dark {
-                --hbc-#{$color}: #{$value};
-            }
-        }
-    }
-}
 
 
 // # BOOTSTRAP ADJUSTMENTS
 $color-mode-type: media-query;
 
-$headings-font-family: $hbc-font-sans;
+$headings-font-family: $elr-font-sans-condensed;
 
-$font-family-sans-serif: $hbc-font-sans;
-$font-family-monospace: $hbc-font-monospace;
+$font-family-sans-serif: $elr-font-sans;
+$font-family-monospace: $elr-font-monospace;
 
-$display-font-family: $hbc-font-sans-condensed;
+$display-font-family: $elr-font-sans-condensed;
 $display-font-style: null;
 $display-font-weight: 500;
 
@@ -535,11 +382,11 @@ $display-font-weight: 500;
 $color-accent: #AD0040;
 $color-accent-dark: #BD3366;
 
-$body-bg-dark: $hbc-dark;
+$body-bg-dark: $elr-dark;
 
 
 $display-font-sizes: (
-    tagline: 3rem,
+    title: 3rem,
     1: 2.5rem,
     2: 2rem,
     3: 1.75rem,
@@ -552,27 +399,27 @@ $navbar-light-toggler-border-color: none;
 $nav-link-font-size: 1.125rem;
 $nav-link-font-weight: 500;
 
-$dropdown-color: var(--hbc-dark);
-$dropdown-bg: var(--hbc-10);
-$dropdown-link-color: var(--hbc-dark);
-$dropdown-link-hover-color: var(--hbc-dark);
-$dropdown-link-hover-bg: var(--hbc-20);
-$dropdown-link-active-color: var(--hbc-dark);
-$dropdown-link-active-bg: var(--hbc-30);
-$dropdown-border-radius: $hbc-border-radius;
+$dropdown-color: var(--#{$abbr}-dark);
+$dropdown-bg: var(--#{$abbr}-10);
+$dropdown-link-color: var(--#{$abbr}-dark);
+$dropdown-link-hover-color: var(--#{$abbr}-dark);
+$dropdown-link-hover-bg: var(--#{$abbr}-20);
+$dropdown-link-active-color: var(--#{$abbr}-dark);
+$dropdown-link-active-bg: var(--#{$abbr}-30);
+$dropdown-border-radius: $elr-border-radius;
 $dropdown-border-width: 0;
 
-$accordion-icon-color: $hbc-dark;
-$accordion-icon-active-color: $hbc-dark;
-$accordion-icon-color-dark: $hbc-white;
-$accordion-icon-active-color-dark: $hbc-white;
+$accordion-icon-color: $elr-dark;
+$accordion-icon-active-color: $elr-dark;
+$accordion-icon-color-dark: $elr-white;
+$accordion-icon-active-color-dark: $elr-white;
 
-$card-border-radius: $hbc-border-radius;
+$card-border-radius: $elr-border-radius;
 
 // ## MODAL
-$modal-content-border-color: var(--hbc-20);
+$modal-content-border-color: var(--#{$abbr}-20);
 $modal-content-border-width: 0;
-$modal-content-border-radius: $hbc-border-radius;
+$modal-content-border-radius: $elr-border-radius;
 
 $modal-header-border-width: 1px;
 

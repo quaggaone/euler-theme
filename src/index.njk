@@ -1,28 +1,184 @@
 ---
 layout: "base.njk"
 title: "Home"
-headerModifier: "_bg-img"
-bodyModifier: ""
+elrHeaderModifier: "elr-header--bg-media"
+elrBodyModifier: ""
 ---
 
-{% include "partials/hbc-cta.njk" %}
-
-{% include "partials/hbc-statement.njk" %}
+{% include "partials/elr-cta.njk" %}
 
 
-{% set hbcImageUrl %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
-{% set hbcImageOptions %}
+{% include "partials/elr-statement.njk" %}
 
+
+{% set elrGridContent %}
+    {% set elrFigureUrl %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrFigureModifier %}
+    {{ euler.abbr }}-figure--end
+    {% endset %}
+    {% set elrFigureCaption %}
+        generic brand image
+    {% endset %}
+    {% include "partials/elr-figure.njk" %}
 {% endset %}
-{% set hbcImageCaption %}
-generic brand image
+{% include "partials/elr-grid.njk" %}
+
+{% set elrGridModifier %}
+    {{ euler.abbr }}-grid__container--row-cols-4
 {% endset %}
-{% include "partials/hbc-image.njk" %}
+{% set elrGridContent %}
+    {% set elrCardModifier %}
+    {{ euler.abbr }}-card--link
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    Cyber Security
+    {% endset %}
+    {% set elrCardSubtitle %}
 
-{% include "partials/hbc-card-grid.njk" %}
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+    <ul><li>Proactive Defense</li><li>Adversarial Security</li><li>Threat Response</li><li>Awareness Trainings</li></ul>
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
 
-{% include "partials/hbc-display-list.njk" %}
 
-{% include "partials/hbc-accordion.njk" %}
+    {% set elrCardModifier %}
+    {{ euler.abbr }}-card--link --gold
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    Technology Consulting
+    {% endset %}
+    {% set elrCardSubtitle %}
 
-{% include "partials/hbc-card-grid.njk" %}
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+    <ul><li>Transformative Initiatives</li><li>Digital Transformation</li><li>Systems Implementation</li><li>Process Optimization</li><li>Customer Success</li></ul>
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+
+
+    {% set elrCardModifier %}
+    --gold
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    Software Engineering
+    {% endset %}
+    {% set elrCardSubtitle %}
+
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+    <ul><li>Custom Software Development</li><li>Mobile App Development</li><li>Web App Development</li><li>Cloud Computing</li><li>Smart Design UI/UX</li></ul>
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+
+
+    {% set elrCardModifier %}
+
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    hotbird dynamics
+    {% endset %}
+    {% set elrCardSubtitle %}
+
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+    <ul><li>Ideation and Concept Development</li><li>Agile Development Processes</li><li>Product-market Fit Analysis</li><li>Investment and Funding Consulting</li><li>Pitch deck and</ul> Business Plan Development</li>
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+{% endset %}
+{% include "partials/elr-grid.njk" %}
+
+
+{% set elrDisplayListModifier %}
+    {{ euler.abbr }}-display-list--alternating
+{% endset %}
+{% include "partials/elr-display-list.njk" %}
+
+
+{% set elrFeatureBoxContent %}
+{% set elrAccordionId %}One{% endset %}
+{% include "partials/elr-accordion.njk" %}
+{% endset %}
+{% include "partials/elr-feature-box.njk" %}
+
+
+{% set elrGridModifier %}
+    {{ euler.abbr }}-grid__container--condensed
+{% endset %}
+{% set elrGridContent %}
+    {% set elrCardModifier %}
+    {{ euler.abbr }}-card--link {{ euler.abbr }}-card--bg-media
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    Cyber Security
+    {% endset %}
+    {% set elrCardSubtitle %}
+    Subtitle
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+
+
+    {% set elrCardModifier %}
+    {{ euler.abbr }}-card--link --gold {{ euler.abbr }}-card--bg-media
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    Technology Consulting
+    {% endset %}
+    {% set elrCardSubtitle %}
+    Subtitle
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+
+
+    {% set elrCardModifier %}
+    --gold {{ euler.abbr }}-card--bg-media
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    Software Engineering
+    {% endset %}
+    {% set elrCardSubtitle %}
+    Subtitle
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+
+
+    {% set elrCardModifier %}
+    {{ euler.abbr }}-card--bg-media
+    {% endset %}
+    {% set elrCardLink %}{% endset %}
+    {% set elrCardTitle %}
+    hotbird dynamics
+    {% endset %}
+    {% set elrCardSubtitle %}
+    Subtitle
+    {% endset %}
+    {% set elrCardImg %}assets/img/jr-korpa-VtDdOeuNg4o-unsplash.jpeg{% endset %}
+    {% set elrCardText %}
+
+    {% endset %}
+    {% include "partials/elr-card.njk" %}
+{% endset %}
+{% include "partials/elr-grid.njk" %}
